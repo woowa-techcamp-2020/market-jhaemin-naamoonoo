@@ -1,4 +1,4 @@
-import validateId from '../validate-id'
+import { validateId } from '../validate-id'
 
 test('Validate ID', () => {
   expect(validateId('myi')).toBe(false)

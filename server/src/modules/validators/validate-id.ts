@@ -1,4 +1,4 @@
-const validateId = (id: string): boolean => {
+export const validateId = (id: string): boolean => {
   const idLength = id.length
 
   if (idLength < 4 || idLength > 20) {
@@ -7,5 +7,3 @@ const validateId = (id: string): boolean => {
 
   return id.match(/^[a-z0-9_-]+$/) !== null
 }
-
-export default validateId

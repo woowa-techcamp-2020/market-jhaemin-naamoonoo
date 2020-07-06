@@ -1,4 +1,4 @@
-import validatePassword from '../validate-password'
+import { validatePassword } from '../validate-password'
 
 test('Validate password', () => {
   expect(validatePassword('1234567')).toBe(false)
