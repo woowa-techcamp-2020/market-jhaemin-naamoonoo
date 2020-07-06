@@ -1,5 +1,8 @@
 import express from 'express'
 
+import Datastore from 'nedb'
+
+const db = new Datastore({ filename: 'database/db', autoload: true })
 const app = express()
 const port = 3000
 
