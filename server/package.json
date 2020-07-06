@@ -5,6 +5,7 @@
   "main": "src/main.ts",
   "scripts": {
     "test": "jest",
+    "test:watch": "jest --watchAll",
     "dev": "ts-node-dev --respawn --transpileOnly src/main.ts",
     "build": "tsc",
     "start": "node dist/main"
