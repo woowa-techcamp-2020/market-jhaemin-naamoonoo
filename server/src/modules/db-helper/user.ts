@@ -1,4 +1,5 @@
 import { db } from '../../db'
+import { comparePassword } from '../encryption'
 
 export type UserInfo = {
   id: string
@@ -17,7 +18,6 @@ export type Address = {
 
 export const createUser = (userInfo: UserInfo): boolean => {
   try {
-    const { id, password, email, name, phone } = userInfo
     db.insert(userInfo, (err, docs) => {})
     return true
   } catch (error) {
@@ -27,11 +27,19 @@ export const createUser = (userInfo: UserInfo): boolean => {
 
 export const findUser = (id: string, password?: string): Promise<UserInfo> => {
   return new Promise((resolve) => {
-    // if (password){
-    // hash password
-    //   }
-    db.find({ id }, (err, docs) => {
-      resolve(docs)
+    db.find<UserInfo>({ id }, async (err, docs) => {
+      if (!password) {
+        resolve(docs[0])
+        return
+      }
+
+      const isPasswordCorrect = await comparePassword(
+        password,
+        docs[0].password
+      )
+      if (isPasswordCorrect) {
+        resolve(docs[0])
+      }
     })
   })
 }
