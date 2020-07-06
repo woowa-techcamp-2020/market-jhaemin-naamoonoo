@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev --respawn --transpileOnly main.ts",
+    "build": "tsc",
+    "start": "node build/main"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/express": "^4.17.6",
+    "@types/node": "^14.0.14",
+    "husky": "^4.2.5",
+    "ts-node-dev": "^1.0.0-pre.50",
+    "typescript": "^3.9.6"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
