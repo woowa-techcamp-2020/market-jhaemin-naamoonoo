@@ -19,8 +19,9 @@
       "@@/*": ["./*"]
     },
     "plugins": [{ "transform": "@zerollup/ts-transform-paths" }],
-    "lib": ["ES2020.String", "DOM", "ESNext.AsyncIterable"]
+    "lib": ["ES2020.String", "ESNext.AsyncIterable"],
+    "types": ["node", "jest"]
   },
-  "include": ["*"],
-  "exclude": ["node_modules", "build", "**/generated"]
+  "include": ["src/main.ts", "**/*.spec.ts", "**/*.test.ts"],
+  "exclude": ["node_modules", "build"]
 }
