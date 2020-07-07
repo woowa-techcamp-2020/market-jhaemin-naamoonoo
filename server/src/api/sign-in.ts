@@ -2,6 +2,8 @@ import express, { Request, Response } from 'express'
 import { findUser } from '../modules/database/schema/user'
 import { comparePassword } from '../modules/encryption'
 import { validateBody } from '../middlewares/validate-body'
+import { createUserToken } from '@/modules/database/schema/userToken'
+import { v4 as uuidv4 } from 'uuid'
 
 const router = express.Router()
 
@@ -28,7 +30,13 @@ router.post(
       return
     }
 
-    res.send(200)
+    const token = uuidv4()
+    await createUserToken({ userId, token })
+
+    res.send({
+      res: true,
+      token,
+    })
   }
 )
 
