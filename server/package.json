@@ -6,8 +6,8 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "dev": "ts-node-dev --respawn --transpileOnly src/main.ts",
-    "build": "tsc",
+    "dev": "ts-node-dev --respawn --transpileOnly -r tsconfig-paths/register src/main.ts",
+    "build": "ttsc",
     "start": "node dist/main"
   },
   "keywords": [],
@@ -19,11 +19,15 @@
     "@types/jest": "^26.0.3",
     "@types/nedb": "^1.8.9",
     "@types/node": "^14.0.14",
+    "@types/supertest": "^2.0.10",
+    "@zerollup/ts-transform-paths": "^1.7.18",
     "husky": "^4.2.5",
     "jest": "^26.1.0",
     "supertest": "^4.0.2",
     "ts-jest": "^26.1.1",
     "ts-node-dev": "^1.0.0-pre.50",
+    "tsconfig-paths": "^3.9.0",
+    "ttypescript": "^1.5.10",
     "typescript": "^3.9.6"
   },
   "dependencies": {
