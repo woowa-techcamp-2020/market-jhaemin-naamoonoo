@@ -1,16 +1,46 @@
 import request from 'supertest'
 import { app } from '../../app'
 
-import { createUser } from '../../modules/database/schema/user'
+import {
+  createUser,
+  deleteUser,
+  UserInfo,
+} from '../../modules/database/schema/user'
 
-it('responds with details about the current user', async () => {
+it('sign in with valid userId and password should be pass', async () => {
+  //given
   const validInput = {
     userId: 'woowa444-_',
     password: 'abcde1234',
   }
 
-  createUser({
+  const [err, createdUser] = await createUser({
     ...validInput,
+    name: '우테켐',
+    email: 'wwa@awas.com',
+    phone: '010-6564-2222s',
+  })
+
+  //when
+  const expectedResponse = await request(app)
+    .post('/api/sign-in')
+    .send(validInput)
+    .expect(200)
+
+  await deleteUser({ userId: createdUser.userId })
+
+  //then
+  // expect(response.body.currentUser.email).toEqual('test@test.com')
+})
+
+it('sign in with none existed userId should be fail', async () => {
+  const invalidInput = {
+    userId: 'WWdsw444-_',
+    password: 'abcde1234',
+  }
+
+  const [err, createdUser] = await createUser({
+    ...invalidInput,
     name: '우테켐',
     email: 'wwa@awas.com',
     phone: '010-6564-2222s',
@@ -20,61 +50,60 @@ it('responds with details about the current user', async () => {
   //when
   const expectedResponse = await request(app)
     .post('/api/sign-in')
-    .send(validInput)
-    .expect(200)
+    .send({ ...invalidInput, userId: 'w4wws4' })
+    .expect(400)
+
+  await deleteUser({ userId: createdUser.userId })
   //then
   // expect(response.body.currentUser.email).toEqual('test@test.com')
 })
 
-// it('fails when an invalid password comes in', async () => {
-//   await request(app)
-//     .post('/api/users/signup')
-//     .send({
-//       email: 'test@test.com',
-//       password: 'password',
-//     })
-//     .expect(201)
+it('sign in with wrong password should be fail', async () => {
+  const invalidInput = {
+    userId: 'test33-_',
+    password: 'abcde1234',
+  }
 
-//   await request(app)
-//     .post('/api/users/signin')
-//     .send({
-//       email: 'test@test.com',
-//       password: 'pass',
-//     })
-//     .expect(400)
-// })
+  const [err, createdUser] = await createUser({
+    ...invalidInput,
+    name: '우테켐',
+    email: 'wwa@awas.com',
+    phone: '010-6564-2222s',
+  })
+  //given
 
-// it('responds with a cookie when valid credentials are given', async () => {
-//   await request(app)
-//     .post('/api/users/signup')
-//     .send({
-//       email: 'test@test.com',
-//       password: 'password',
-//     })
-//     .expect(201)
+  //when
+  const expectedResponse = await request(app)
+    .post('/api/sign-in')
+    .send({ ...invalidInput, password: 'wnskdws' })
+    .expect(400)
 
-//   const response = await request(app)
-//     .post('/api/users/signin')
-//     .send({
-//       email: 'test@test.com',
-//       password: 'password',
-//     })
-//     .expect(200)
+  await deleteUser({ userId: createdUser.userId })
+  //then
+  // expect(response.body.currentUser.email).toEqual('test@test.com')
+})
 
-//   expect(response.get('Set-Cookie')).toBeDefined()
-// })
+it('sign in with invalidInput should be fail', async () => {
+  const invalidInput = {
+    userId: 's#FDw444-_',
+    password: 'abc@de1!234',
+  }
 
-// test('Sign in with valid Id and password should be pass', () => {
-//   //given
-//   const validInput = {
-//     id: 'woowa444-_',
-//     password: 'abcde1234',
-//   }
-//   const expectedResult = true
+  const [err, createdUser] = await createUser({
+    ...invalidInput,
+    name: '우테켐',
+    email: 'wwa@awas.com',
+    phone: '010-6564-2222s',
+  })
+  //given
 
-//   //when
-//   const testResult = validInput
+  //when
+  const expectedResponse = await request(app)
+    .post('/api/sign-in')
+    .send({ ...invalidInput, password: 'wnskdws' })
+    .expect(400)
 
-//   //then
-//   expect(testResult).toBe(expectedResult)
-// })
+  await deleteUser({ userId: createdUser.userId })
+  //then
+  // expect(response.body.currentUser.email).toEqual('test@test.com')
+})
