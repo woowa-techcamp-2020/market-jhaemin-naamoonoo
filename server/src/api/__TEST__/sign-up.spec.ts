@@ -6,7 +6,7 @@ import request from 'supertest'
 test('Sign up with all valid information should be passed', (done) => {
   // given
   const validUserInfo: UserInfo = {
-    id: 'fameu5e',
+    userId: 'fameu5e',
     password: '12345678',
     email: 'io@jhaemin.com',
     name: '장해민',
@@ -14,7 +14,7 @@ test('Sign up with all valid information should be passed', (done) => {
   }
 
   const expectedResult: SignUpResponse = {
-    id: {
+    userId: {
       res: true,
       err: null,
     },
@@ -48,7 +48,7 @@ test('Sign up with all valid information should be passed', (done) => {
 test('Sign up with short id should not be passed', (done) => {
   // given
   const validUserInfo: UserInfo = {
-    id: 'fam',
+    userId: 'fam',
     password: '12345678',
     email: 'io@jhaemin.com',
     name: '장해민',
@@ -56,7 +56,7 @@ test('Sign up with short id should not be passed', (done) => {
   }
 
   const expectedResult: SignUpResponse = {
-    id: {
+    userId: {
       res: false,
       // TODO: Use constant error message
       err: '',

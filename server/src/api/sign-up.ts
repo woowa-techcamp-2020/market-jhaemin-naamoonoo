@@ -15,7 +15,7 @@ export type SignUpResponse = {
 // TODO: Use body validation middleware
 router.post('/sign-up', (req, res) => {
   res.json({
-    id: {
+    userId: {
       res: true,
       err: null,
     },
