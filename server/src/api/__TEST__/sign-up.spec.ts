@@ -13,28 +13,7 @@ test('Sign up with all valid information should be passed', (done) => {
     phone: '010-5520-3618',
   }
 
-  const expectedResult: SignUpResponse = {
-    userId: {
-      res: true,
-      err: null,
-    },
-    password: {
-      res: true,
-      err: null,
-    },
-    email: {
-      res: true,
-      err: null,
-    },
-    name: {
-      res: true,
-      err: null,
-    },
-    phone: {
-      res: true,
-      err: null,
-    },
-  }
+  const expectedResult: SignUpResponse = {}
 
   request(app)
     .post('/sign-up')
@@ -45,37 +24,20 @@ test('Sign up with all valid information should be passed', (done) => {
     })
 })
 
-test('Sign up with short id should not be passed', (done) => {
+test('Sign up with wrong email format should not be passed', (done) => {
   // given
   const validUserInfo: UserInfo = {
-    userId: 'fam',
+    userId: 'fameu6e',
     password: '12345678',
-    email: 'io@jhaemin.com',
+    email: 'io@',
     name: '장해민',
     phone: '010-5520-3618',
   }
 
   const expectedResult: SignUpResponse = {
-    userId: {
-      res: false,
-      // TODO: Use constant error message
-      err: '',
-    },
-    password: {
-      res: true,
-      err: null,
-    },
     email: {
-      res: true,
-      err: null,
-    },
-    name: {
-      res: true,
-      err: null,
-    },
-    phone: {
-      res: true,
-      err: null,
+      res: false,
+      err: '이메일 error',
     },
   }
 

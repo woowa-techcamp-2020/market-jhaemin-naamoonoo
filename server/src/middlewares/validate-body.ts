@@ -1,5 +1,6 @@
-import { Response, Request, NextFunction } from 'express'
-import { UserInfo, deleteUser } from '../modules/database/schema/user'
+import { NextFunction, Request, Response } from 'express'
+
+import { UserInfo } from '../modules/database/schema/user'
 import Validator from '../modules/validators'
 
 export const validateBody = (attrs: (keyof UserInfo)[]) => (

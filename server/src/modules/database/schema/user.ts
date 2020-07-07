@@ -1,8 +1,8 @@
 import {
   makeCreateFunction,
   makeFindFunction,
-  makeUpdateFunction,
   makeRemoveFunction,
+  makeUpdateFunction,
 } from '../crud'
 
 import { userStore } from '../store'
@@ -26,3 +26,11 @@ export const createUser = makeCreateFunction(userStore)
 export const findUser = makeFindFunction(userStore)
 export const updateUser = makeUpdateFunction(userStore)
 export const deleteUser = makeRemoveFunction(userStore)
+
+export const isUniqueUserId = async (userId: string) => {
+  const [, results] = await findUser({
+    userId,
+  })
+
+  return results.length === 0
+}
