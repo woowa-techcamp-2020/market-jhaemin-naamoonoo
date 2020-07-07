@@ -15,30 +15,30 @@ test('Validate Name', () => {
 test('Name has no number or special characters should be pass', () => {
   //given
   const validName = '우테켐'
-  const exprectedResult = true
+  const expectedResult = true
   //when
   const testResult = validateName(validName)
   //then
-  expect(testResult).toBe(exprectedResult)
+  expect(testResult).toBe(expectedResult)
 })
 
 // falsy
 test('Name has number should be fail', () => {
   //given
   const invalidName = '장해민1'
-  const exprectedResult = false
+  const expectedResult = false
   //when
   const testResult = validateName(invalidName)
   //then
-  expect(testResult).toBe(exprectedResult)
+  expect(testResult).toBe(expectedResult)
 })
 
 test('Name has special character should be fail', () => {
   //given
   const invalidName = '남현우!'
-  const exprectedResult = false
+  const expectedResult = false
   //when
   const testResult = validateName(invalidName)
   //then
-  expect(testResult).toBe(exprectedResult)
+  expect(testResult).toBe(expectedResult)
 })
