@@ -18,7 +18,7 @@
       "@/*": ["./src/*"],
       "@@/*": ["./*"]
     },
-    "plugins": [],
+    "plugins": [{ "transform": "@zerollup/ts-transform-paths" }],
     "lib": ["ES2020.String", "ESNext.AsyncIterable"],
     "types": ["node", "jest"]
   },
