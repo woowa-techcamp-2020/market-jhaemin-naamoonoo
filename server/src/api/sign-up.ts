@@ -33,7 +33,7 @@ router.post(
       }
     }
 
-    createUser({
+    await createUser({
       userId,
       password,
       email,
