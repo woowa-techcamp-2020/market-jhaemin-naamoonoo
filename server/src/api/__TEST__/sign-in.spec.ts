@@ -1,13 +1,13 @@
-import request from 'supertest'
-import { app } from '../../app'
-
 import {
+  UserInfo,
   createUser,
   deleteUser,
-  UserInfo,
 } from '../../modules/database/schema/user'
 
-it('sign in with valid userId and password should be pass', async () => {
+import { app } from '../../app'
+import request from 'supertest'
+
+it('sign in with valid userId and password should be pass', async (done) => {
   //given
   const validInput = {
     userId: 'woowa444-_',
@@ -31,9 +31,11 @@ it('sign in with valid userId and password should be pass', async () => {
 
   //then
   // expect(response.body.currentUser.email).toEqual('test@test.com')
+
+  done()
 })
 
-it('sign in with none existed userId should be fail', async () => {
+it('sign in with none existed userId should be fail', async (done) => {
   const invalidInput = {
     userId: 'WWdsw444-_',
     password: 'abcde1234',
@@ -56,9 +58,11 @@ it('sign in with none existed userId should be fail', async () => {
   await deleteUser({ userId: createdUser.userId })
   //then
   // expect(response.body.currentUser.email).toEqual('test@test.com')
+
+  done()
 })
 
-it('sign in with wrong password should be fail', async () => {
+it('sign in with wrong password should be fail', async (done) => {
   const invalidInput = {
     userId: 'test33-_',
     password: 'abcde1234',
@@ -81,9 +85,11 @@ it('sign in with wrong password should be fail', async () => {
   await deleteUser({ userId: createdUser.userId })
   //then
   // expect(response.body.currentUser.email).toEqual('test@test.com')
+
+  done()
 })
 
-it('sign in with invalidInput should be fail', async () => {
+it('sign in with invalidInput should be fail', async (done) => {
   const invalidInput = {
     userId: 's#FDw444-_',
     password: 'abc@de1!234',
@@ -106,4 +112,6 @@ it('sign in with invalidInput should be fail', async () => {
   await deleteUser({ userId: createdUser.userId })
   //then
   // expect(response.body.currentUser.email).toEqual('test@test.com')
+
+  done()
 })
