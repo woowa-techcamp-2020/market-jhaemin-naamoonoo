@@ -1,0 +1,32 @@
+{
+  "truthy test": {
+    "prefix": "ttc",
+    "body": [
+      "test('$1 be pass', () => {",
+      "//given",
+      "const valid$2 = ''",
+      "const exprectedResult = true\n",
+      "//when",
+      "const testResult = $3(valid$2)\n",
+      "//then",
+      "expect(testResult).toBe(exprectedResult)",
+      "})"
+    ],
+    "description": "truthy test case generator"
+  },
+  "falsy test": {
+    "prefix": "ftc",
+    "body": [
+      "test('$1 be fail', () => {",
+      "//given",
+      "const valid$2 = ''",
+      "const exprectedResult = false\n",
+      "//when",
+      "const testResult = $3(valid$2)\n",
+      "//then",
+      "expect(testResult).toBe(exprectedResult)",
+      "})"
+    ],
+    "description": "falsy test case generator"
+  }
+}
