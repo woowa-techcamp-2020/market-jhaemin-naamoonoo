@@ -1,4 +1,9 @@
-import { makeCreateFunction, makeFindFunction } from '../crud'
+import {
+  makeCreateFunction,
+  makeFindFunction,
+  makeUpdateFunction,
+  makeRemoveFunction,
+} from '../crud'
 
 import { userStore } from '../store'
 
@@ -19,3 +24,5 @@ export type Address = {
 
 export const createUser = makeCreateFunction(userStore)
 export const findUser = makeFindFunction(userStore)
+export const updateUser = makeUpdateFunction(userStore)
+export const deleteUser = makeRemoveFunction(userStore)

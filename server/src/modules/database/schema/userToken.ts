@@ -1,4 +1,8 @@
-import { makeCreateFunction } from '../crud'
+import {
+  makeCreateFunction,
+  makeUpdateFunction,
+  makeRemoveFunction,
+} from '../crud'
 import { userTokenStore } from '../store'
 
 export type UserToken = {
@@ -8,3 +12,5 @@ export type UserToken = {
 
 export const createUserToken = makeCreateFunction(userTokenStore)
 export const findUserToken = makeCreateFunction(userTokenStore)
+export const updateUserToken = makeUpdateFunction(userTokenStore)
+export const deleteUserToken = makeRemoveFunction(userTokenStore)
