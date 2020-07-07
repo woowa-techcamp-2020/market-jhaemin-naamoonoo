@@ -3,7 +3,7 @@ import { makeCreateFunction, makeFindFunction } from '../crud'
 import { userStore } from '../store'
 
 export type UserInfo = {
-  id: string
+  userId: string
   password: string
   email: string
   name: string
