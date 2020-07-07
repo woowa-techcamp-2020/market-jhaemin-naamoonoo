@@ -5,11 +5,11 @@
       "test('$1 be pass', () => {",
       "//given",
       "const valid$2 = ''",
-      "const exprectedResult = true\n",
+      "const expectedResult = true\n",
       "//when",
       "const testResult = $3(valid$2)\n",
       "//then",
-      "expect(testResult).toBe(exprectedResult)",
+      "expect(testResult).toBe(expectedResult)",
       "})"
     ],
     "description": "truthy test case generator"
@@ -20,11 +20,11 @@
       "test('$1 be fail', () => {",
       "//given",
       "const valid$2 = ''",
-      "const exprectedResult = false\n",
+      "const expectedResult = false\n",
       "//when",
       "const testResult = $3(valid$2)\n",
       "//then",
-      "expect(testResult).toBe(exprectedResult)",
+      "expect(testResult).toBe(expectedResult)",
       "})"
     ],
     "description": "falsy test case generator"
