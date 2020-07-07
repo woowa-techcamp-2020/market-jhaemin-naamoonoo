@@ -2,7 +2,7 @@ import { makeCreateFunction } from '../crud'
 import { userTokenStore } from '../store'
 
 export type UserToken = {
-  id: string
+  userId: string
   token: string
 }
 

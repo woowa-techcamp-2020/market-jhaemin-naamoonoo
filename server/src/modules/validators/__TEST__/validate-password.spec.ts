@@ -4,40 +4,40 @@ import { validatePassword } from '../validate-password'
 test('Password has 8 to 20 length, consists of only eng characters and number, number should be pass', () => {
   //given
   const validPassword = 'woowabros6'
-  const exprectedResult = true
+  const expectedResult = true
   //when
   const testResult = validatePassword(validPassword)
   //then
-  expect(testResult).toBe(exprectedResult)
+  expect(testResult).toBe(expectedResult)
 })
 
 // falsy
 test('Password has less than 8 length should be fail', () => {
   //given
   const invalidPassword = 'asssabc'
-  const exprectedResult = false
+  const expectedResult = false
   //when
   const testResult = validatePassword(invalidPassword)
   //then
-  expect(testResult).toBe(exprectedResult)
+  expect(testResult).toBe(expectedResult)
 })
 
 test('Password has more then 20 length should be fail', () => {
   //given
   const invalidPassword = 'abcdefghijklmnopqrstuvwxyz'
-  const exprectedResult = false
+  const expectedResult = false
   //when
   const testResult = validatePassword(invalidPassword)
   //then
-  expect(testResult).toBe(exprectedResult)
+  expect(testResult).toBe(expectedResult)
 })
 
 test('Password has special character should be fail', () => {
   //given
   const invalidPassword = '@@woowaaw!'
-  const exprectedResult = false
+  const expectedResult = false
   //when
   const testResult = validatePassword(invalidPassword)
   //then
-  expect(testResult).toBe(exprectedResult)
+  expect(testResult).toBe(expectedResult)
 })
