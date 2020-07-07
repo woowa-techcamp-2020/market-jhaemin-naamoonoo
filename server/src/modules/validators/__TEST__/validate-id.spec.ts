@@ -1,14 +1,53 @@
 import { validateId } from '../validate-id'
 
-test('Validate ID', () => {
-  expect(validateId('myi')).toBe(false)
-  expect(validateId('qwertyuiopasdfghjklzx')).toBe(false)
-  expect(validateId('**eifhwieo')).toBe(false)
-  expect(validateId('difhei(&kd')).toBe(false)
+// truthy
+test('ID has 4 to 20 length, consists of only lowercase english, number, or _, - should be pass', () => {
+  //given
+  const validId = '-woowabros6_'
+  const exprectedResult = true
+  //when
+  const testResult = validateId(validId)
+  //then
+  expect(testResult).toBe(exprectedResult)
+})
 
-  expect(validateId('hello1234')).toBe(true)
-  expect(validateId('eiwheie')).toBe(true)
-  expect(validateId('ei3ueu_')).toBe(true)
-  expect(validateId('ei3ueu_-')).toBe(true)
-  expect(validateId('weihfi_dif2')).toBe(true)
+// falsy
+test('ID has less then 4 length should be fail', () => {
+  //given
+  const invalidId = 'abc'
+  const exprectedResult = false
+  //when
+  const testResult = validateId(invalidId)
+  //then
+  expect(testResult).toBe(exprectedResult)
+})
+
+test('ID has more then 20 length should be fail', () => {
+  //given
+  const invalidId = 'abcdefghijklmnopqrstuvwxyz'
+  const exprectedResult = false
+  //when
+  const testResult = validateId(invalidId)
+  //then
+  expect(testResult).toBe(exprectedResult)
+})
+
+test('ID has uppercase character should be fail', () => {
+  //given
+  const invalidId = 'woowaBros44'
+  const exprectedResult = false
+  //when
+  const testResult = validateId(invalidId)
+  //then
+  expect(testResult).toBe(exprectedResult)
+})
+
+test('ID has special character excpet for - or _ should be fail', () => {
+  //given
+  const invalidId = 'woowa!'
+  const exprectedResult = false
+  //when
+  const testResult = validateId(invalidId)
+  //then
+  expect(testResult).toBe(exprectedResult)
 })
