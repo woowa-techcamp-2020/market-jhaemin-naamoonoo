@@ -1,9 +1,10 @@
+import { UserInfo, deleteUser } from '@/modules/database/schema/user'
+
 import { SignUpResponse } from '../sign-up'
-import { UserInfo } from '../../modules/database/schema/user'
 import { app } from '../../app'
 import request from 'supertest'
 
-test('Sign up with all valid information should be passed', (done) => {
+test('Sign up with all valid information', async (done) => {
   // given
   const validUserInfo: UserInfo = {
     userId: 'fameu5e',
@@ -13,20 +14,22 @@ test('Sign up with all valid information should be passed', (done) => {
     phone: '010-5520-3618',
   }
 
+  await deleteUser({ userId: validUserInfo.userId })
+
   const expectedResult: SignUpResponse = {}
 
-  request(app)
-    .post('/sign-up')
-    .send(validUserInfo)
-    .then((response) => {
-      expect(response.body).toEqual(expectedResult)
-      done()
-    })
+  const response = await request(app).post('/sign-up').send(validUserInfo)
+
+  expect(response.body).toEqual(expectedResult)
+
+  await deleteUser({ userId: validUserInfo.userId })
+
+  done()
 })
 
-test('Sign up with wrong email format should not be passed', (done) => {
+test('Sign up with wrong email format', async (done) => {
   // given
-  const validUserInfo: UserInfo = {
+  const invalidUserInfo: UserInfo = {
     userId: 'fameu6e',
     password: '12345678',
     email: 'io@',
@@ -41,11 +44,11 @@ test('Sign up with wrong email format should not be passed', (done) => {
     },
   }
 
-  request(app)
-    .post('/sign-up')
-    .send(validUserInfo)
-    .then((response) => {
-      expect(response.body).toEqual(expectedResult)
-      done()
-    })
+  const response = await request(app).post('/sign-up').send(invalidUserInfo)
+
+  await deleteUser({ userId: invalidUserInfo.userId })
+
+  expect(response.body).toEqual(expectedResult)
+
+  done()
 })
