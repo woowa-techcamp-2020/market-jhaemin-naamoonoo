@@ -4,9 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "serve public --listen 8080",
-    "dev:ts": "webpack --config webpack.dev.js --watch",
-    "dev": "npm-run-all --parallel start dev:ts",
+    "dev": "webpack --config webpack.dev.js --watch",
     "build": "webpack --config webpack.prod.js"
   },
   "author": "",
