@@ -1,11 +1,3 @@
-:root {
-  --input-height: 49px;
-  --input-inner-height: 47px;
-  --input-large-height: 79px;
-  --input-msg-height: 29px;
-  --transition-time: 300ms;
-}
-
 .sign-up-main {
   display: flex;
   align-items: flex-start;
@@ -14,77 +6,100 @@
 
 .input-container {
   width: calc(100% - 30px);
-  max-width: 400px;
-  padding: 50px 0;
-}
-
-.input-wrapper {
+  max-width: 336px;
+  padding: 100px 0;
   display: flex;
-  height: var(--input-height);
-  position: relative;
-  margin-bottom: 15px;
-
-  border: 1px solid var(--border-gray);
-  border-radius: 10px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-  overflow: hidden;
-
-  transition: height var(--transition-time) ease;
+  flex-direction: column;
+  align-items: center;
 }
 
-.input-wrapper.msg-activated {
-  height: var(--input-large-height);
-}
+.description {
+  width: 100%;
 
-.input-icon {
-  width: 51px;
-  height: var(--input-inner-height);
-  background-repeat: no-repeat;
-  background-position: center;
-  border-right: 1px solid var(--border-gray);
-}
+  font-size: 15px;
+  text-align: center;
+  line-height: 1;
 
-.input-icon.id {
-  background-image: url('/assets/icons/id-tag.svg');
-}
+  color: #07a0a5;
+  background-color: #f3f4f7;
 
-.input-icon.pw {
-  background-image: url('/assets/icons/key.svg');
-}
-
-.input-text {
-  flex: 1;
-  font-size: 16px;
-  padding: 0 15px;
-  height: var(--input-inner-height);
-}
-
-.input-text::placeholder {
-  color: var(--placeholder-gray);
-}
-
-.msg-field {
-  height: var(--input-msg-height);
-  position: absolute;
-  top: var(--input-inner-height);
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-top: 1px solid var(--border-gray);
-  opacity: 0;
-  transition: opacity var(--transition-time) ease;
-
+  margin-bottom: 20px;
+  padding: 10px;
+  height: 45px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  border-radius: 7px;
 }
 
-.input-wrapper.msg-activated .msg-field {
-  opacity: 1;
+.ceo-logo {
+  width: calc(100% - 30px);
+  max-width: 300px;
+  margin-bottom: 70px;
 }
 
-.msg-field .msg-text {
-  text-align: center;
-  font-size: 12px;
-  line-height: 1;
+.essential,
+.optional {
+  width: 100%;
+}
+
+.optional {
+  margin-top: 30px;
+}
+
+.optional .description {
+  cursor: pointer;
+  transition: background-color 300ms ease;
+}
+
+.optional .description:hover {
+  background-color: #e8e8ef;
+}
+
+.optional .description:active {
+  background-color: #e0e0e6;
+}
+
+.optional .description .text {
+  margin-left: 10px;
+  user-select: none;
+}
+
+.optional .description input[type='checkbox'] {
+  box-shadow: none;
+}
+
+.agreement {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.aa-checkbox-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 12px;
+}
+
+.aa-checkbox-wrapper label {
+  margin-left: 10px;
+  flex: 1;
+}
+
+.aa-checkbox-wrapper .small {
+  font-size: 14px;
+}
+
+.register-btn {
+  background-color: var(--blue);
+  border: 1px solid var(--deep-blue);
+  border-radius: 10px;
+  color: #fff;
+  width: 100%;
+  height: var(--input-height);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  margin-top: 30px;
+  cursor: pointer;
 }
