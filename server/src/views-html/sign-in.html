@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In</title>
+    <link rel="stylesheet" href="/styles/globalstyle.css" />
+    <link rel="stylesheet" href="/styles/sign-in.css" />
+  </head>
+  <body>
+    <main class="sign-in-main">
+      <div class="sign-in-container">
+        <image
+          class="main-logo"
+          src="https://ceo.baemin.com/lockpath/images/logo-ceo.png"
+          alt="main-logo"
+        />
+        <form class="input-container">
+          <div class="input-wrapper invalid-input">
+            <div class="input-icon user-id"></div>
+            <input class="input-field" type="text" placeholder="아이디" />
+            <div class="check"></div>
+            <div class="error-msg">
+              <p class="error-msg-text">에러</p>
+            </div>
+          </div>
+          <div class="input-wrapper valid-input">
+            <div class="input-icon password"></div>
+            <input class="input-field" type="password" placeholder="비밀번호" />
+            <div class="check"></div>
+            <div class="error-msg">
+              <p class="error-msg-text">비밀번호 에러입니당</p>
+            </div>
+          </div>
+          <button class="sign-in-btn">로그인</button>
+        </form>
+      </div>
+    </main>
+
+    <script src="/dist/bundle.js"></script>
+  </body>
+</html>
