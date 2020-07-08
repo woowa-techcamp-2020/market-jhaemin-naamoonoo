@@ -8,9 +8,9 @@ import { ErrMsg } from '../errors'
 
 const router = express.Router()
 
-router.get('/sign-in', (req: Request, res: Response) => {
-  res.render('sign-in/sign-in.pug')
-})
+// router.get('/sign-in', (req: Request, res: Response) => {
+//   res.render('sign-in/sign-in.pug')
+// })
 
 router.post(
   '/api/sign-in',
