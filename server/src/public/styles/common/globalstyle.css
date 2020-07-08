@@ -1,8 +1,14 @@
 :root {
   /* Colors */
   --border-gray: #ddd;
+  --border-blue: #0165c1;
   --placeholder-gray: #ababab;
+  --white: #ffffff;
   --blue: #0091fa;
+  --red: #f64646;
+  --pink: #fff8f8;
+  --green: #1ccf44;
+  --light-green: #f3fff7;
   --deep-blue: #0165c1;
   --light-blue: #f6faff;
 }

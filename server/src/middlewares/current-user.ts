@@ -23,7 +23,6 @@ export const currentUser = async (
   res: Response,
   next: NextFunction
 ) => {
-  console.log(req.query.token)
   if (!req.query.token) {
     return next()
   }
