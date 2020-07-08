@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "strict": false,
+    "declaration": false,
+    "moduleResolution": "node",
+    "target": "ES2018",
+    "allowJs": true,
+    "module": "CommonJS",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@@/*": ["./*"]
+    },
+    "lib": ["ES2020.String", "ESNext.AsyncIterable", "DOM"]
+  },
+  "include": ["src/main.ts", "**/*.spec.ts", "**/*.test.ts"],
+  "exclude": ["node_modules", "dist"]
+}
