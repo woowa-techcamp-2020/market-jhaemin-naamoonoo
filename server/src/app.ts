@@ -1,7 +1,9 @@
 import { api } from './api'
 import bodyParser from 'body-parser'
-import express from 'express'
 import cookieSession from 'cookie-session'
+import express from 'express'
+import path from 'path'
+import { routers } from './routers'
 
 const app = express()
 const PORT = 3000
@@ -19,8 +21,19 @@ app.use(
     secure: process.env.NODE_ENV !== 'test',
   })
 )
+
 app.use(api)
 
-app.get('/', (req, res) => res.send('Hello World'))
+// Serve static files at `public` directory
+app.use(express.static(path.join(__dirname, '/public')))
+
+// Change the default views directory
+app.set('views', path.join(__dirname, '/views'))
+
+// Use pug engine
+app.set('view engine', 'pug')
+
+// Serve
+app.use(routers)
 
 export { app, PORT }
