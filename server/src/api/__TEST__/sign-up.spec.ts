@@ -18,7 +18,7 @@ test('Sign up with all valid information', async (done) => {
 
   const expectedResult: SignUpResponse = {}
 
-  const response = await request(app).post('/sign-up').send(validUserInfo)
+  const response = await request(app).post('/api/sign-up').send(validUserInfo)
 
   expect(response.body).toEqual(expectedResult)
 
@@ -44,7 +44,7 @@ test('Sign up with wrong email format', async (done) => {
     },
   }
 
-  const response = await request(app).post('/sign-up').send(invalidUserInfo)
+  const response = await request(app).post('/api/sign-up').send(invalidUserInfo)
 
   await deleteUser({ userId: invalidUserInfo.userId })
 
