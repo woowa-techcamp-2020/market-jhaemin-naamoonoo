@@ -5,37 +5,33 @@ html(lang='en')
   head
     title 배민상회
     style
+      include ../../public/styles/globalstyle.css
       include ./current-user.css
-    script 
-      fetch("./")
   body
-    //- mixin infoDetail(label, info)
-    //- div#user-info
-    //-   label=label
-    //-   p#info=info
-    div#container
-      img.logo(
-        src="https://ceo.baemin.com/lockpath/images/logo-ceo.png"
-        alt="main-logo"
-      )
-      h1 회원이 되셨습니다
-      a(
-        href="#"
-      ) 메인으로 →
-      div#info-container
-        div#user-info
-          label 이름
-          p#info #{currentUser.name}
-        div#user-info
-          label 아이디
-          p#info #{currentUser.userId}
-        div#user-info
-          label 이메일
-          p#info #{currentUser.email}
-        div#user-info
-          label 휴대폰
-          p#info #{currentUser.phone}
-      p 위 내용은 내 정보 관리에서 수정하실 수 있습니다.
+    main.current-user-main
+      div.current-user-container
+        img.main-logo(
+          src="https://ceo.baemin.com/lockpath/images/logo-ceo.png"
+          alt="main-logo"
+        )
+        h1.title-text 회원이 되셨습니다
+        a.link(
+          href="#"
+        ) 메인으로 →
+        div.user-info-container
+          div.user-info-wrapper
+            label.user-info-label 이름
+            p.user-info-content #{currentUser.name}
+          div.user-info-wrapper
+            label.user-info-label 아이디
+            p.user-info-content #{currentUser.userId}
+          div.user-info-wrapper
+            label.user-info-label 이메일
+            p.user-info-content #{currentUser.email}
+          div.user-info-wrapper
+            label.user-info-label 휴대폰
+            p.user-info-content #{currentUser.phone}
+        p.description 위 내용은 내 정보 관리에서 수정하실 수 있습니다.
           
     script(type="module")
         include ./current-user.js

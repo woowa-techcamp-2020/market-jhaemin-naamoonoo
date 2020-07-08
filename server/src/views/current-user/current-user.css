@@ -1,19 +1,32 @@
-#container {
-  width: 325px;
-}
-
-#info-container {
-  border: 1px lightgray solid;
-}
-
-#user-info {
+.currcurrent-user-main {
+  height: 100vh;
   display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
-#label {
-  flex: 1;
+.current-user-container {
+  max-width: 600;
+  background-color: var(--red);
 }
 
-#info {
-  color: gray;
+.main-logo {
+}
+
+.title-text ß {
+}
+
+.link {
+}
+
+.user-info-container {
+}
+
+.user-info-wrapper {
+}
+
+.user-info-label {
+}
+
+.user-info-content {
 }
