@@ -4,6 +4,7 @@ import {
   isUniqueUserId,
 } from '@/modules/database/schema/user'
 
+import { encryptPassword } from '@/modules/encryption'
 import express from 'express'
 import { validateBody } from '../middlewares/validate-body'
 
@@ -35,7 +36,7 @@ router.post(
 
     await createUser({
       userId,
-      password,
+      password: await encryptPassword(password),
       email,
       name,
       phone,
