@@ -3,36 +3,149 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="/styles/globalstyle.css" />
+    <title>회원가입 | 배민사장님광장</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/styles/common/globalstyle.css" />
+    <link rel="stylesheet" href="/styles/common/input.css" />
     <link rel="stylesheet" href="/styles/sign-up.css" />
   </head>
   <body>
     <main class="sign-up-main">
       <div class="input-container">
-        <div class="input-wrapper id">
-          <div class="input-icon id"></div>
-          <input class="input-text" placeholder="아이디" type="text" />
-          <div class="msg-field">
-            <span class="msg-text">블라블라</span>
+        <img
+          src="/assets/images/logo-ceo.svg"
+          alt="CEO Logo"
+          class="ceo-logo"
+        />
+
+        <div class="essential">
+          <p class="description">필수 정보를 입력해주세요</p>
+
+          <div class="input-wrapper id">
+            <div class="input-icon id"></div>
+            <input class="input-text" placeholder="아이디" type="text" />
+            <div class="msg-field">
+              <span class="msg-text"></span>
+            </div>
+          </div>
+
+          <div class="input-wrapper pw">
+            <div class="input-icon pw"></div>
+            <input class="input-text" placeholder="비밀번호" type="password" />
+            <div class="msg-field">
+              <span class="msg-text"></span>
+            </div>
+          </div>
+
+          <div class="input-wrapper pw-confirm">
+            <div class="input-icon pw"></div>
+            <input
+              class="input-text"
+              placeholder="비밀번호 확인"
+              type="password"
+            />
+            <div class="msg-field">
+              <span class="msg-text"></span>
+            </div>
+          </div>
+
+          <div class="input-wrapper email">
+            <div class="input-icon email"></div>
+            <input class="input-text" placeholder="이메일" type="email" />
+            <div class="msg-field">
+              <span class="msg-text"></span>
+            </div>
+          </div>
+
+          <div class="input-wrapper name">
+            <div class="input-icon name"></div>
+            <input class="input-text" placeholder="이름" type="text" />
+            <div class="msg-field">
+              <span class="msg-text"></span>
+            </div>
+          </div>
+
+          <div class="input-wrapper phone">
+            <div class="input-icon phone"></div>
+            <input class="input-text" placeholder="휴대폰" type="tel" />
+            <button class="action">인증받기</button>
+            <div class="msg-field">
+              <span class="msg-text"></span>
+            </div>
+          </div>
+
+          <div class="input-wrapper field">
+            <div class="input-icon field"></div>
+            <input
+              class="input-text"
+              placeholder="인증번호 6자리 입력"
+              type="text"
+            />
+            <button class="action">확인</button>
+            <div class="msg-field">
+              <span class="msg-text"></span>
+            </div>
           </div>
         </div>
 
-        <div class="input-wrapper pw">
-          <div class="input-icon pw"></div>
-          <input class="input-text" placeholder="비밀번호" type="text" />
-          <div class="msg-field">
-            <span class="msg-text">블라블라</span>
+        <div class="optional">
+          <label class="description" for="optional-information-checkbox">
+            <span class="input-checkbox-wrapper">
+              <input type="checkbox" id="optional-information-checkbox" />
+            </span>
+            <span class="text">선택 정보를 입력하시겠어요?</span>
+          </label>
+
+          <div class="input-wrapper address disabled">
+            <div class="input-icon address"></div>
+            <input
+              class="input-text"
+              placeholder="우편번호"
+              type="text"
+              disabled
+            />
+            <button class="action" disabled>주소찾기</button>
+            <div class="msg-field">
+              <span class="msg-text"></span>
+            </div>
+          </div>
+
+          <div class="input-wrapper disabled">
+            <input class="input-text" type="text" placeholder="주소" disabled />
+          </div>
+
+          <div class="input-wrapper disabled">
+            <input
+              class="input-text"
+              type="text"
+              placeholder="상세 주소"
+              disabled
+            />
           </div>
         </div>
 
-        <div class="input-wrapper pw-confirm">
-          <div class="input-icon pw"></div>
-          <input class="input-text" placeholder="비밀번호" type="text" />
-          <div class="msg-field">
-            <span class="msg-text">블라블라</span>
+        <div class="agreement">
+          <div class="aa-checkbox-wrapper">
+            <input type="checkbox" id="agree-all-checkbox" />
+            <label for="agree-all-checkbox">전체 약관에 동의합니다.</label>
+          </div>
+
+          <div class="aa-checkbox-wrapper">
+            <input type="checkbox" id="agree-essential-checkbox" />
+            <label for="agree-essential-checkbox" class="small"
+              >필수 항목에 동의합니다.</label
+            >
+          </div>
+
+          <div class="aa-checkbox-wrapper">
+            <input type="checkbox" id="agree-ad-checkbox" />
+            <label for="agree-ad-checkbox" class="small"
+              >광고성 정보 수신 동의 (선택)</label
+            >
           </div>
         </div>
+
+        <button class="register-btn">가입 완료</button>
       </div>
     </main>
 
