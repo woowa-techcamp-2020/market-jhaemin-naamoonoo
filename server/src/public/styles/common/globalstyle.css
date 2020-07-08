@@ -2,6 +2,9 @@
   /* Colors */
   --border-gray: #ddd;
   --placeholder-gray: #ababab;
+  --blue: #0091fa;
+  --deep-blue: #0165c1;
+  --light-blue: #f6faff;
 }
 
 body {
@@ -16,9 +19,15 @@ body {
   box-sizing: border-box;
 }
 
+button,
 input {
   border: none;
   background: none;
   appearance: none;
+  -webkit-appearance: none;
   outline: none;
+}
+
+button:disabled {
+  cursor: default !important;
 }
