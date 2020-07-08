@@ -46,7 +46,7 @@ export function makeRemoveFunction<T>(store: DataStore<T>) {
     }
   ): Promise<[Error, number]> => {
     return new Promise((resolve) => {
-      store.remove(query, {}, (err, numRemoved) => {
+      store.remove(query, { multi: true }, (err, numRemoved) => {
         resolve([err, numRemoved])
       })
     })

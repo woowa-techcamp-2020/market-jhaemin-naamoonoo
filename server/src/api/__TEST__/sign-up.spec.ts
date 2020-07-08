@@ -1,9 +1,10 @@
+import { UserInfo, deleteUser } from '@/modules/database/schema/user'
+
 import { SignUpResponse } from '../sign-up'
-import { UserInfo } from '../../modules/database/schema/user'
 import { app } from '../../app'
 import request from 'supertest'
 
-test('Sign up with all valid information should be passed', (done) => {
+test('Sign up with all valid information', async (done) => {
   // given
   const validUserInfo: UserInfo = {
     userId: 'fameu5e',
@@ -13,77 +14,41 @@ test('Sign up with all valid information should be passed', (done) => {
     phone: '010-5520-3618',
   }
 
-  const expectedResult: SignUpResponse = {
-    userId: {
-      res: true,
-      err: null,
-    },
-    password: {
-      res: true,
-      err: null,
-    },
-    email: {
-      res: true,
-      err: null,
-    },
-    name: {
-      res: true,
-      err: null,
-    },
-    phone: {
-      res: true,
-      err: null,
-    },
-  }
+  await deleteUser({ userId: validUserInfo.userId })
 
-  request(app)
-    .post('/sign-up')
-    .send(validUserInfo)
-    .then((response) => {
-      expect(response.body).toEqual(expectedResult)
-      done()
-    })
+  const expectedResult: SignUpResponse = {}
+
+  const response = await request(app).post('/api/sign-up').send(validUserInfo)
+
+  expect(response.body).toEqual(expectedResult)
+
+  await deleteUser({ userId: validUserInfo.userId })
+
+  done()
 })
 
-test('Sign up with short id should not be passed', (done) => {
+test('Sign up with wrong email format', async (done) => {
   // given
-  const validUserInfo: UserInfo = {
-    userId: 'fam',
+  const invalidUserInfo: UserInfo = {
+    userId: 'fameu6e',
     password: '12345678',
-    email: 'io@jhaemin.com',
+    email: 'io@',
     name: '장해민',
     phone: '010-5520-3618',
   }
 
   const expectedResult: SignUpResponse = {
-    userId: {
-      res: false,
-      // TODO: Use constant error message
-      err: '',
-    },
-    password: {
-      res: true,
-      err: null,
-    },
     email: {
-      res: true,
-      err: null,
-    },
-    name: {
-      res: true,
-      err: null,
-    },
-    phone: {
-      res: true,
-      err: null,
+      res: false,
+      err: '이메일 error',
     },
   }
 
-  request(app)
-    .post('/sign-up')
-    .send(validUserInfo)
-    .then((response) => {
-      expect(response.body).toEqual(expectedResult)
-      done()
-    })
+  const response = await request(app).post('/api/sign-up').send(invalidUserInfo)
+
+  await deleteUser({ userId: invalidUserInfo.userId })
+
+  expect(response.body).toEqual(expectedResult)
+
+  done()
 })
