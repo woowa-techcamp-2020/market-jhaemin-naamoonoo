@@ -2,7 +2,7 @@ const path = require('path')
 
 /** @type {import('webpack').Configuration} */
 const config = {
-  entry: './src/main.ts',
+  entry: ['./src/sign-in.ts', './src/sign-up.ts'],
   module: {
     rules: [
       {
