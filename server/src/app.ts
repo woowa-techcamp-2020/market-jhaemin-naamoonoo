@@ -6,6 +6,9 @@ import cookieSession from 'cookie-session'
 const app = express()
 const PORT = 3000
 
+app.set('view engine', 'pug')
+app.set('views', __dirname + '/views')
+
 app.use(bodyParser.json({ limit: '100mb' })) // why?
 app.use(bodyParser.urlencoded({ limit: '100mb', extended: true })) // why?
 

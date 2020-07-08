@@ -1,5 +1,6 @@
 import { UserInfo, deleteUser } from '@/modules/database/schema/user'
 
+import { ErrMsg } from '@/errors'
 import { SignUpResponse } from '../sign-up'
 import { app } from '../../app'
 import request from 'supertest'
@@ -40,7 +41,7 @@ test('Sign up with wrong email format', async (done) => {
   const expectedResult: SignUpResponse = {
     email: {
       res: false,
-      err: '이메일 error',
+      err: ErrMsg.invalidEmail,
     },
   }
 

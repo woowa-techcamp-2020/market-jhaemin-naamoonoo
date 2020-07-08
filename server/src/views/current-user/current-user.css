@@ -1,0 +1,19 @@
+#container {
+  width: 325px;
+}
+
+#info-container {
+  border: 1px lightgray solid;
+}
+
+#user-info {
+  display: flex;
+}
+
+#label {
+  flex: 1;
+}
+
+#info {
+  color: gray;
+}

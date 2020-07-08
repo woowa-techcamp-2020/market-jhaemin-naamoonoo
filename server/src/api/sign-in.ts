@@ -2,10 +2,15 @@ import express, { Request, Response } from 'express'
 import { findUser } from '../modules/database/schema/user'
 import { comparePassword } from '../modules/encryption'
 import { validateBody } from '../middlewares/validate-body'
-import { createUserToken } from '@/modules/database/schema/userToken'
+import { createUserToken } from '../modules/database/schema/userToken'
 import { v4 as uuidv4 } from 'uuid'
+import { ErrMsg } from '../errors'
 
 const router = express.Router()
+
+router.get('/sign-in', (req: Request, res: Response) => {
+  res.render('sign-in/sign-in.pug')
+})
 
 router.post(
   '/api/sign-in',
@@ -16,7 +21,7 @@ router.post(
     if (!foundUser) {
       res.status(400).send({
         res: false,
-        err,
+        err: ErrMsg.noneExistedUser,
       })
       return
     }
@@ -25,7 +30,7 @@ router.post(
     if (!isCorrectPassword) {
       res.status(400).send({
         res: false,
-        err: 'Invalid password',
+        err: ErrMsg.wrongPassword,
       })
       return
     }

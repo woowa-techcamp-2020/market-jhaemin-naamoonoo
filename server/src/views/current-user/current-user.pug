@@ -1,0 +1,35 @@
+doctype html
+html(lang='en')
+  head
+    title 배민상회
+    style
+      include ./current-user.css
+    script 
+      fetch("./")
+  body
+    div#container
+      img.title(
+        src="https://ceo.baemin.com/lockpath/images/logo-ceo.png"
+        alt="main-logo"
+      )
+      h1 회원이 되셨습니다
+      a(
+        href="#"
+      ) 메인으로
+      div#info-container
+        div#user-info
+          label 이름
+          p#info 
+        div#user-info
+          label 아이디
+          p#info 
+        div#user-info
+          label 이메일
+          p#info 
+        div#user-info
+          label 휴대폰
+          p#info 
+          
+      
+    script(type="module")
+        include ./current-user.js
