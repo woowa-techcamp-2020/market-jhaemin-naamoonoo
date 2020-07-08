@@ -20,7 +20,7 @@ export type SignUpResponse = {
 }
 
 router.post(
-  '/sign-up',
+  '/api/sign-up',
   validateBody(['userId', 'password', 'email', 'name', 'phone']),
   async (req, res) => {
     const { userId, password, email, name, phone } = req.body as UserInfo
