@@ -4,7 +4,7 @@
   --input-inner-height: 47px;
   --input-large-height: 79px;
   --input-msg-height: 29px;
-  --transition-time: 300ms;
+  --transition-time: 250ms;
 }
 
 .input-wrapper {
@@ -23,7 +23,7 @@
 
   overflow: hidden;
 
-  transition: height var(--transition-time) ease;
+  transition: height var(--transition-time) cubic-bezier(0.74, 0.02, 0.14, 1);
 }
 
 .check {
@@ -43,6 +43,7 @@
 }
 
 .input-wrapper.valid-input .check {
+  opacity: 1;
   width: 22px;
   height: 22px;
 }
@@ -69,6 +70,10 @@
 
 .input-wrapper.invalid-input .msg-field {
   opacity: 1;
+}
+
+.input-wrapper.invalid-input .msg-text {
+  color: var(--red);
 }
 
 .input-wrapper.disabled {
@@ -108,7 +113,7 @@
   background-image: url('/assets/icons/phone.svg');
 }
 
-.input-wrapper .input-icon.field {
+.input-wrapper .input-icon.code {
   background-image: url('/assets/icons/field.svg');
   background-position: calc(50% + 2px) calc(50% - 2px);
 }
@@ -157,6 +162,8 @@
 
 .input-wrapper .action {
   cursor: pointer;
+
+  height: var(--input-inner-height);
 
   min-width: 82px;
 
