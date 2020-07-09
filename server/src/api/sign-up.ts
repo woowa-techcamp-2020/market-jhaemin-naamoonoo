@@ -19,10 +19,6 @@ export type SignUpResponse = {
   [K in keyof UserInfo]?: FieldResponse
 }
 
-router.get('sign-up', (req, res) => {
-  res.render('sign-up/sign-up.pug')
-})
-
 router.post(
   '/api/sign-up',
   validateBody(['userId', 'password', 'email', 'name', 'phone']),
