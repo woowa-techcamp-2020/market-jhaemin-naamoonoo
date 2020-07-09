@@ -63,7 +63,7 @@
   background-image: url('/assets/icons/phone.svg');
 }
 
-.input-wrapper .input-icon.field {
+.input-wrapper .input-icon.code {
   background-image: url('/assets/icons/field.svg');
   background-position: calc(50% + 2px) calc(50% - 2px);
 }
