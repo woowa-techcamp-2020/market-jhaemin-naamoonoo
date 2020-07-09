@@ -1,5 +1,9 @@
+@import './fonts.css';
+@import './spring.css';
+
 :root {
   /* Colors */
+  --gray: #777;
   --border-gray: #ddd;
   --border-blue: #0165c1;
   --placeholder-gray: #ababab;
@@ -14,8 +18,8 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'PAYW Pro', 'PAYW Pro KR', sans-serif;
+  color: #333;
 }
 
 * {
@@ -32,6 +36,7 @@ input {
   appearance: none;
   -webkit-appearance: none;
   outline: none;
+  color: inherit;
 }
 
 button:disabled {

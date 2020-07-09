@@ -4,7 +4,7 @@ const path = require('path')
 const config = {
   entry: {
     'sign-in': './src/sign-in.ts',
-    'sign-up': './src/sign-up.ts',
+    'sign-up': './src/sign-up/index.ts',
   },
   module: {
     rules: [
