@@ -92,9 +92,9 @@ const phoneInputWrapper = setInputWrapper({
     Validators.phone.error,
   ],
   onDebounce: (value) => {
-    const { replaceActionLabel, checkValidation } = phoneInputWrapper
-
-    replaceActionLabel('인증받기')
+    phoneInputConfirmWrapper.display(false)
+    phoneInputWrapper.replaceActionLabel('인증받기')
+    letfTime = 120
   },
 })
 
@@ -151,3 +151,7 @@ const checkEssentialPart = (): boolean | typeof idInputWrapper => {
 }
 
 export { checkEssentialPart }
+
+setInterval(() => {
+  timeTick()
+}, 1000)
