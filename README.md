@@ -6,6 +6,8 @@
 
 ---
 
+## Before getting started
+
 This project implements the **sign up** and **sign in** of [배민상회](https://mart.baemin.com/?gclid=EAIaIQobChMI8ciAjr-86gIVGa6WCh2KbwTwEAAYASAAEgIIY_D_BwE). At first, a registration process seems very easy and simple, but it requires tons of considerations and design. Especially for our frontend developers, understanding the mechanisms behind the jungle makes us being closer to a full-stack developer.
 
 In short, the server side and the client side are separated into each application chunk and they have their own `package.json` where all the dependencies and npm scripts are self-reliance. Then we can consider them independently and they became easily migratable for plugging into other server side or client side systems.
@@ -16,6 +18,20 @@ In short, the server side and the client side are separated into each applicatio
 
 - [namoonoo](https://github.com/naamoonoo)
 - [jhaemin](https://github.com/jhaemin)
+
+## Development
+
+You have to manually install modules and build for each of server side and client side. Fortunately, we use the same script names not to confuse ourselves.
+
+```zsh
+# Inside `/server` and `/client`
+> npm install # or just npm i
+> npm run dev # will open the port to host the apps, automatically rebuild on change
+> npm run build # will produce production ready codes
+
+# only for server
+> npm start # run the app after build
+```
 
 ## TDD
 
