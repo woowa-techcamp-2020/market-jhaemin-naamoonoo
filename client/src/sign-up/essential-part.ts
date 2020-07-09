@@ -151,7 +151,10 @@ const checkEssentialPart = (): boolean | typeof idInputWrapper => {
 }
 
 export { checkEssentialPart }
+<<<<<<< HEAD
 
 setInterval(() => {
   timeTick()
 }, 1000)
+=======
+>>>>>>> sign-up
