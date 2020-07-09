@@ -1,3 +1,4 @@
+import { onSubmitHandler } from '../main'
 import './essential-part'
 import './optional-part'
 import './policy'

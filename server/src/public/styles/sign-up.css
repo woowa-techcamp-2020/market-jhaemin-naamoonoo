@@ -110,3 +110,16 @@
   cursor: pointer;
   font-size: 1rem;
 }
+
+.timer {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 14px;
+  color: var(--red);
+  font-variant-numeric: tabular-nums;
+}
+
+/* .timer .disabled {
+  opacity: 1;
+} */
