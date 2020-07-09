@@ -6,7 +6,7 @@ import { routers } from './routers'
 import session from 'express-session'
 
 const app = express()
-const PORT = 3000
+const PORT = 10100
 
 app.set('view engine', 'pug')
 app.set('views', __dirname + '/views')
