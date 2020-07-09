@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign In</title>
-    <link rel="stylesheet" href="/styles/globalstyle.css" />
+    <link rel="stylesheet" href="/styles/common/globalstyle.css" />
     <link rel="stylesheet" href="/styles/sign-in.css" />
   </head>
   <body>
@@ -18,7 +18,11 @@
         <form class="input-container">
           <div class="input-wrapper invalid-input">
             <div class="input-icon user-id"></div>
-            <input class="input-field" type="text" placeholder="아이디" />
+            <input
+              class="input-field user-id"
+              type="text"
+              placeholder="아이디"
+            />
             <div class="check"></div>
             <div class="error-msg">
               <p class="error-msg-text">에러</p>
@@ -26,7 +30,11 @@
           </div>
           <div class="input-wrapper valid-input">
             <div class="input-icon password"></div>
-            <input class="input-field" type="password" placeholder="비밀번호" />
+            <input
+              class="input-field password"
+              type="password"
+              placeholder="비밀번호"
+            />
             <div class="check"></div>
             <div class="error-msg">
               <p class="error-msg-text">비밀번호 에러입니당</p>
