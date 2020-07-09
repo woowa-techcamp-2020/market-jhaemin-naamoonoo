@@ -26,6 +26,7 @@ router.post('/api/sign-in', async (req: Request, res: Response) => {
   if (!isCorrectPassword) {
     signInResult.err = {}
     signInResult.err.password = ErrMsg.wrongPassword
+    req.session.user = foundUser
     res.send(signInResult)
     return
   }
