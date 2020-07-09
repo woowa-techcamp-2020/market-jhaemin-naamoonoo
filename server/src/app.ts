@@ -1,10 +1,9 @@
 import { api } from './api'
 import appRoot from 'app-root-path'
 import bodyParser from 'body-parser'
-import session from 'express-session'
 import express from 'express'
 import { routers } from './routers'
-import appRoot from 'app-root-path'
+import session from 'express-session'
 
 const app = express()
 const PORT = 3000
