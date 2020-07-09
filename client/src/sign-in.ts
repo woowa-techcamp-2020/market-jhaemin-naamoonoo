@@ -1,37 +1,11 @@
-import { fetchWrapper } from './main'
+import { onSubmitHandler } from './main'
 import Validator from '../../server/src/modules/validators'
 
 const signInButton = document.querySelector('.sign-in-btn')
 
-const onSubmitHandler = async (e: Event) => {
-  e.preventDefault()
-  const userIdWrapper = document.querySelector('.input-wrapper.id')
-  const passwordWrapper = document.querySelector('.input-wrapper.pw')
-
-  const userIdInput = userIdWrapper.querySelector('input') as HTMLInputElement
-  const passwordInput = passwordWrapper.querySelector(
-    'input'
-  ) as HTMLInputElement
-  const body = {
-    userId: userIdInput.value,
-    password: passwordInput.value,
-  }
-
-  const res = await fetchWrapper('POST', '/sign-in', body)
-  if (res.err.userId) {
-    userIdWrapper.classList.remove('valid-input')
-    userIdWrapper.classList.add('invalid-input')
-    userIdWrapper.querySelector('.msg-text').innerHTML = res.err.userId
-  }
-
-  if (res.err.password) {
-    passwordWrapper.classList.remove('valid-input')
-    passwordWrapper.classList.add('invalid-input')
-    passwordWrapper.querySelector('.msg-text').innerHTML = res.err.password
-  }
-}
-
-signInButton.addEventListener('click', onSubmitHandler)
+signInButton.addEventListener('click', (e: Event) =>
+  onSubmitHandler(e, '/sign-in')
+)
 
 const userIdInput = document.querySelector(
   '.input-wrapper.id input'
