@@ -23,34 +23,42 @@
 
   overflow: hidden;
 
-  transition: height var(--transition-time) cubic-bezier(0.74, 0.02, 0.14, 1);
+  transition: height var(--transition-time) cubic-bezier(0.74, 0.02, 0.14, 1),
+    margin var(--transition-time) cubic-bezier(0.74, 0.02, 0.14, 1),
+    opacity var(--transition-time) ease,
+    border-color var(--transition-time) ease;
+}
+
+.input-wrapper.hidden {
+  height: 0 !important;
+  margin: 0 !important;
+  opacity: 0 !important;
 }
 
 .check {
-  opacity: 0;
-  background-image: url(../../assets/icons/check.svg);
-  /* background-color: var(--green); */
-  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
+  top: 10px;
   right: 10px;
-  align-self: center;
-
-  /* TODO: transform으로 바꿔주세요 */
-  width: 0px;
-  height: 0px;
-  transition: width var(--transition-time) ease,
-    heigth var(--transition-time) ease;
+  width: 25px;
+  height: 25px;
+  font-size: 22px;
+  color: var(--green);
 }
 
-.input-wrapper.valid-input .check {
-  opacity: 1;
-  width: 22px;
-  height: 22px;
+.check .icon {
+  opacity: 0;
+}
+
+.input-wrapper.valid-input .check .icon {
+  animation: springZoomOut 0.6s linear forwards;
 }
 
 .input-wrapper.valid-input .input-icon {
   background-color: var(--light-green);
-  fill: var(--red);
+  color: var(--green);
 }
 
 .input-wrapper.invalid-input {
@@ -61,6 +69,7 @@
 .input-wrapper.invalid-input .input-icon {
   border-color: var(--red);
   background-color: var(--pink);
+  color: var(--red);
 }
 
 .input-wrapper.invalid-input .msg-field {
@@ -91,43 +100,32 @@
   background-repeat: no-repeat;
   background-position: center;
   border-right: 1px solid var(--border-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: var(--gray);
+  transition: color var(--transition-time) ease;
+  user-select: none;
+  pointer-events: none;
+  cursor: default;
 }
 
-.input-wrapper .input-icon.id {
-  background-image: url('/assets/icons/id-tag.svg');
-}
-
-.input-wrapper .input-icon.pw {
-  background-image: url('/assets/icons/key.svg');
-}
-
-.input-wrapper .input-icon.email {
-  background-image: url('/assets/icons/mail.svg');
-}
-
-.input-wrapper .input-icon.name {
-  background-image: url('/assets/icons/person.svg');
-}
-
-.input-wrapper .input-icon.phone {
-  background-image: url('/assets/icons/phone.svg');
-}
-
-.input-wrapper .input-icon.code {
-  background-image: url('/assets/icons/field.svg');
-  background-position: calc(50% + 2px) calc(50% - 2px);
-}
-
-.input-wrapper .input-icon.address {
-  background-image: url('/assets/icons/home.svg');
+.input-wrapper .input-icon.code i {
+  position: relative;
+  left: 2px;
+  bottom: 2px;
+  font-size: 1.28em;
 }
 
 .input-wrapper .input-text {
   flex: 1;
   font-size: 16px;
   padding: 0 15px;
+  padding-right: 40px;
   height: var(--input-inner-height);
   min-width: 0;
+  background-color: #fff;
 }
 
 .input-wrapper .input-text::placeholder {
@@ -143,7 +141,8 @@
   bottom: 0;
   border-top: 1px solid var(--border-gray);
   opacity: 0;
-  transition: opacity var(--transition-time) ease;
+  transition: opacity var(--transition-time) ease,
+    border-color var(--transition-time) ease;
 
   display: flex;
   align-items: center;
@@ -170,13 +169,20 @@
   border-left: 1px solid var(--border-gray);
 
   font-size: 14px;
+  font-weight: 600;
   color: var(--placeholder-gray);
+  background-color: #fff;
+
+  transition: color var(--transition-time) ease,
+    background-color var(--transition-time) ease;
 }
 
 .input-wrapper .action.activated {
   background-color: var(--light-blue);
   color: var(--blue);
-  font-weight: 700;
+}
+
+.input-wrapper .action.activated:hover {
 }
 
 /* Checkbox */
