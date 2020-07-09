@@ -4,6 +4,7 @@ import bodyParser from 'body-parser'
 import session from 'express-session'
 import express from 'express'
 import { routers } from './routers'
+import appRoot from 'app-root-path'
 
 const app = express()
 const PORT = 3000
@@ -36,5 +37,9 @@ app.set('view engine', 'pug')
 
 // Serve
 app.use(routers)
+
+app.use(function (req, res, next) {
+  res.status(404).sendFile(appRoot.resolve('/src/views-html/404.html'))
+})
 
 export { app, PORT }
