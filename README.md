@@ -6,7 +6,11 @@
 
 ---
 
-This project implements the **sign up** and **sign in** of [배민상회](https://mart.baemin.com/?gclid=EAIaIQobChMI8ciAjr-86gIVGa6WCh2KbwTwEAAYASAAEgIIY_D_BwE). At first, a registration process seems very easy and simple, but it requires tons of considerations and design. Especially for our frontend developers, understanding the mechanisms behind the jungle makes us being closer to a full-stack developer. In short, the server side and the client side are separated into each application chunk and they have their own `package.json` where all the dependencies and npm scripts are self-reliance. Then we can consider them independently and they became easily migratable for plugging into other server side or client side systems. **TypeScript** is our primary programming language. Simply it is a superset of JavaScript and provides better and enjoyable scripting, debugging, testing from its stronger type declarations.
+This project implements the **sign up** and **sign in** of [배민상회](https://mart.baemin.com/?gclid=EAIaIQobChMI8ciAjr-86gIVGa6WCh2KbwTwEAAYASAAEgIIY_D_BwE). At first, a registration process seems very easy and simple, but it requires tons of considerations and design. Especially for our frontend developers, understanding the mechanisms behind the jungle makes us being closer to a full-stack developer.
+
+In short, the server side and the client side are separated into each application chunk and they have their own `package.json` where all the dependencies and npm scripts are self-reliance. Then we can consider them independently and they became easily migratable for plugging into other server side or client side systems.
+
+**TypeScript** is our primary programming language which is simply a superset of JavaScript and provides better and enjoyable scripting, debugging and testing throughout the entire workflow powered by its stronger type declarations.
 
 ## Maintainers / Contributors
 
