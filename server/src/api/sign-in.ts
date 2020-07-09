@@ -6,7 +6,6 @@ import { comparePassword } from '../modules/encryption'
 import { createUserToken } from '../modules/database/schema/userToken'
 import { findUser } from '../modules/database/schema/user'
 import { v4 as uuidv4 } from 'uuid'
-import { validateBody } from '../middlewares/validate-body'
 
 const router = express.Router()
 
