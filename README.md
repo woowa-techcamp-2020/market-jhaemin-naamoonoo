@@ -81,13 +81,17 @@ We use [bcrypt](https://en.wikipedia.org/wiki/Bcrypt) to hash user passwords.
 
 To build and bundle TypeScript sources, we integrate with the [**webpack**](https://webpack.js.org/) build system.
 
-### Semantic Markup
+### Semantic HTML
+
+Semantic HTML is the use of HTML markup to strengthen the meaning of the information in webpages, rather than just display its presentational look. In HTML5, many semantic tags were added like `nav`, `main`, or `aside`. You can also write semantic markup without those tags by merely adding [WAI-ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) attributes to any tags. But according to the MDN, it is better to prefer semantic HTML element over ARIA if possible.
 
 ### CSS
 
-Markup language alone looks horrible and literally ugly.
+Markup language alone looks horrible and literally ugly. CSS gracefully resolves this problem by applying styles whatever we want. Thanks to the new flex and grid layout system, the design possibilities now became almost infinity.
 
 **var()**
+
+Until this feature came out, we couldn't assign any reusable variables like global colors or sizes. The preprocessors were the king to mitigate this problem. They enable us to define variables, reuse them, and manipulate them with a lot of utility functions. They were good enough to enhance the styling workflow.
 
 **Transition**
 
