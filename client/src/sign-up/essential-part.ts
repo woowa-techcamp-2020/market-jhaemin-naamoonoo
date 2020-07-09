@@ -114,6 +114,8 @@ const timeTick = () => {
   timer.innerHTML = `${minute}:${second < 10 ? '0' : ''}${second}`
 }
 
+setInterval(timeTick, 1000)
+
 phoneInputWrapper.action.addEventListener('click', () => {
   if (phoneInputWrapper.checkValidation()) {
     phoneInputConfirmWrapper.display(true)

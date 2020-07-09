@@ -2,8 +2,6 @@ import express, { Request, Response } from 'express'
 import { findUser } from '../modules/database/schema/user'
 import { comparePassword } from '../modules/encryption'
 import { validateBody } from '../middlewares/validate-body'
-import { createUserToken } from '../modules/database/schema/userToken'
-import { v4 as uuidv4 } from 'uuid'
 import { ErrMsg } from '../errors'
 import { ApiResponse } from '@/types'
 
@@ -36,8 +34,7 @@ router.post(
       return
     }
 
-    const token = uuidv4()
-    await createUserToken({ userId, token })
+    req.session.user = foundUser
     res.send(signInResult)
   }
 )

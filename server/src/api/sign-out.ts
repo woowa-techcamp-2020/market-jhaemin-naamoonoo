@@ -5,8 +5,12 @@ import { deleteUserToken } from '@/modules/database/schema/userToken'
 const router = express.Router()
 
 router.get('/api/sign-out', async (req: Request, res: Response) => {
-  const token = req.query.token as string
-  await deleteUserToken({ token })
+  req.session.destroy((err) => {
+    if (err) {
+      console.error(err)
+    }
+    console.log('logged out')
+  })
   res.send({})
 })
 
