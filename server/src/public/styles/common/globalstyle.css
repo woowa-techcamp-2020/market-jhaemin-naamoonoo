@@ -1,3 +1,6 @@
+@import './fonts.css';
+@import './spring.css';
+
 :root {
   /* Colors */
   --gray: #777;
@@ -15,8 +18,7 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'PAYW Pro', 'PAYW Pro KR', sans-serif;
   color: #333;
 }
 
@@ -39,37 +41,4 @@ input {
 
 button:disabled {
   cursor: default !important;
-}
-
-@font-face {
-  font-family: 'Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: url('/fonts/Icons/Icons-Regular.eot');
-  src: url('/fonts/Icons/Icons-Regular.woff2') format('woff2'),
-    url('/fonts/Icons/Icons-Regular.woff') format('woff'),
-    url('/fonts/Icons/Icons-Regular.ttf') format('truetype');
-}
-
-.icon {
-  font-family: 'Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 1.125em;
-  vertical-align: baseline;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-feature-settings: 'liga';
-  -moz-font-feature-settings: 'liga=1';
-  -moz-font-feature-settings: 'liga';
-  font-feature-settings: 'liga';
-  text-align: center;
 }
