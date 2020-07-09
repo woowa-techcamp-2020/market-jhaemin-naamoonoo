@@ -2,6 +2,8 @@ import { ErrMsg } from '../../../server/src/errors'
 import Validators from '../../../server/src/modules/validators'
 import { setInputWrapper } from '../modules/set-input-wrapper'
 
+let code = '0'
+
 const idInputWrapper = setInputWrapper({
   fieldName: 'id',
   validator: async (value) => {
@@ -40,8 +42,8 @@ const pwInputWrapper = setInputWrapper({
     Validators.password.validator(value),
     Validators.password.error,
   ],
-  onDebounce: ({ checkValidation }) => {
-    const isValid = checkValidation()
+  onDebounce: () => {
+    const isValid = pwInputWrapper.checkValidation()
 
     pwConfirmInputWrapper.display(isValid)
   },
@@ -55,8 +57,17 @@ const emailInputWrapper = setInputWrapper({
   ],
 })
 
+const nameInputWrapper = setInputWrapper({
+  fieldName: 'name',
+  validator: (value) => [
+    Validators.name.validator(value),
+    Validators.name.error,
+  ],
+})
+
 const phoneInputConfirmWrapper = setInputWrapper({
   fieldName: 'code',
+  validator: (value) => [code === value, '인증번호가 틀렸습니다.'],
 })
 
 const phoneInputWrapper = setInputWrapper({
@@ -65,7 +76,9 @@ const phoneInputWrapper = setInputWrapper({
     Validators.phone.validator(value),
     Validators.phone.error,
   ],
-  onDebounce: ({ value, checkValidation, replaceActionLabel }) => {
+  onDebounce: (value) => {
+    const { replaceActionLabel, checkValidation } = phoneInputWrapper
+
     replaceActionLabel('인증받기')
 
     const shouldDisplayConfirmElm =
@@ -78,6 +91,31 @@ const phoneInputWrapper = setInputWrapper({
 phoneInputWrapper.action.addEventListener('click', () => {
   if (phoneInputWrapper.checkValidation()) {
     phoneInputWrapper.replaceActionLabel('재전송')
-    alert('1234')
+    code = '3691'
+    alert(code)
   }
 })
+
+const inputWrappers = [
+  idInputWrapper,
+  pwInputWrapper,
+  pwConfirmInputWrapper,
+  emailInputWrapper,
+  nameInputWrapper,
+  phoneInputWrapper,
+  phoneInputConfirmWrapper,
+]
+
+const isAllValid = () => {
+  for (const wrapper of inputWrappers) {
+    if (!wrapper.checkValidation()) {
+      return false
+    }
+  }
+
+  return true
+}
+
+setInterval(() => {
+  console.log(isAllValid())
+}, 1000)
