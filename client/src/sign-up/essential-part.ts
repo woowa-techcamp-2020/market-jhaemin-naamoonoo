@@ -10,13 +10,18 @@ const idInputWrapper = setInputWrapper({
     const isValid = Validators.userId.validator(value)
 
     if (!isValid) {
-      return [false, Validators.userId.error]
+      return [isValid, Validators.userId.error]
     }
 
     try {
       const response = await fetch('/api/is-unique-user-id', {
         method: 'post',
-        body: JSON.stringify(value),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          userId: value,
+        }),
       })
       const result = await response.json()
 
@@ -96,26 +101,26 @@ phoneInputWrapper.action.addEventListener('click', () => {
   }
 })
 
-const inputWrappers = [
-  idInputWrapper,
-  pwInputWrapper,
-  pwConfirmInputWrapper,
-  emailInputWrapper,
-  nameInputWrapper,
-  phoneInputWrapper,
-  phoneInputConfirmWrapper,
-]
+export const inputWrappers = {
+  userId: idInputWrapper,
+  password: pwInputWrapper,
+  passwordConfirm: pwConfirmInputWrapper,
+  email: emailInputWrapper,
+  name: nameInputWrapper,
+  phone: phoneInputWrapper,
+  phoneConfirm: phoneInputConfirmWrapper,
+}
 
-const isAllValid = () => {
-  for (const wrapper of inputWrappers) {
+const checkEssentialPart = (): boolean | typeof idInputWrapper => {
+  for (const key of Object.keys(inputWrappers)) {
+    const wrapper = inputWrappers[key]
+
     if (!wrapper.checkValidation()) {
-      return false
+      return wrapper
     }
   }
 
   return true
 }
 
-setInterval(() => {
-  console.log(isAllValid())
-}, 1000)
+export { checkEssentialPart }

@@ -33,6 +33,8 @@ export const setInputWrapper = ({
     wrapper.classList.remove('valid-input')
   }
 
+  const focus = () => input.focus()
+
   const checkValidation = () => isValid.current
 
   const getValue = () => input.value
@@ -55,7 +57,6 @@ export const setInputWrapper = ({
 
     if (condition) {
       action.classList.add('activated')
-      console.log('activated')
       return
     }
 
@@ -79,7 +80,6 @@ export const setInputWrapper = ({
     wrapper.querySelector('.msg-text').innerHTML = msg
 
     isValid.current = false
-    console.log(`setErrMsg: ${msg}`)
 
     toggleAction(false)
 
@@ -119,6 +119,7 @@ export const setInputWrapper = ({
     setErrMsg,
     setOk,
     reset,
+    focus,
     getValue,
     checkValidation,
     display,
