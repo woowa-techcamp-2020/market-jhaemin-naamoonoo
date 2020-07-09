@@ -26,7 +26,8 @@
   transition: height var(--transition-time) cubic-bezier(0.74, 0.02, 0.14, 1),
     margin var(--transition-time) cubic-bezier(0.74, 0.02, 0.14, 1),
     opacity var(--transition-time) ease,
-    border-color var(--transition-time) ease;
+    border-color var(--transition-time) ease,
+    box-shadow var(--transition-time) ease, filter var(--transition-time) ease;
 }
 
 .input-wrapper.hidden {
@@ -87,7 +88,9 @@
 
 .input-wrapper.disabled {
   box-shadow: none;
-  opacity: 0.7;
+  filter: blur(2px);
+  user-select: none;
+  pointer-events: none;
 }
 
 .input-wrapper.msg-activated {

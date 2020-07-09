@@ -16,6 +16,7 @@
 .description {
   width: 100%;
 
+  font-weight: 500;
   font-size: 15px;
   text-align: center;
   line-height: 1;
@@ -70,7 +71,7 @@
   box-shadow: none;
 }
 
-.agreement {
+.policy {
   width: 100%;
   margin-top: 30px;
 }
@@ -86,6 +87,11 @@
 .aa-checkbox-wrapper label {
   margin-left: 10px;
   flex: 1;
+  user-select: none;
+}
+
+.aa-checkbox-wrapper label[for='agree-all-checkbox'] {
+  font-weight: 500;
 }
 
 .aa-checkbox-wrapper .small {
