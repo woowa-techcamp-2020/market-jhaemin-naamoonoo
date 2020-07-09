@@ -1,2 +1,4 @@
 *.css linguist-language=TypeScript
+*.html linguist-language=TypeScript
+*.pug linguist-language=TypeScript
 * -text
