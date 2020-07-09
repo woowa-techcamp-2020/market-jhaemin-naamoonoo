@@ -1,5 +1,5 @@
-import { onSubmitHandler } from './main'
 import Validator from '../../server/src/modules/validators'
+import { onSubmitHandler } from './main'
 
 const signInButton = document.querySelector('.sign-in-btn')
 
@@ -42,7 +42,7 @@ const validationOnBlur = (e: Event) => {
   }
 }
 
-userIdInput.addEventListener('blur', validationOnBlur)
+// userIdInput.addEventListener('blur', validationOnBlur)
 
 const validationOnChange = (e: Event) => {
   const inputElement = e.target
@@ -64,9 +64,9 @@ const validationOnChange = (e: Event) => {
   }
 }
 
-userIdInput.addEventListener('input', validationOnChange)
-const inputs = Array.from(document.querySelectorAll('.input-text'))
-inputs.forEach((input) => {
-  input.addEventListener('blur', validationOnBlur)
-  input.addEventListener('input', validationOnChange)
-})
+// userIdInput.addEventListener('input', validationOnChange)
+// const inputs = Array.from(document.querySelectorAll('.input-text'))
+// inputs.forEach((input) => {
+//   input.addEventListener('blur', validationOnBlur)
+//   input.addEventListener('input', validationOnChange)
+// })

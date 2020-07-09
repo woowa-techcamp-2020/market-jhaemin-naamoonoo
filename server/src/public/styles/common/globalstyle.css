@@ -1,4 +1,6 @@
 @import './fonts.css';
+@import './input.css';
+@import './button.css';
 @import './spring.css';
 
 :root {
@@ -42,4 +44,9 @@ input {
 
 button:disabled {
   cursor: default !important;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }

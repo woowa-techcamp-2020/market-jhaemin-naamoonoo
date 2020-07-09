@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign In</title>
+    <title>로그인 | 배민상회</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="/styles/common/globalstyle.css" />
-    <link rel="stylesheet" href="/styles/common/input.css" />
     <link rel="stylesheet" href="/styles/sign-in.css" />
   </head>
   <body>
@@ -13,40 +13,54 @@
       <div class="sign-in-container">
         <image
           class="main-logo"
-          src="https://ceo.baemin.com/lockpath/images/logo-ceo.png"
+          src="/assets/images/logo-ceo.svg"
           alt="main-logo"
         />
         <form class="input-container">
           <div class="input-wrapper id">
-            <div class="input-icon id"></div>
+            <div class="input-icon id">
+              <i class="icon">tag</i>
+            </div>
             <input
               class="input-text"
               placeholder="아이디"
               type="text"
               name="userId"
+              spellcheck="false"
+              autocomplete="off"
             />
-            <div class="check"></div>
+            <div class="check">
+              <i class="icon">checkmark_alt_circle_fill</i>
+            </div>
             <div class="msg-field">
               <span class="msg-text"></span>
             </div>
           </div>
 
           <div class="input-wrapper pw">
-            <div class="input-icon pw"></div>
+            <div class="input-icon pw">
+              <i class="icon">lock</i>
+            </div>
             <input
               class="input-text"
               placeholder="비밀번호"
               type="password"
               name="password"
             />
-            <div class="check"></div>
+            <div class="check">
+              <i class="icon">checkmark_alt_circle_fill</i>
+            </div>
             <div class="msg-field">
               <span class="msg-text"></span>
             </div>
           </div>
 
-          <button class="sign-in-btn">로그인</button>
+          <button class="sign-in-btn btn">로그인</button>
         </form>
+
+        <a href="/sign-up" class="join"
+          >회원가입 <i class="icon">chevron_right</i></a
+        >
       </div>
     </main>
 

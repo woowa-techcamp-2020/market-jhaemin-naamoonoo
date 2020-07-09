@@ -98,19 +98,6 @@
   font-size: 14px;
 }
 
-.register-btn {
-  background-color: var(--blue);
-  border: 1px solid var(--deep-blue);
-  border-radius: 10px;
-  color: #fff;
-  width: 100%;
-  height: var(--input-height);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-  margin-top: 30px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
 .timer {
   position: absolute;
   top: 15px;

@@ -15,132 +15,35 @@
 }
 
 .sign-in-container {
-  max-width: 600px;
+  text-align: center;
+  width: 100%;
+  max-width: var(--input-width);
 }
 
 .main-logo {
-  width: 258px;
-  height: 40px;
+  width: 100%;
+  max-width: 258px;
+  margin: auto;
   margin-bottom: 45px;
 }
 
-.input-container {
-}
-
-.input-wrapper {
-  display: flex;
-  height: var(--input-height);
-  width: 100%;
-  border: 1px solid var(--border-gray);
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 15px;
-
-  position: relative;
-  transition: height var(--transition-time) ease,
-    border-color var(--transition-time) ease;
-}
-
-.input-wrapper.invalid-input {
-  height: var(--input-large-height);
-  border-color: var(--red);
-}
-
-.input-wrapper.invalid-input .error-msg {
-  border-color: var(--red);
-  background-color: var(--pink);
-}
-
-.input-icon {
-  width: 51px;
-  border-right: 1px solid var(--border-gray);
-  background-repeat: no-repeat;
-  background-position: center;
-  height: var(--input-inner-height);
-
-  transition: border-color var(--transition-time) ease,
-    background-color var(--transition-time) ease;
-}
-
-.input-wrapper.valid-input .input-icon {
-  background-color: var(--light-green);
-  fill: var(--red);
-}
-
-.input-wrapper.invalid-input .input-icon {
-  border-color: var(--red);
-  background-color: var(--pink);
-  fill: var(--red);
-}
-
-.input-icon.user-id {
-  background-image: url(../assets/icons/id-tag.svg);
-}
-.input-icon.password {
-  background-image: url(../assets/icons/key.svg);
-}
-
-.input-field {
-  padding: 10px;
-  height: var(--input-height);
-}
-
-.input-field::placeholder {
-  color: var(--placeholder-gray);
-}
-
-.check {
-  opacity: 0;
-  background-image: url(../assets/icons/check.svg);
-  /* background-color: var(--green); */
-  border-radius: 50%;
-  position: absolute;
-  right: 10px;
-  align-self: center;
-
-  width: 22px;
-  height: 22px;
-  transition: opacity var(--transition-time) ease;
-}
-
-.input-wrapper.valid-input .check {
-  opacity: 1;
-}
-
-.error-msg {
-  opacity: 0;
-  position: absolute;
-  top: var(--input-inner-height);
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  display: flex;
-  justify-content: center;
-  align-content: center;
-
-  height: var(--input-msg-height);
-  font-size: 12px;
-  border-top: 1px solid var(--border-gray);
-  transition: opacity var(--transition-time) ease,
-    border-color var(--transition-time) ease;
-}
-
-.input-wrapper.invalid-input .error-msg {
-  opacity: 1;
-}
-
-.error-msg-text {
-  align-self: center;
-  color: var(--red);
-}
-
 .sign-in-btn {
-  width: 100%;
-  height: var(--input-height);
+  margin-top: 20px;
+}
 
-  border: 1px solid var(--border-blue);
-  border-radius: 10px;
-  background-color: var(--blue);
-  color: var(--white);
+.join {
+  font-size: 15px;
+  margin-top: 30px;
+  display: inline-block;
+}
+
+.join .icon {
+  display: inline-block;
+  transition: transform 200ms ease;
+  font-weight: 700;
+  font-size: 1em;
+}
+
+.join:hover .icon {
+  transform: translateX(30%);
 }
