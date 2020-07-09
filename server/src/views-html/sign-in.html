@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign In</title>
     <link rel="stylesheet" href="/styles/common/globalstyle.css" />
+    <link rel="stylesheet" href="/styles/common/input.css" />
     <link rel="stylesheet" href="/styles/sign-in.css" />
   </head>
   <body>
@@ -16,30 +17,34 @@
           alt="main-logo"
         />
         <form class="input-container">
-          <div class="input-wrapper invalid-input">
-            <div class="input-icon user-id"></div>
+          <div class="input-wrapper id">
+            <div class="input-icon id"></div>
             <input
-              class="input-field user-id"
-              type="text"
+              class="input-text"
               placeholder="아이디"
+              type="text"
+              name="userId"
             />
             <div class="check"></div>
-            <div class="error-msg">
-              <p class="error-msg-text">에러</p>
+            <div class="msg-field">
+              <span class="msg-text"></span>
             </div>
           </div>
-          <div class="input-wrapper valid-input">
-            <div class="input-icon password"></div>
+
+          <div class="input-wrapper pw">
+            <div class="input-icon pw"></div>
             <input
-              class="input-field password"
-              type="password"
+              class="input-text"
               placeholder="비밀번호"
+              type="password"
+              name="password"
             />
             <div class="check"></div>
-            <div class="error-msg">
-              <p class="error-msg-text">비밀번호 에러입니당</p>
+            <div class="msg-field">
+              <span class="msg-text"></span>
             </div>
           </div>
+
           <button class="sign-in-btn">로그인</button>
         </form>
       </div>
@@ -48,3 +53,9 @@
     <script src="/dist/bundle.js"></script>
   </body>
 </html>
+
+<!-- success -->
+{ err: null }
+
+<!-- failure -->
+{ err: { password: '', userId: '' } }
