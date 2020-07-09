@@ -153,7 +153,3 @@ const checkEssentialPart = (): boolean | typeof idInputWrapper => {
 }
 
 export { checkEssentialPart }
-
-setInterval(() => {
-  timeTick()
-}, 1000)
