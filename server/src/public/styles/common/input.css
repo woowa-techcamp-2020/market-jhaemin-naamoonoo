@@ -26,6 +26,51 @@
   transition: height var(--transition-time) ease;
 }
 
+.check {
+  opacity: 0;
+  background-image: url(../../assets/icons/check.svg);
+  /* background-color: var(--green); */
+  border-radius: 50%;
+  position: absolute;
+  right: 10px;
+  align-self: center;
+
+  /* TODO: transform으로 바꿔주세요 */
+  width: 0px;
+  height: 0px;
+  transition: width var(--transition-time) ease,
+    heigth var(--transition-time) ease;
+}
+
+.input-wrapper.valid-input .check {
+  width: 22px;
+  height: 22px;
+}
+
+.input-wrapper.valid-input .input-icon {
+  background-color: var(--light-green);
+  fill: var(--red);
+}
+
+.input-wrapper.invalid-input {
+  height: var(--input-large-height);
+  border-color: var(--red);
+}
+
+.input-wrapper.invalid-input .input-icon {
+  border-color: var(--red);
+  background-color: var(--pink);
+}
+
+.input-wrapper.invalid-input .msg-field {
+  border-color: var(--red);
+  background-color: var(--pink);
+}
+
+.input-wrapper.invalid-input .msg-field {
+  opacity: 1;
+}
+
 .input-wrapper.disabled {
   box-shadow: none;
   opacity: 0.7;
