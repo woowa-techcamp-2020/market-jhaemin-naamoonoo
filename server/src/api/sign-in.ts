@@ -5,43 +5,40 @@ import { validateBody } from '../middlewares/validate-body'
 import { createUserToken } from '../modules/database/schema/userToken'
 import { v4 as uuidv4 } from 'uuid'
 import { ErrMsg } from '../errors'
+import { ApiResponse } from '@/types'
 
 const router = express.Router()
-
-// router.get('/sign-in', (req: Request, res: Response) => {
-//   res.render('sign-in/sign-in.pug')
-// })
 
 router.post(
   '/api/sign-in',
   validateBody(['userId', 'password']),
   async (req: Request, res: Response) => {
+    const signInResult: ApiResponse = {
+      err: null,
+    }
     const { userId, password } = req.body
     const [err, [foundUser, _]] = await findUser({ userId })
     if (!foundUser) {
-      res.status(400).send({
-        res: false,
-        err: ErrMsg.noneExistedUser,
-      })
+      signInResult.err = {}
+      signInResult.err.userId = ErrMsg.noneExistedUser
+      res.send(signInResult)
       return
     }
 
-    const isCorrectPassword = comparePassword(foundUser.password, password)
+    const isCorrectPassword = await comparePassword(
+      foundUser.password,
+      password
+    )
     if (!isCorrectPassword) {
-      res.status(400).send({
-        res: false,
-        err: ErrMsg.wrongPassword,
-      })
+      signInResult.err = {}
+      signInResult.err.password = ErrMsg.wrongPassword
+      res.send(signInResult)
       return
     }
 
     const token = uuidv4()
     await createUserToken({ userId, token })
-
-    res.send({
-      res: true,
-      token,
-    })
+    res.send(signInResult)
   }
 )
 

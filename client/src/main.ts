@@ -1,9 +1,6 @@
-export type MethodType = 'GET' | 'POST' | 'DELETE' | 'PATCH'
+import { ApiResponse } from '../../server/src/types'
 
-export type FetchResponse = {
-  res: boolean
-  err?: string
-}
+export type MethodType = 'GET' | 'POST' | 'DELETE' | 'PATCH'
 
 export const fetchWrapper = async (
   method: MethodType,
@@ -11,7 +8,7 @@ export const fetchWrapper = async (
   body?: {
     [key: string]: string
   }
-): Promise<FetchResponse> => {
+): Promise<ApiResponse> => {
   try {
     const baseUrl = 'http://localhost:3000/api'
     const response = await fetch(baseUrl + url, {
@@ -21,10 +18,9 @@ export const fetchWrapper = async (
       },
       body: JSON.stringify(body),
     })
-    const json = await response.json()
-    console.log(json)
-    return { res: true }
+    const res = await response.json()
+    return res
   } catch (err) {
-    return { res: false, err }
+    return err
   }
 }
