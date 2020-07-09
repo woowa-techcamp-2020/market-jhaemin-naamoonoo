@@ -7,17 +7,10 @@ import {
 import { encryptPassword } from '@/modules/encryption'
 import express from 'express'
 import { validateBody } from '../middlewares/validate-body'
+import { ApiResponse } from '../types'
+import { ErrMsg } from '@/errors'
 
 const router = express.Router()
-
-type FieldResponse = {
-  res: boolean
-  err: string | null
-}
-
-export type SignUpResponse = {
-  [K in keyof UserInfo]?: FieldResponse
-}
 
 router.post(
   '/api/sign-up',
@@ -25,13 +18,10 @@ router.post(
   async (req, res) => {
     const { userId, password, email, name, phone } = req.body as UserInfo
 
-    const signUpResponse: SignUpResponse = {}
+    const signUpResponse: ApiResponse = { err: null }
 
     if (!(await isUniqueUserId(userId))) {
-      signUpResponse.userId = {
-        res: false,
-        err: 'Duplicate ID',
-      }
+      signUpResponse.err.userId = ErrMsg.duplicatedUserId
     }
 
     await createUser({
