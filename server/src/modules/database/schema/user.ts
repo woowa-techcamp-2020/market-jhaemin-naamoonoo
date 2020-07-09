@@ -13,7 +13,7 @@ export type UserInfo = {
   email: string
   name: string
   phone: string
-  address?: Address
+  address?: Address | {}
 }
 
 export type Address = {
