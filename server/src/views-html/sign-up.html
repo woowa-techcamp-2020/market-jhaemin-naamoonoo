@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/styles/common/globalstyle.css" />
     <link rel="stylesheet" href="/styles/common/input.css" />
     <link rel="stylesheet" href="/styles/sign-up.css" />
+    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
   </head>
   <body>
     <main class="sign-up-main">
@@ -29,6 +30,7 @@
               class="input-text"
               placeholder="아이디"
               type="text"
+              name="userId"
               spellcheck="false"
             />
             <div class="check">
@@ -43,7 +45,12 @@
             <div class="input-icon pw">
               <i class="icon">lock</i>
             </div>
-            <input class="input-text" placeholder="비밀번호" type="password" />
+            <input
+              class="input-text"
+              placeholder="비밀번호"
+              type="password"
+              name="password"
+            />
             <div class="check">
               <i class="icon">checkmark_alt_circle_fill</i>
             </div>
@@ -61,6 +68,7 @@
               placeholder="비밀번호 확인"
               type="password"
               tabindex="-1"
+              name="passwordConfirm"
             />
             <div class="check">
               <i class="icon">checkmark_alt_circle_fill</i>
@@ -74,7 +82,12 @@
             <div class="input-icon email">
               <i class="icon">envelope</i>
             </div>
-            <input class="input-text" placeholder="이메일" type="email" />
+            <input
+              class="input-text"
+              placeholder="이메일"
+              type="email"
+              name="email"
+            />
             <div class="check">
               <i class="icon">checkmark_alt_circle_fill</i>
             </div>
@@ -91,6 +104,7 @@
               class="input-text"
               placeholder="이름"
               type="text"
+              name="name"
               spellcheck="false"
             />
             <div class="check">
@@ -105,7 +119,12 @@
             <div class="input-icon phone">
               <i class="icon">phone</i>
             </div>
-            <input class="input-text" placeholder="휴대폰" type="tel" />
+            <input
+              class="input-text"
+              placeholder="휴대폰"
+              type="tel"
+              name="phone"
+            />
             <button class="action">인증받기</button>
             <div class="msg-field">
               <span class="msg-text"></span>
@@ -144,26 +163,35 @@
               <i class="icon">house_alt</i>
             </div>
             <input
-              class="input-text"
+              class="input-text address-postal"
               placeholder="우편번호"
               type="text"
+              name="postalCode"
               disabled
             />
-            <button class="action" disabled>주소찾기</button>
+            <!-- <button class="action" disabled>주소찾기</button> -->
+            <button class="action">주소찾기</button>
             <div class="msg-field">
               <span class="msg-text"></span>
             </div>
           </div>
 
-          <div class="input-wrapper disabled">
-            <input class="input-text" type="text" placeholder="주소" disabled />
+          <div class="input-wrapper address disabled">
+            <input
+              class="input-text address-default"
+              type="text"
+              placeholder="주소"
+              name="essentialAddress"
+              disabled
+            />
           </div>
 
-          <div class="input-wrapper disabled">
+          <div class="input-wrapper address disabled">
             <input
-              class="input-text"
+              class="input-text address-detail"
               type="text"
               placeholder="상세 주소"
+              name="additionalAddress"
               disabled
             />
           </div>

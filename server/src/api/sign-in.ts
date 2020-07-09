@@ -26,8 +26,8 @@ router.post(
     }
 
     const isCorrectPassword = await comparePassword(
-      foundUser.password,
-      password
+      password,
+      foundUser.password
     )
     if (!isCorrectPassword) {
       signInResult.err = {}

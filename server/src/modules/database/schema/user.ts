@@ -17,8 +17,8 @@ export type UserInfo = {
 }
 
 export type Address = {
-  postalCode: number
-  essentialAddress: string
+  postalCode?: number
+  essentialAddress?: string
   additionalAddress?: string
 }
 
@@ -28,9 +28,6 @@ export const updateUser = makeUpdateFunction(userStore)
 export const deleteUser = makeRemoveFunction(userStore)
 
 export const isUniqueUserId = async (userId: string) => {
-  const [, results] = await findUser({
-    userId,
-  })
-
+  const [, results] = await findUser({ userId })
   return results.length === 0
 }
