@@ -2,7 +2,9 @@ const path = require('path')
 
 /** @type {import('webpack').Configuration} */
 const config = {
-  entry: './src/main.ts',
+  entry: {
+    'sign-up': './src/sign-up.ts',
+  },
   module: {
     rules: [
       {
@@ -19,7 +21,7 @@ const config = {
     },
   },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].built.js',
     path: path.resolve(__dirname, '../server/src/public/dist'),
   },
 }
