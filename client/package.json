@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack --config webpack.dev.js --watch",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.prod.js && stylus src/styles/spring.styl -o ../server/src/public/styles/common/spring.css"
   },
   "author": "",
   "license": "MIT",

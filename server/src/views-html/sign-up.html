@@ -23,77 +23,102 @@
           <p class="description">필수 정보를 입력해주세요</p>
 
           <div class="input-wrapper id">
-            <div class="input-icon id"></div>
+            <div class="input-icon id">
+              <i class="icon">tag</i>
+            </div>
             <input
               class="input-text"
               placeholder="아이디"
               type="text"
               name="userId"
+              spellcheck="false"
             />
-            <div class="check"></div>
+            <div class="check">
+              <i class="icon">checkmark_alt_circle_fill</i>
+            </div>
             <div class="msg-field">
               <span class="msg-text"></span>
             </div>
           </div>
 
           <div class="input-wrapper pw">
-            <div class="input-icon pw"></div>
+            <div class="input-icon pw">
+              <i class="icon">lock</i>
+            </div>
             <input
               class="input-text"
               placeholder="비밀번호"
               type="password"
               name="password"
             />
-            <div class="check"></div>
+            <div class="check">
+              <i class="icon">checkmark_alt_circle_fill</i>
+            </div>
             <div class="msg-field">
               <span class="msg-text"></span>
             </div>
           </div>
 
-          <div class="input-wrapper pw-confirm">
-            <div class="input-icon pw"></div>
+          <div class="input-wrapper pw-confirm hidden">
+            <div class="input-icon pw">
+              <i class="icon">lock_fill</i>
+            </div>
             <input
               class="input-text"
               placeholder="비밀번호 확인"
               type="password"
+              tabindex="-1"
               name="passwordConfirm"
             />
-            <div class="check"></div>
+            <div class="check">
+              <i class="icon">checkmark_alt_circle_fill</i>
+            </div>
             <div class="msg-field">
               <span class="msg-text"></span>
             </div>
           </div>
 
           <div class="input-wrapper email">
-            <div class="input-icon email"></div>
+            <div class="input-icon email">
+              <i class="icon">envelope</i>
+            </div>
             <input
               class="input-text"
               placeholder="이메일"
               type="email"
               name="email"
             />
-            <div class="check"></div>
+            <div class="check">
+              <i class="icon">checkmark_alt_circle_fill</i>
+            </div>
             <div class="msg-field">
               <span class="msg-text"></span>
             </div>
           </div>
 
           <div class="input-wrapper name">
-            <div class="input-icon name"></div>
+            <div class="input-icon name">
+              <i class="icon">person</i>
+            </div>
             <input
               class="input-text"
               placeholder="이름"
               type="text"
               name="name"
+              spellcheck="false"
             />
-            <div class="check"></div>
+            <div class="check">
+              <i class="icon">checkmark_alt_circle_fill</i>
+            </div>
             <div class="msg-field">
               <span class="msg-text"></span>
             </div>
           </div>
 
           <div class="input-wrapper phone">
-            <div class="input-icon phone"></div>
+            <div class="input-icon phone">
+              <i class="icon">phone</i>
+            </div>
             <input
               class="input-text"
               placeholder="휴대폰"
@@ -106,14 +131,19 @@
             </div>
           </div>
 
-          <div class="input-wrapper code">
-            <div class="input-icon code"></div>
+          <div class="input-wrapper code hidden">
+            <div class="input-icon code">
+              <i class="icon">pencil_ellipsis_rectangle</i>
+            </div>
             <input
               class="input-text"
               placeholder="인증번호 6자리 입력"
               type="text"
+              tabindex="-1"
             />
-            <button class="action">확인</button>
+            <div class="check">
+              <i class="icon">checkmark_alt_circle_fill</i>
+            </div>
             <div class="msg-field">
               <span class="msg-text"></span>
             </div>
@@ -129,7 +159,9 @@
           </label>
 
           <div class="input-wrapper address disabled">
-            <div class="input-icon address"></div>
+            <div class="input-icon address">
+              <i class="icon">house_alt</i>
+            </div>
             <input
               class="input-text address-postal"
               placeholder="우편번호"
