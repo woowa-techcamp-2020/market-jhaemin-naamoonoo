@@ -12,17 +12,14 @@ export const validateBody = (attrs: (keyof UserInfo)[]) => (
     const { validator, error: err } = Validator[key]
     const isValidInput = validator(req.body[key])
     if (!isValidInput) {
-      results[key] = {
-        res: isValidInput,
-        err: !isValidInput ? err : null,
-      }
+      results[key] = err
     }
     return results
   }, {})
 
   const numberOfInvalidInput = Object.keys(validatedResult).length
   if (numberOfInvalidInput !== 0) {
-    return res.status(400).send(validatedResult)
+    return res.send(validatedResult)
   }
 
   next()
