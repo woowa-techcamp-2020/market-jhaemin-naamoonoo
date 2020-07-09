@@ -1,6 +1,11 @@
 import { ApiResponse } from '../../server/src/types'
 import { UserInfo } from '@@/../server/src/modules/database/schema/user'
 
+declare global {
+  interface Window {
+    daum: any
+  }
+}
 export type MethodType = 'GET' | 'POST' | 'DELETE' | 'PATCH'
 
 export const fetchWrapper = async (

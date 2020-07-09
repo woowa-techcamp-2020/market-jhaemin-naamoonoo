@@ -3,6 +3,9 @@ import Validators from '../../../server/src/modules/validators'
 import { setInputWrapper } from '../modules/set-input-wrapper'
 
 let code = '0'
+let letfTime = 0
+
+const timer = document.querySelector('.timer') as HTMLElement
 
 const idInputWrapper = setInputWrapper({
   fieldName: 'id',
@@ -72,7 +75,14 @@ const nameInputWrapper = setInputWrapper({
 
 const phoneInputConfirmWrapper = setInputWrapper({
   fieldName: 'code',
-  validator: (value) => [code === value, '인증번호가 틀렸습니다.'],
+  validator: (value) => [
+    (() => {
+      const isSameCode = code === value
+      timer.hidden = isSameCode
+      return isSameCode
+    })(),
+    '인증번호가 틀렸습니다.',
+  ],
 })
 
 const phoneInputWrapper = setInputWrapper({
@@ -85,19 +95,36 @@ const phoneInputWrapper = setInputWrapper({
     const { replaceActionLabel, checkValidation } = phoneInputWrapper
 
     replaceActionLabel('인증받기')
-
-    const shouldDisplayConfirmElm =
-      checkValidation() && value.trim().length !== 0
-
-    phoneInputConfirmWrapper.display(shouldDisplayConfirmElm)
   },
 })
 
+const timeTick = () => {
+  if (letfTime === 0) {
+    timer.hidden = true
+    phoneInputConfirmWrapper.display(false)
+    phoneInputWrapper.replaceActionLabel('인증받기')
+  }
+
+  if (letfTime > 0) {
+    letfTime -= 1
+  }
+
+  const minute = Math.floor(letfTime / 60).toString()
+  const second = letfTime % 60
+  timer.innerHTML = `${minute}:${second < 10 ? '0' : ''}${second}`
+}
+
 phoneInputWrapper.action.addEventListener('click', () => {
   if (phoneInputWrapper.checkValidation()) {
+    phoneInputConfirmWrapper.display(true)
     phoneInputWrapper.replaceActionLabel('재전송')
+    letfTime = 120
+    timer.hidden = false
     code = '3691'
-    alert(code)
+    setTimeout(
+      () => alert(`[배민광장] 사장님의 인증번호는 ${code}입니다`),
+      3000
+    )
   }
 })
 
@@ -124,3 +151,7 @@ const checkEssentialPart = (): boolean | typeof idInputWrapper => {
 }
 
 export { checkEssentialPart }
+
+setInterval(() => {
+  timeTick()
+}, 1000)
