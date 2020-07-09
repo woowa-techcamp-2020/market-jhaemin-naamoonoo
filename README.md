@@ -53,7 +53,7 @@ It is all about server side application. The Express router handles all the requ
 
 **Middlewares**
 
-Similar yet the same thing as router. Middlewares could intervene between the middlewares at any point, at any router. Middlewares intercept the request and can early response without going next to the next middlewares.
+Similar yet the same thing as router. Middlewares could intervene between the middlewares at any point, at any router. Middlewares intercept the request and can early respond without going next to the next middlewares.
 
 **Static**
 
