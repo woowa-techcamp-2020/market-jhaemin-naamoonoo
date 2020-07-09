@@ -16,11 +16,19 @@ router.post(
   '/api/sign-up',
   validateBody(['userId', 'password', 'email', 'name', 'phone']),
   async (req, res) => {
-    const { userId, password, email, name, phone } = req.body as UserInfo
+    const {
+      userId,
+      password,
+      email,
+      name,
+      phone,
+      address,
+    } = req.body as UserInfo
 
     const signUpResponse: ApiResponse = { err: null }
 
     if (!(await isUniqueUserId(userId))) {
+      signUpResponse.err = {}
       signUpResponse.err.userId = ErrMsg.duplicatedUserId
     }
 
@@ -30,6 +38,7 @@ router.post(
       email,
       name,
       phone,
+      address,
     })
 
     res.json(signUpResponse)
