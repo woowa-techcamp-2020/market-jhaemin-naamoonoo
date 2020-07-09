@@ -47,4 +47,28 @@ By default, browser understands and parses HTML. There are a lot of markup langu
 
 Express session is like a global storage alive only during each session. According the [documentation](https://github.com/expressjs/session) session data are not stored in cookie directly, but just the session ID. The data are stored in server-side safely.
 
+### Database
+
+We use [nedb](https://github.com/louischatriot/nedb), one of the most popular embedded database for Node.js nw.js and electron. This modules is a JSON-like-file-based datastore that provides mongoDB-like APIs. It's easy to learn, easy to embed right into the existing projects.
+
+### Security
+
+We use [bcrypt](https://en.wikipedia.org/wiki/Bcrypt) to hash user passwords.
+
 ## Client Side
+
+### webpack
+
+To build and bundle TypeScript sources, we integrate with the [**webpack**](https://webpack.js.org/) build system.
+
+### Semantic Markup
+
+### CSS
+
+Markup language alone looks horrible and literally ugly.
+
+**var()**
+
+**Transition**
+
+**Animation**
