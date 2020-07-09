@@ -20,6 +20,5 @@
     },
     "lib": ["ES2020.String", "ESNext.AsyncIterable", "DOM"]
   },
-  "include": ["src/main.ts", "**/*.spec.ts", "**/*.test.ts"],
   "exclude": ["node_modules", "dist"]
 }

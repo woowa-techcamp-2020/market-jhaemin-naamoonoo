@@ -20,6 +20,7 @@
 body {
   font-family: 'PAYW Pro', 'PAYW Pro KR', sans-serif;
   color: #333;
+  scroll-behavior: smooth;
 }
 
 * {
