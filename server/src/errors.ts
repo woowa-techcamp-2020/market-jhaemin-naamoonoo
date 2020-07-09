@@ -3,7 +3,7 @@ export enum ErrMsg {
   wrongPassword = '비밀번호가 옳지 않습니다. 비밀번호를 확인해주세요.',
   emptyUserId = '아이디를 입력해 주세요.',
   emptyPassword = '비밀번호를 입력해 주세요.',
-
+  duplicatedUserId = '이미 사용중인 아이디입니다.',
   emptyPasswordCheck = '비밀번호 확인을 위해 한번 더 입력해 주세요.',
   emptyEmail = '이메일 주소를 입력해 주세요.',
   emptyName = '이름을 입력해 주세요.',
