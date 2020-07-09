@@ -4,6 +4,15 @@
   <a href="https://ceo.baemin.dev">https://ceo.baemin.dev</a>
 </h3>
 
+<p align="center">
+  <a href="https://github.com/woowa-techcamp-2020/market-6/blob/master/LICENSE">
+    <img src="https://img.shields.io/github/license/woowa-techcamp-2020/market-6?color=12B991" />
+  </a>
+  <a href="https://github.com/woowa-techcamp-2020/market-6/releases">
+    <img src="https://img.shields.io/github/v/release/woowa-techcamp-2020/market-6?include_prereleases&sort=semver&label=version&color=12B991" />
+  </a>
+</p>
+
 ---
 
 ## Before getting started
@@ -57,7 +66,7 @@ Similar yet the same thing as router. Middlewares could intervene between the mi
 
 **Static**
 
-Of course Express serves the static files like compiled CSS, JavaScipt or images and fonts to be loaded and consumed from the client side.
+Of course Express can serve the static files as usual like compiled CSS, JavaScipt or images and fonts to be loaded and consumed from the client side.
 
 **Veiw Engine**
 
@@ -65,7 +74,7 @@ By default, browser understands and parses HTML. There are a lot of markup langu
 
 **Session**
 
-Express session is like a global storage alive only during each session. According the [documentation](https://github.com/expressjs/session) session data are not stored in cookie directly, but just the session ID. The data are stored in server-side safely.
+Express session is like a global storage alive only during each session. According to the official [documentation](https://github.com/expressjs/session), session data are not stored in cookie directly, but just the session ID. The data are stored in server-side safely.
 
 ### Database
 
@@ -85,6 +94,18 @@ To build and bundle TypeScript sources, we integrate with the [**webpack**](http
 
 Semantic HTML is the use of HTML markup to strengthen the meaning of the information in webpages, rather than just display its presentational look. In HTML5, many semantic tags were added like `nav`, `main`, or `aside`. You can also write semantic markup without those tags by merely adding [WAI-ARIA](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA) attributes to any tags. But according to the MDN, it is better to prefer semantic HTML element over ARIA if possible.
 
+```html
+<!-- Non-semantic elements -->
+<div>This tag tells nothing about its content</div>
+<span>Also this tag means nothing about its content</span>
+
+<!-- Semantic elements -->
+<article>
+  <h1>This is head</h1>
+  <p>This is paragraph</p>
+</article>
+```
+
 ### CSS
 
 Markup language alone looks horrible and literally ugly. CSS gracefully resolves this problem by applying styles whatever we want. Thanks to the new flex and grid layout system, the design possibilities now became almost infinity.
@@ -93,6 +114,6 @@ Markup language alone looks horrible and literally ugly. CSS gracefully resolves
 
 Until this feature came out, we couldn't assign any reusable variables like global colors or sizes. The preprocessors were the king to mitigate this problem. They enable us to define variables, reuse them, and manipulate them with a lot of utility functions. They were good enough to enhance the styling workflow.
 
-**Transition**
+**Transition** / **Animation**
 
-**Animation**
+Animations(transitions) are great way to dynamically interact with the end users.
