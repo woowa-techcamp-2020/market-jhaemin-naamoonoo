@@ -4,11 +4,11 @@ import {
   isUniqueUserId,
 } from '@/modules/database/schema/user'
 
+import { ApiResponse } from '../types'
+import { ErrMsg } from '@/errors'
 import { encryptPassword } from '@/modules/encryption'
 import express from 'express'
 import { validateBody } from '../middlewares/validate-body'
-import { ApiResponse } from '../types'
-import { ErrMsg } from '@/errors'
 
 const router = express.Router()
 
@@ -30,6 +30,7 @@ router.post(
     if (!(await isUniqueUserId(userId))) {
       signUpResponse.err = {}
       signUpResponse.err.userId = ErrMsg.duplicatedUserId
+      return
     }
 
     await createUser({
