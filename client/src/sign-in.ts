@@ -18,16 +18,16 @@ const onSubmitHandler = async (e: Event) => {
   }
 
   const res = await fetchWrapper('POST', '/sign-in', body)
-  if (res['userId']) {
+  if (res.err.userId) {
+    userIdWrapper.classList.remove('valid-input')
     userIdWrapper.classList.add('invalid-input')
-    const errorMsg = userIdWrapper.querySelector('.msg-text')
-    errorMsg.textContent = res['userId'].error
+    userIdWrapper.querySelector('.msg-text').innerHTML = res.err.userId
   }
 
-  if (res['password']) {
+  if (res.err.password) {
+    passwordWrapper.classList.remove('valid-input')
     passwordWrapper.classList.add('invalid-input')
-    const errorMsg = userIdWrapper.querySelector('.msg-text')
-    errorMsg.textContent = res['password'].error
+    passwordWrapper.querySelector('.msg-text').innerHTML = res.err.password
   }
 }
 
