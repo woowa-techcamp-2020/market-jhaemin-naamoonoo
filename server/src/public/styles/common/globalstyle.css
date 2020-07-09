@@ -1,4 +1,6 @@
 @import './fonts.css';
+@import './input.css';
+@import './button.css';
 @import './spring.css';
 
 :root {
