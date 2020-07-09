@@ -1,0 +1,39 @@
+main {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 0 50px;
+}
+
+.box {
+  text-align: center;
+  position: relative;
+  top: -50px;
+}
+
+.character {
+  width: 300px;
+}
+
+.content {
+  line-height: 1;
+  font-size: 30px;
+}
+
+.to-home {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--gray);
+}
+
+.icon {
+  font-weight: 700;
+  font-size: 1em;
+  display: inline-block;
+  transition: transform 200ms ease;
+}
+
+.to-home:hover .icon {
+  transform: translateX(30%);
+}
