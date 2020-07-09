@@ -25,12 +25,12 @@ You have to manually install modules and build for each of server side and clien
 
 ```zsh
 # Inside `/server` and `/client`
-> npm install # or just npm i
-> npm run dev # will open the port to host the apps, automatically rebuild on change
-> npm run build # will produce production ready codes
+% npm install # or just npm i
+% npm run dev # will open the port to host the apps, automatically rebuild on change
+% npm run build # will produce production ready codes
 
 # only for server
-> npm start # run the app after build
+% npm start # run the app after build
 ```
 
 ## TDD
