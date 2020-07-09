@@ -23,13 +23,15 @@ router.post('/api/sign-in', async (req: Request, res: Response) => {
   }
 
   const isCorrectPassword = await comparePassword(password, foundUser.password)
+
   if (!isCorrectPassword) {
     signInResult.err = {}
     signInResult.err.password = ErrMsg.wrongPassword
-    req.session.user = foundUser
     res.send(signInResult)
     return
   }
+
+  req.session.user = foundUser
 
   const token = uuidv4()
   await createUserToken({ userId, token })

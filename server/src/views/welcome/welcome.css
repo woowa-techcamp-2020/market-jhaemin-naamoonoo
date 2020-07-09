@@ -1,0 +1,83 @@
+:root {
+  --light-blue: #f2f3f4;
+}
+
+.welcome-main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+  background-color: #fff;
+}
+
+@media only screen and (max-width: 700px) {
+  .welcome-main {
+    background-color: var(--light-blue);
+  }
+}
+
+.welcome-container {
+  width: calc(100% - 30px);
+  max-width: 500px;
+  background-color: var(--light-blue);
+  border-radius: 15px;
+  padding: 25px;
+}
+
+@media only screen and (max-width: 700px) {
+  .welcome-container {
+    width: 100%;
+    border-radius: 0;
+    padding: 15px;
+  }
+}
+
+.main-logo {
+  margin-bottom: 20px;
+}
+
+.title-text {
+  margin-bottom: 15px;
+}
+
+.link {
+}
+
+.user-info-container {
+}
+
+.user-info-wrapper {
+  background-color: #fff;
+  border-radius: 10px;
+  margin-top: 15px;
+  padding: 15px;
+}
+
+.user-info-label {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
+  color: var(--gray);
+}
+
+.user-info-content {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.description {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--gray);
+}
+
+.sign-out {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 20px;
+  font-weight: 600;
+}

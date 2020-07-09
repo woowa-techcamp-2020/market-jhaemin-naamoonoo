@@ -3,21 +3,20 @@
 doctype html
 html(lang='en')
   head
-    title 배민상회
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title 환영합니다 | 배민상회
+    link(rel="icon" href="/favicon.ico" type="image/x-icon")
+    link(rel="stylesheet" href="/styles/common/globalstyle.css")
     style
-      //- include ../../public/styles/common/globalstyle.css
-      //- include ./current-user.css
+      include ./welcome.css
   body
-    main.current-user-main
-      div.current-user-container
+    main.welcome-main
+      div.welcome-container
         img.main-logo(
-          src="https://ceo.baemin.com/lockpath/images/logo-ceo.png"
+          src="/assets/images/logo-ceo.svg"
           alt="main-logo"
         )
-        h1.title-text 회원이 되셨습니다
-        a.link(
-          href="#"
-        ) 메인으로 →
+        h1.title-text #{currentUser.name}님, 반갑습니다.
         div.user-info-container
           div.user-info-wrapper
             label.user-info-label 이름
@@ -32,6 +31,9 @@ html(lang='en')
             label.user-info-label 휴대폰
             p.user-info-content #{currentUser.phone}
         p.description 위 내용은 내 정보 관리에서 수정하실 수 있습니다.
+        a.link(
+          class="sign-out"
+          href="/sign-out"
+        ) 로그아웃
           
     script(type="module")
-        include ./current-user.js

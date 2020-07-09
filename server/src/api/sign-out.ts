@@ -1,17 +1,18 @@
-import express, { Request, Response } from 'express'
 import '../middlewares/current-user'
+
+import express, { Request, Response } from 'express'
+
 import { deleteUserToken } from '@/modules/database/schema/userToken'
 
 const router = express.Router()
 
-router.get('/api/sign-out', async (req: Request, res: Response) => {
+router.get('/sign-out', async (req: Request, res: Response) => {
   req.session.destroy((err) => {
     if (err) {
       console.error(err)
     }
-    console.log('logged out')
   })
-  res.send({})
+  res.redirect('/')
 })
 
 export { router as signOutRouter }

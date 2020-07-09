@@ -45,3 +45,8 @@ input {
 button:disabled {
   cursor: default !important;
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

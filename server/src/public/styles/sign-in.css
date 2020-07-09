@@ -15,12 +15,35 @@
 }
 
 .sign-in-container {
+  text-align: center;
   width: 100%;
   max-width: var(--input-width);
 }
 
 .main-logo {
-  width: 258px;
-  height: 40px;
+  width: 100%;
+  max-width: 258px;
+  margin: auto;
   margin-bottom: 45px;
+}
+
+.sign-in-btn {
+  margin-top: 20px;
+}
+
+.join {
+  font-size: 15px;
+  margin-top: 30px;
+  display: inline-block;
+}
+
+.join .icon {
+  display: inline-block;
+  transition: transform 200ms ease;
+  font-weight: 700;
+  font-size: 1em;
+}
+
+.join:hover .icon {
+  transform: translateX(30%);
 }
