@@ -3,13 +3,49 @@ import { onSubmitHandler } from './main'
 
 const signInButton = document.querySelector('.sign-in-btn')
 
-signInButton.addEventListener('click', (e: Event) =>
-  onSubmitHandler(e, '/sign-in')
-)
+signInButton.addEventListener('click', (e: Event) => submit())
+
+const userIdInputWrapper = document.querySelector(
+  '.input-wrapper.id'
+) as HTMLDivElement
+const userPwInputWrapper = document.querySelector(
+  '.input-wrapper.pw'
+) as HTMLDivElement
 
 const userIdInput = document.querySelector(
   '.input-wrapper.id input'
 ) as HTMLInputElement
+
+const userPwInput = document.querySelector(
+  '.input-wrapper.pw input'
+) as HTMLInputElement
+
+async function submit() {
+  const res = await onSubmitHandler(null, '/sign-in')
+
+  if (res && res.userId) {
+    userIdInput.focus()
+  } else {
+    userIdInputWrapper.classList.remove('invalid-input')
+    userIdInputWrapper.classList.add('valid-input')
+  }
+
+  if (res && res.password) {
+    userPwInput.focus()
+  }
+}
+
+userIdInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    userPwInput.focus()
+  }
+})
+
+userPwInput.addEventListener('keydown', async (e) => {
+  if (e.key === 'Enter') {
+    await submit()
+  }
+})
 
 const validationOnBlur = (e: Event) => {
   const inputElement = e.target
