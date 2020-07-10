@@ -46,7 +46,7 @@ You have to manually install modules and build for each of server side and clien
 
 We chose to start with [TDD](https://en.wikipedia.org/wiki/Test-driven_development), stands for Test-driven development, where firstly write the test cases for every function and API request then implement them passing all those pre-ready tests. In this way, we can build more robust and neat source code. However, sometimes TDD feels cumbersome and we refused to write tests unconsciously, which means at some point we were doing in exactly the reversed way. We didn't expect ourselves to do the perfect job, it's okay.
 
-To checkout more about our tests, take a look at **`__TEST__`** directories that reside somewhere.
+To checenut more about our tests, take a look at **`__TEST__`** directories that reside somewhere.
 
 ## Server Side
 
@@ -114,6 +114,72 @@ Markup language alone looks horrible and literally ugly. CSS gracefully resolves
 
 Until this feature came out, we couldn't assign any reusable variables like global colors or sizes. The preprocessors were the king to mitigate this problem. They enable us to define variables, reuse them, and manipulate them with a lot of utility functions. They were good enough to enhance the styling workflow.
 
-**Transition** / **Animation**
+```css
 
-Animations(transitions) are great way to dynamically interact with the end users.
+/* declare */
+:root {
+  /* Colors */
+  --gray: #777;
+  --border-gray: #ddd;
+  ...
+  /* Sizes */
+  --input-msg-height: 29px;
+  --transition-time: 250ms;
+}
+
+/* use case */
+.input-wrapper {
+  ...
+  border: 1px solid var(--border-gray);
+
+  ...
+  transition: opacity var(--transition-time) ease,
+}
+
+```
+
+### Animation(Dynamic UI)
+
+Dynamic UI is a great way to dynamically interact with the end users. Mostly used for pretty look, but It also could upgrade the UX(user experience). In our project, one of the example is giving a positive feedback by showing green check icon when the user's input is valid and vice verse.
+
+<p align="center">
+  <img src="./server/src/public/assets/images/input-validator.gif" width="300" />
+</p>
+
+To implement dynamic ui, the [transform](https://developer.mozilla.org/en/docs/Web/CSS/transform), [transition](https://developer.mozilla.org/en/docs/Web/CSS/transition), and [animation](https://developer.mozilla.org/en/docs/Web/CSS/animation) are the related css property.
+
+**Transition**
+Transition is used for enabling you to define the transition between two states of an element.
+
+**Transform**
+Transform property lets you rotate, scale, skew, or translate an element which means actullay changing the element.
+
+**Animation**
+Compared to transform or transition, Animation can specify change by using @keyframes. keyframes detailize the transition and depend on each status using `from` and `to` statement or specifying the each `%`'s status.
+
+```css
+@keyframes springZoomOut {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  1% {
+    transform: scale(0.305023341375187);
+    opacity: 0.007176201964553;
+  }
+
+  ... ... 99% {
+    transform: scale(1.001268916679594);
+    opacity: 1.001812738113706;
+  }
+  100% {
+    transform: scale(1.001145589595984);
+    opacity: 1.001636556565692;
+  }
+}
+
+.check .icon {
+  animation: springZoomOut 0.6s linear forwards;
+  ...;
+}
+```
