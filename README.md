@@ -48,6 +48,33 @@ We chose to start with [TDD](https://en.wikipedia.org/wiki/Test-driven_developme
 
 To checenut more about our tests, take a look at **`__TEST__`** directories that reside somewhere.
 
+Test code is written by [given-when-then](https://martinfowler.com/bliki/GivenWhenThen.html) pattern. Specify the testing situtation by the how human thinks. If this test is well written, it can be used for document as well.
+
+### unit
+
+It's just testing the single unit functions. For example, It test the validation functions which is validating the user input.
+
+<p align="center">
+  <img src="./server/src/public/assets/images/unit-test.png" width="450" />
+</p>
+
+### api
+
+Using supertest, we can test the api request. When we send a `POST` request to sign in, by the each situdation's body, we receive the different response.
+
+<p align="center">
+  <img src="./server/src/public/assets/images/sign-in-api-test.png" width="450" />
+</p>
+
+### client
+
+Insetead of testing by hand, we can easily check that It's been rendered well, and even check event handler is working properly.
+
+<p align="center">
+  <img src="./server/src/public/assets/images/address-check-box-by-hand.gif" width="250" />
+  <img src="./server/src/public/assets/images/address-checkbox-test.gif" width="300" />
+</p>
+
 ## Server Side
 
 ### Express
