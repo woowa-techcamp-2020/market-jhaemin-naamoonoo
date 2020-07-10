@@ -14,7 +14,7 @@ export const fetchWrapper = async (
   body?: UserInfo
 ): Promise<ApiResponse> => {
   try {
-    const baseUrl = 'http://localhost:3000/api'
+    const baseUrl = '/api'
     const response = await fetch(baseUrl + url, {
       method,
       headers: {
@@ -53,6 +53,7 @@ export const onSubmitHandler = async (e: Event, url: string) => {
 
   const { err: errors } = await fetchWrapper('POST', url, body)
   if (!errors) {
+    window.location.href = '/welcome'
     return
   }
 

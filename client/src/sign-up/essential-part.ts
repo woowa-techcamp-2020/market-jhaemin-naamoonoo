@@ -92,9 +92,9 @@ const phoneInputWrapper = setInputWrapper({
     Validators.phone.error,
   ],
   onDebounce: (value) => {
-    const { replaceActionLabel, checkValidation } = phoneInputWrapper
-
-    replaceActionLabel('인증받기')
+    phoneInputConfirmWrapper.display(false)
+    phoneInputWrapper.replaceActionLabel('인증받기')
+    letfTime = 120
   },
 })
 
@@ -113,6 +113,8 @@ const timeTick = () => {
   const second = letfTime % 60
   timer.innerHTML = `${minute}:${second < 10 ? '0' : ''}${second}`
 }
+
+setInterval(timeTick, 1000)
 
 phoneInputWrapper.action.addEventListener('click', () => {
   if (phoneInputWrapper.checkValidation()) {

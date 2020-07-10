@@ -1625,3 +1625,1627 @@
     opacity: 1.001636556565692;
   }
 }
+@-moz-keyframes springZoomOutLight {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  1% {
+    transform: scale(0.702152860589366);
+    opacity: 0.007176201964553;
+  }
+  2% {
+    transform: scale(0.708227552190317);
+    opacity: 0.027425173967725;
+  }
+  3% {
+    transform: scale(0.717660647352516);
+    opacity: 0.058868824508387;
+  }
+  4% {
+    transform: scale(0.729910220898298);
+    opacity: 0.099700736327659;
+  }
+  5% {
+    transform: scale(0.744460844995841);
+    opacity: 0.148202816652802;
+  }
+  6% {
+    transform: scale(0.760827598335553);
+    opacity: 0.202758661118509;
+  }
+  7% {
+    transform: scale(0.778559159818935);
+    opacity: 0.261863866063115;
+  }
+  8% {
+    transform: scale(0.79724005285975);
+    opacity: 0.324133509532502;
+  }
+  9% {
+    transform: scale(0.816492113674594);
+    opacity: 0.388307045581978;
+  }
+  10% {
+    transform: scale(0.835975253358264);
+    opacity: 0.453250844527546;
+  }
+  11% {
+    transform: scale(0.855387595648175);
+    opacity: 0.517958652160582;
+  }
+  12% {
+    transform: scale(0.874465058629793);
+    opacity: 0.581550195432643;
+  }
+  13% {
+    transform: scale(0.892980457959643);
+    opacity: 0.643268193198809;
+  }
+  14% {
+    transform: scale(0.910742199975647);
+    opacity: 0.702473999918822;
+  }
+  15% {
+    transform: scale(0.92759263483841);
+    opacity: 0.758642116128034;
+  }
+  16% {
+    transform: scale(0.943406133389821);
+    opacity: 0.811353777966072;
+  }
+  17% {
+    transform: scale(0.958086948578905);
+    opacity: 0.860289828596351;
+  }
+  18% {
+    transform: scale(0.971566917632666);
+    opacity: 0.905223058775552;
+  }
+  19% {
+    transform: scale(0.983803057166454);
+    opacity: 0.946010190554845;
+  }
+  20% {
+    transform: scale(0.994775097397187);
+    opacity: 0.982583657990624;
+  }
+  21% {
+    transform: scale(1.004482998098605);
+    opacity: 1.014943326995351;
+  }
+  22% {
+    transform: scale(1.012944483204912);
+    opacity: 1.043148277349706;
+  }
+  23% {
+    transform: scale(1.020192626031937);
+    opacity: 1.06730875343979;
+  }
+  24% {
+    transform: scale(1.026273513562046);
+    opacity: 1.087578378540155;
+  }
+  25% {
+    transform: scale(1.031244012919887);
+    opacity: 1.104146709732958;
+  }
+  26% {
+    transform: scale(1.035169657773162);
+    opacity: 1.117232192577207;
+  }
+  27% {
+    transform: scale(1.038122671563014);
+    opacity: 1.127075571876713;
+  }
+  28% {
+    transform: scale(1.040180137221766);
+    opacity: 1.133933790739219;
+  }
+  29% {
+    transform: scale(1.041422322075019);
+    opacity: 1.138074406916731;
+  }
+  30% {
+    transform: scale(1.041931161788793);
+    opacity: 1.139770539295975;
+  }
+  31% {
+    transform: scale(1.041788906009367);
+    opacity: 1.139296353364557;
+  }
+  32% {
+    transform: scale(1.041076924729573);
+    opacity: 1.136923082431911;
+  }
+  33% {
+    transform: scale(1.039874672242926);
+    opacity: 1.132915574143086;
+  }
+  34% {
+    transform: scale(1.038258804460205);
+    opacity: 1.127529348200684;
+  }
+  35% {
+    transform: scale(1.03630244331152);
+    opacity: 1.121008144371735;
+  }
+  36% {
+    transform: scale(1.034074580270928);
+    opacity: 1.113581934236427;
+  }
+  37% {
+    transform: scale(1.031639610512562);
+    opacity: 1.105465368375206;
+  }
+  38% {
+    transform: scale(1.029056988684762);
+    opacity: 1.096856628949207;
+  }
+  39% {
+    transform: scale(1.026380995920906);
+    opacity: 1.087936653069686;
+  }
+  40% {
+    transform: scale(1.023660608009766);
+    opacity: 1.078868693365887;
+  }
+  41% {
+    transform: scale(1.020939453962221);
+    opacity: 1.069798179874072;
+  }
+  42% {
+    transform: scale(1.018255855071635);
+    opacity: 1.060852850238783;
+  }
+  43% {
+    transform: scale(1.015642933430945);
+    opacity: 1.052143111436484;
+  }
+  44% {
+    transform: scale(1.013128780532194);
+    opacity: 1.043762601773981;
+  }
+  45% {
+    transform: scale(1.010736675844825);
+    opacity: 1.035788919482748;
+  }
+  46% {
+    transform: scale(1.008485346373276);
+    opacity: 1.028284487910921;
+  }
+  47% {
+    transform: scale(1.006389258570188);
+    opacity: 1.021297528567294;
+  }
+  48% {
+    transform: scale(1.004458934435399);
+    opacity: 1.014863114784664;
+  }
+  49% {
+    transform: scale(1.002701284602498);
+    opacity: 1.009004282008326;
+  }
+  50% {
+    transform: scale(1.001119951464728);
+    opacity: 1.003733171549091;
+  }
+  51% {
+    transform: scale(0.999715656423423);
+    opacity: 0.999052188078077;
+  }
+  52% {
+    transform: scale(0.99848654582412);
+    opacity: 0.994955152747066;
+  }
+  53% {
+    transform: scale(0.997428530927641);
+    opacity: 0.99142843642547;
+  }
+  54% {
+    transform: scale(0.996535617825094);
+    opacity: 0.98845205941698;
+  }
+  55% {
+    transform: scale(0.995800223851891);
+    opacity: 0.98600074617297;
+  }
+  56% {
+    transform: scale(0.995213477836387);
+    opacity: 0.984044926121292;
+  }
+  57% {
+    transform: scale(0.994765501761521);
+    opacity: 0.982551672538403;
+  }
+  58% {
+    transform: scale(0.99444567228937);
+    opacity: 0.981485574297902;
+  }
+  59% {
+    transform: scale(0.994242860867272);
+    opacity: 0.980809536224239;
+  }
+  60% {
+    transform: scale(0.994145651652399);
+    opacity: 0.980485505507996;
+  }
+  61% {
+    transform: scale(0.994142536880647);
+    opacity: 0.980475122935489;
+  }
+  62% {
+    transform: scale(0.994222089786421);
+    opacity: 0.980740299288071;
+  }
+  63% {
+    transform: scale(0.994373115213994);
+    opacity: 0.981243717379981;
+  }
+  64% {
+    transform: scale(0.994584778673676);
+    opacity: 0.981949262245587;
+  }
+  65% {
+    transform: scale(0.994846714584779);
+    opacity: 0.982822381949263;
+  }
+  66% {
+    transform: scale(0.995149114738939);
+    opacity: 0.983830382463131;
+  }
+  67% {
+    transform: scale(0.995482798111454);
+    opacity: 0.984942660371514;
+  }
+  68% {
+    transform: scale(0.995839263433699);
+    opacity: 0.98613087811233;
+  }
+  69% {
+    transform: scale(0.996210725707948);
+    opacity: 0.98736908569316;
+  }
+  70% {
+    transform: scale(0.996590138294791);
+    opacity: 0.988633794315972;
+  }
+  71% {
+    transform: scale(0.996971201873175);
+    opacity: 0.989904006243916;
+  }
+  72% {
+    transform: scale(0.997348361848237);
+    opacity: 0.991161206160792;
+  }
+  73% {
+    transform: scale(0.997716795595384);
+    opacity: 0.992389318651281;
+  }
+  74% {
+    transform: scale(0.998072390976562);
+    opacity: 0.99357463658854;
+  }
+  75% {
+    transform: scale(0.998411717497548);
+    opacity: 0.994705724991826;
+  }
+  76% {
+    transform: scale(0.998731991417444);
+    opacity: 0.995773304724812;
+  }
+  77% {
+    transform: scale(0.999031035994521);
+    opacity: 0.996770119981737;
+  }
+  78% {
+    transform: scale(0.999307238086241);
+    opacity: 0.997690793620803;
+  }
+  79% {
+    transform: scale(0.999559502097784);
+    opacity: 0.998531673659281;
+  }
+  80% {
+    transform: scale(0.999787202281717);
+    opacity: 0.999290674272391;
+  }
+  81% {
+    transform: scale(0.999990134256271);
+    opacity: 0.999967114187569;
+  }
+  82% {
+    transform: scale(1.000168466510328);
+    opacity: 1.000561555034426;
+  }
+  83% {
+    transform: scale(1.000322692577001);
+    opacity: 1.001075641923335;
+  }
+  84% {
+    transform: scale(1.000453584479047);
+    opacity: 1.001511948263492;
+  }
+  85% {
+    transform: scale(1.000562147935928);
+    opacity: 1.001873826453093;
+  }
+  86% {
+    transform: scale(1.000649579741725);
+    opacity: 1.00216526580575;
+  }
+  87% {
+    transform: scale(1.000717227663527);
+    opacity: 1.002390758878423;
+  }
+  88% {
+    transform: scale(1.000766553101634);
+    opacity: 1.002555177005447;
+  }
+  89% {
+    transform: scale(1.000799096703443);
+    opacity: 1.002663655678145;
+  }
+  90% {
+    transform: scale(1.000816447067089);
+    opacity: 1.002721490223632;
+  }
+  91% {
+    transform: scale(1.000820212570343);
+    opacity: 1.002734041901144;
+  }
+  92% {
+    transform: scale(1.000811996369638);
+    opacity: 1.002706654565462;
+  }
+  93% {
+    transform: scale(1.000793374513611);
+    opacity: 1.002644581712036;
+  }
+  94% {
+    transform: scale(1.000765877105246);
+    opacity: 1.002552923684153;
+  }
+  95% {
+    transform: scale(1.000730972408719);
+    opacity: 1.002436574695729;
+  }
+  96% {
+    transform: scale(1.000690053760438);
+    opacity: 1.002300179201458;
+  }
+  97% {
+    transform: scale(1.000644429130043);
+    opacity: 1.002148097100144;
+  }
+  98% {
+    transform: scale(1.000595313150376);
+    opacity: 1.001984377167918;
+  }
+  99% {
+    transform: scale(1.000543821434112);
+    opacity: 1.001812738113706;
+  }
+  100% {
+    transform: scale(1.000490966969708);
+    opacity: 1.001636556565692;
+  }
+}
+@-webkit-keyframes springZoomOutLight {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  1% {
+    transform: scale(0.702152860589366);
+    opacity: 0.007176201964553;
+  }
+  2% {
+    transform: scale(0.708227552190317);
+    opacity: 0.027425173967725;
+  }
+  3% {
+    transform: scale(0.717660647352516);
+    opacity: 0.058868824508387;
+  }
+  4% {
+    transform: scale(0.729910220898298);
+    opacity: 0.099700736327659;
+  }
+  5% {
+    transform: scale(0.744460844995841);
+    opacity: 0.148202816652802;
+  }
+  6% {
+    transform: scale(0.760827598335553);
+    opacity: 0.202758661118509;
+  }
+  7% {
+    transform: scale(0.778559159818935);
+    opacity: 0.261863866063115;
+  }
+  8% {
+    transform: scale(0.79724005285975);
+    opacity: 0.324133509532502;
+  }
+  9% {
+    transform: scale(0.816492113674594);
+    opacity: 0.388307045581978;
+  }
+  10% {
+    transform: scale(0.835975253358264);
+    opacity: 0.453250844527546;
+  }
+  11% {
+    transform: scale(0.855387595648175);
+    opacity: 0.517958652160582;
+  }
+  12% {
+    transform: scale(0.874465058629793);
+    opacity: 0.581550195432643;
+  }
+  13% {
+    transform: scale(0.892980457959643);
+    opacity: 0.643268193198809;
+  }
+  14% {
+    transform: scale(0.910742199975647);
+    opacity: 0.702473999918822;
+  }
+  15% {
+    transform: scale(0.92759263483841);
+    opacity: 0.758642116128034;
+  }
+  16% {
+    transform: scale(0.943406133389821);
+    opacity: 0.811353777966072;
+  }
+  17% {
+    transform: scale(0.958086948578905);
+    opacity: 0.860289828596351;
+  }
+  18% {
+    transform: scale(0.971566917632666);
+    opacity: 0.905223058775552;
+  }
+  19% {
+    transform: scale(0.983803057166454);
+    opacity: 0.946010190554845;
+  }
+  20% {
+    transform: scale(0.994775097397187);
+    opacity: 0.982583657990624;
+  }
+  21% {
+    transform: scale(1.004482998098605);
+    opacity: 1.014943326995351;
+  }
+  22% {
+    transform: scale(1.012944483204912);
+    opacity: 1.043148277349706;
+  }
+  23% {
+    transform: scale(1.020192626031937);
+    opacity: 1.06730875343979;
+  }
+  24% {
+    transform: scale(1.026273513562046);
+    opacity: 1.087578378540155;
+  }
+  25% {
+    transform: scale(1.031244012919887);
+    opacity: 1.104146709732958;
+  }
+  26% {
+    transform: scale(1.035169657773162);
+    opacity: 1.117232192577207;
+  }
+  27% {
+    transform: scale(1.038122671563014);
+    opacity: 1.127075571876713;
+  }
+  28% {
+    transform: scale(1.040180137221766);
+    opacity: 1.133933790739219;
+  }
+  29% {
+    transform: scale(1.041422322075019);
+    opacity: 1.138074406916731;
+  }
+  30% {
+    transform: scale(1.041931161788793);
+    opacity: 1.139770539295975;
+  }
+  31% {
+    transform: scale(1.041788906009367);
+    opacity: 1.139296353364557;
+  }
+  32% {
+    transform: scale(1.041076924729573);
+    opacity: 1.136923082431911;
+  }
+  33% {
+    transform: scale(1.039874672242926);
+    opacity: 1.132915574143086;
+  }
+  34% {
+    transform: scale(1.038258804460205);
+    opacity: 1.127529348200684;
+  }
+  35% {
+    transform: scale(1.03630244331152);
+    opacity: 1.121008144371735;
+  }
+  36% {
+    transform: scale(1.034074580270928);
+    opacity: 1.113581934236427;
+  }
+  37% {
+    transform: scale(1.031639610512562);
+    opacity: 1.105465368375206;
+  }
+  38% {
+    transform: scale(1.029056988684762);
+    opacity: 1.096856628949207;
+  }
+  39% {
+    transform: scale(1.026380995920906);
+    opacity: 1.087936653069686;
+  }
+  40% {
+    transform: scale(1.023660608009766);
+    opacity: 1.078868693365887;
+  }
+  41% {
+    transform: scale(1.020939453962221);
+    opacity: 1.069798179874072;
+  }
+  42% {
+    transform: scale(1.018255855071635);
+    opacity: 1.060852850238783;
+  }
+  43% {
+    transform: scale(1.015642933430945);
+    opacity: 1.052143111436484;
+  }
+  44% {
+    transform: scale(1.013128780532194);
+    opacity: 1.043762601773981;
+  }
+  45% {
+    transform: scale(1.010736675844825);
+    opacity: 1.035788919482748;
+  }
+  46% {
+    transform: scale(1.008485346373276);
+    opacity: 1.028284487910921;
+  }
+  47% {
+    transform: scale(1.006389258570188);
+    opacity: 1.021297528567294;
+  }
+  48% {
+    transform: scale(1.004458934435399);
+    opacity: 1.014863114784664;
+  }
+  49% {
+    transform: scale(1.002701284602498);
+    opacity: 1.009004282008326;
+  }
+  50% {
+    transform: scale(1.001119951464728);
+    opacity: 1.003733171549091;
+  }
+  51% {
+    transform: scale(0.999715656423423);
+    opacity: 0.999052188078077;
+  }
+  52% {
+    transform: scale(0.99848654582412);
+    opacity: 0.994955152747066;
+  }
+  53% {
+    transform: scale(0.997428530927641);
+    opacity: 0.99142843642547;
+  }
+  54% {
+    transform: scale(0.996535617825094);
+    opacity: 0.98845205941698;
+  }
+  55% {
+    transform: scale(0.995800223851891);
+    opacity: 0.98600074617297;
+  }
+  56% {
+    transform: scale(0.995213477836387);
+    opacity: 0.984044926121292;
+  }
+  57% {
+    transform: scale(0.994765501761521);
+    opacity: 0.982551672538403;
+  }
+  58% {
+    transform: scale(0.99444567228937);
+    opacity: 0.981485574297902;
+  }
+  59% {
+    transform: scale(0.994242860867272);
+    opacity: 0.980809536224239;
+  }
+  60% {
+    transform: scale(0.994145651652399);
+    opacity: 0.980485505507996;
+  }
+  61% {
+    transform: scale(0.994142536880647);
+    opacity: 0.980475122935489;
+  }
+  62% {
+    transform: scale(0.994222089786421);
+    opacity: 0.980740299288071;
+  }
+  63% {
+    transform: scale(0.994373115213994);
+    opacity: 0.981243717379981;
+  }
+  64% {
+    transform: scale(0.994584778673676);
+    opacity: 0.981949262245587;
+  }
+  65% {
+    transform: scale(0.994846714584779);
+    opacity: 0.982822381949263;
+  }
+  66% {
+    transform: scale(0.995149114738939);
+    opacity: 0.983830382463131;
+  }
+  67% {
+    transform: scale(0.995482798111454);
+    opacity: 0.984942660371514;
+  }
+  68% {
+    transform: scale(0.995839263433699);
+    opacity: 0.98613087811233;
+  }
+  69% {
+    transform: scale(0.996210725707948);
+    opacity: 0.98736908569316;
+  }
+  70% {
+    transform: scale(0.996590138294791);
+    opacity: 0.988633794315972;
+  }
+  71% {
+    transform: scale(0.996971201873175);
+    opacity: 0.989904006243916;
+  }
+  72% {
+    transform: scale(0.997348361848237);
+    opacity: 0.991161206160792;
+  }
+  73% {
+    transform: scale(0.997716795595384);
+    opacity: 0.992389318651281;
+  }
+  74% {
+    transform: scale(0.998072390976562);
+    opacity: 0.99357463658854;
+  }
+  75% {
+    transform: scale(0.998411717497548);
+    opacity: 0.994705724991826;
+  }
+  76% {
+    transform: scale(0.998731991417444);
+    opacity: 0.995773304724812;
+  }
+  77% {
+    transform: scale(0.999031035994521);
+    opacity: 0.996770119981737;
+  }
+  78% {
+    transform: scale(0.999307238086241);
+    opacity: 0.997690793620803;
+  }
+  79% {
+    transform: scale(0.999559502097784);
+    opacity: 0.998531673659281;
+  }
+  80% {
+    transform: scale(0.999787202281717);
+    opacity: 0.999290674272391;
+  }
+  81% {
+    transform: scale(0.999990134256271);
+    opacity: 0.999967114187569;
+  }
+  82% {
+    transform: scale(1.000168466510328);
+    opacity: 1.000561555034426;
+  }
+  83% {
+    transform: scale(1.000322692577001);
+    opacity: 1.001075641923335;
+  }
+  84% {
+    transform: scale(1.000453584479047);
+    opacity: 1.001511948263492;
+  }
+  85% {
+    transform: scale(1.000562147935928);
+    opacity: 1.001873826453093;
+  }
+  86% {
+    transform: scale(1.000649579741725);
+    opacity: 1.00216526580575;
+  }
+  87% {
+    transform: scale(1.000717227663527);
+    opacity: 1.002390758878423;
+  }
+  88% {
+    transform: scale(1.000766553101634);
+    opacity: 1.002555177005447;
+  }
+  89% {
+    transform: scale(1.000799096703443);
+    opacity: 1.002663655678145;
+  }
+  90% {
+    transform: scale(1.000816447067089);
+    opacity: 1.002721490223632;
+  }
+  91% {
+    transform: scale(1.000820212570343);
+    opacity: 1.002734041901144;
+  }
+  92% {
+    transform: scale(1.000811996369638);
+    opacity: 1.002706654565462;
+  }
+  93% {
+    transform: scale(1.000793374513611);
+    opacity: 1.002644581712036;
+  }
+  94% {
+    transform: scale(1.000765877105246);
+    opacity: 1.002552923684153;
+  }
+  95% {
+    transform: scale(1.000730972408719);
+    opacity: 1.002436574695729;
+  }
+  96% {
+    transform: scale(1.000690053760438);
+    opacity: 1.002300179201458;
+  }
+  97% {
+    transform: scale(1.000644429130043);
+    opacity: 1.002148097100144;
+  }
+  98% {
+    transform: scale(1.000595313150376);
+    opacity: 1.001984377167918;
+  }
+  99% {
+    transform: scale(1.000543821434112);
+    opacity: 1.001812738113706;
+  }
+  100% {
+    transform: scale(1.000490966969708);
+    opacity: 1.001636556565692;
+  }
+}
+@-o-keyframes springZoomOutLight {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  1% {
+    transform: scale(0.702152860589366);
+    opacity: 0.007176201964553;
+  }
+  2% {
+    transform: scale(0.708227552190317);
+    opacity: 0.027425173967725;
+  }
+  3% {
+    transform: scale(0.717660647352516);
+    opacity: 0.058868824508387;
+  }
+  4% {
+    transform: scale(0.729910220898298);
+    opacity: 0.099700736327659;
+  }
+  5% {
+    transform: scale(0.744460844995841);
+    opacity: 0.148202816652802;
+  }
+  6% {
+    transform: scale(0.760827598335553);
+    opacity: 0.202758661118509;
+  }
+  7% {
+    transform: scale(0.778559159818935);
+    opacity: 0.261863866063115;
+  }
+  8% {
+    transform: scale(0.79724005285975);
+    opacity: 0.324133509532502;
+  }
+  9% {
+    transform: scale(0.816492113674594);
+    opacity: 0.388307045581978;
+  }
+  10% {
+    transform: scale(0.835975253358264);
+    opacity: 0.453250844527546;
+  }
+  11% {
+    transform: scale(0.855387595648175);
+    opacity: 0.517958652160582;
+  }
+  12% {
+    transform: scale(0.874465058629793);
+    opacity: 0.581550195432643;
+  }
+  13% {
+    transform: scale(0.892980457959643);
+    opacity: 0.643268193198809;
+  }
+  14% {
+    transform: scale(0.910742199975647);
+    opacity: 0.702473999918822;
+  }
+  15% {
+    transform: scale(0.92759263483841);
+    opacity: 0.758642116128034;
+  }
+  16% {
+    transform: scale(0.943406133389821);
+    opacity: 0.811353777966072;
+  }
+  17% {
+    transform: scale(0.958086948578905);
+    opacity: 0.860289828596351;
+  }
+  18% {
+    transform: scale(0.971566917632666);
+    opacity: 0.905223058775552;
+  }
+  19% {
+    transform: scale(0.983803057166454);
+    opacity: 0.946010190554845;
+  }
+  20% {
+    transform: scale(0.994775097397187);
+    opacity: 0.982583657990624;
+  }
+  21% {
+    transform: scale(1.004482998098605);
+    opacity: 1.014943326995351;
+  }
+  22% {
+    transform: scale(1.012944483204912);
+    opacity: 1.043148277349706;
+  }
+  23% {
+    transform: scale(1.020192626031937);
+    opacity: 1.06730875343979;
+  }
+  24% {
+    transform: scale(1.026273513562046);
+    opacity: 1.087578378540155;
+  }
+  25% {
+    transform: scale(1.031244012919887);
+    opacity: 1.104146709732958;
+  }
+  26% {
+    transform: scale(1.035169657773162);
+    opacity: 1.117232192577207;
+  }
+  27% {
+    transform: scale(1.038122671563014);
+    opacity: 1.127075571876713;
+  }
+  28% {
+    transform: scale(1.040180137221766);
+    opacity: 1.133933790739219;
+  }
+  29% {
+    transform: scale(1.041422322075019);
+    opacity: 1.138074406916731;
+  }
+  30% {
+    transform: scale(1.041931161788793);
+    opacity: 1.139770539295975;
+  }
+  31% {
+    transform: scale(1.041788906009367);
+    opacity: 1.139296353364557;
+  }
+  32% {
+    transform: scale(1.041076924729573);
+    opacity: 1.136923082431911;
+  }
+  33% {
+    transform: scale(1.039874672242926);
+    opacity: 1.132915574143086;
+  }
+  34% {
+    transform: scale(1.038258804460205);
+    opacity: 1.127529348200684;
+  }
+  35% {
+    transform: scale(1.03630244331152);
+    opacity: 1.121008144371735;
+  }
+  36% {
+    transform: scale(1.034074580270928);
+    opacity: 1.113581934236427;
+  }
+  37% {
+    transform: scale(1.031639610512562);
+    opacity: 1.105465368375206;
+  }
+  38% {
+    transform: scale(1.029056988684762);
+    opacity: 1.096856628949207;
+  }
+  39% {
+    transform: scale(1.026380995920906);
+    opacity: 1.087936653069686;
+  }
+  40% {
+    transform: scale(1.023660608009766);
+    opacity: 1.078868693365887;
+  }
+  41% {
+    transform: scale(1.020939453962221);
+    opacity: 1.069798179874072;
+  }
+  42% {
+    transform: scale(1.018255855071635);
+    opacity: 1.060852850238783;
+  }
+  43% {
+    transform: scale(1.015642933430945);
+    opacity: 1.052143111436484;
+  }
+  44% {
+    transform: scale(1.013128780532194);
+    opacity: 1.043762601773981;
+  }
+  45% {
+    transform: scale(1.010736675844825);
+    opacity: 1.035788919482748;
+  }
+  46% {
+    transform: scale(1.008485346373276);
+    opacity: 1.028284487910921;
+  }
+  47% {
+    transform: scale(1.006389258570188);
+    opacity: 1.021297528567294;
+  }
+  48% {
+    transform: scale(1.004458934435399);
+    opacity: 1.014863114784664;
+  }
+  49% {
+    transform: scale(1.002701284602498);
+    opacity: 1.009004282008326;
+  }
+  50% {
+    transform: scale(1.001119951464728);
+    opacity: 1.003733171549091;
+  }
+  51% {
+    transform: scale(0.999715656423423);
+    opacity: 0.999052188078077;
+  }
+  52% {
+    transform: scale(0.99848654582412);
+    opacity: 0.994955152747066;
+  }
+  53% {
+    transform: scale(0.997428530927641);
+    opacity: 0.99142843642547;
+  }
+  54% {
+    transform: scale(0.996535617825094);
+    opacity: 0.98845205941698;
+  }
+  55% {
+    transform: scale(0.995800223851891);
+    opacity: 0.98600074617297;
+  }
+  56% {
+    transform: scale(0.995213477836387);
+    opacity: 0.984044926121292;
+  }
+  57% {
+    transform: scale(0.994765501761521);
+    opacity: 0.982551672538403;
+  }
+  58% {
+    transform: scale(0.99444567228937);
+    opacity: 0.981485574297902;
+  }
+  59% {
+    transform: scale(0.994242860867272);
+    opacity: 0.980809536224239;
+  }
+  60% {
+    transform: scale(0.994145651652399);
+    opacity: 0.980485505507996;
+  }
+  61% {
+    transform: scale(0.994142536880647);
+    opacity: 0.980475122935489;
+  }
+  62% {
+    transform: scale(0.994222089786421);
+    opacity: 0.980740299288071;
+  }
+  63% {
+    transform: scale(0.994373115213994);
+    opacity: 0.981243717379981;
+  }
+  64% {
+    transform: scale(0.994584778673676);
+    opacity: 0.981949262245587;
+  }
+  65% {
+    transform: scale(0.994846714584779);
+    opacity: 0.982822381949263;
+  }
+  66% {
+    transform: scale(0.995149114738939);
+    opacity: 0.983830382463131;
+  }
+  67% {
+    transform: scale(0.995482798111454);
+    opacity: 0.984942660371514;
+  }
+  68% {
+    transform: scale(0.995839263433699);
+    opacity: 0.98613087811233;
+  }
+  69% {
+    transform: scale(0.996210725707948);
+    opacity: 0.98736908569316;
+  }
+  70% {
+    transform: scale(0.996590138294791);
+    opacity: 0.988633794315972;
+  }
+  71% {
+    transform: scale(0.996971201873175);
+    opacity: 0.989904006243916;
+  }
+  72% {
+    transform: scale(0.997348361848237);
+    opacity: 0.991161206160792;
+  }
+  73% {
+    transform: scale(0.997716795595384);
+    opacity: 0.992389318651281;
+  }
+  74% {
+    transform: scale(0.998072390976562);
+    opacity: 0.99357463658854;
+  }
+  75% {
+    transform: scale(0.998411717497548);
+    opacity: 0.994705724991826;
+  }
+  76% {
+    transform: scale(0.998731991417444);
+    opacity: 0.995773304724812;
+  }
+  77% {
+    transform: scale(0.999031035994521);
+    opacity: 0.996770119981737;
+  }
+  78% {
+    transform: scale(0.999307238086241);
+    opacity: 0.997690793620803;
+  }
+  79% {
+    transform: scale(0.999559502097784);
+    opacity: 0.998531673659281;
+  }
+  80% {
+    transform: scale(0.999787202281717);
+    opacity: 0.999290674272391;
+  }
+  81% {
+    transform: scale(0.999990134256271);
+    opacity: 0.999967114187569;
+  }
+  82% {
+    transform: scale(1.000168466510328);
+    opacity: 1.000561555034426;
+  }
+  83% {
+    transform: scale(1.000322692577001);
+    opacity: 1.001075641923335;
+  }
+  84% {
+    transform: scale(1.000453584479047);
+    opacity: 1.001511948263492;
+  }
+  85% {
+    transform: scale(1.000562147935928);
+    opacity: 1.001873826453093;
+  }
+  86% {
+    transform: scale(1.000649579741725);
+    opacity: 1.00216526580575;
+  }
+  87% {
+    transform: scale(1.000717227663527);
+    opacity: 1.002390758878423;
+  }
+  88% {
+    transform: scale(1.000766553101634);
+    opacity: 1.002555177005447;
+  }
+  89% {
+    transform: scale(1.000799096703443);
+    opacity: 1.002663655678145;
+  }
+  90% {
+    transform: scale(1.000816447067089);
+    opacity: 1.002721490223632;
+  }
+  91% {
+    transform: scale(1.000820212570343);
+    opacity: 1.002734041901144;
+  }
+  92% {
+    transform: scale(1.000811996369638);
+    opacity: 1.002706654565462;
+  }
+  93% {
+    transform: scale(1.000793374513611);
+    opacity: 1.002644581712036;
+  }
+  94% {
+    transform: scale(1.000765877105246);
+    opacity: 1.002552923684153;
+  }
+  95% {
+    transform: scale(1.000730972408719);
+    opacity: 1.002436574695729;
+  }
+  96% {
+    transform: scale(1.000690053760438);
+    opacity: 1.002300179201458;
+  }
+  97% {
+    transform: scale(1.000644429130043);
+    opacity: 1.002148097100144;
+  }
+  98% {
+    transform: scale(1.000595313150376);
+    opacity: 1.001984377167918;
+  }
+  99% {
+    transform: scale(1.000543821434112);
+    opacity: 1.001812738113706;
+  }
+  100% {
+    transform: scale(1.000490966969708);
+    opacity: 1.001636556565692;
+  }
+}
+@keyframes springZoomOutLight {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  1% {
+    transform: scale(0.702152860589366);
+    opacity: 0.007176201964553;
+  }
+  2% {
+    transform: scale(0.708227552190317);
+    opacity: 0.027425173967725;
+  }
+  3% {
+    transform: scale(0.717660647352516);
+    opacity: 0.058868824508387;
+  }
+  4% {
+    transform: scale(0.729910220898298);
+    opacity: 0.099700736327659;
+  }
+  5% {
+    transform: scale(0.744460844995841);
+    opacity: 0.148202816652802;
+  }
+  6% {
+    transform: scale(0.760827598335553);
+    opacity: 0.202758661118509;
+  }
+  7% {
+    transform: scale(0.778559159818935);
+    opacity: 0.261863866063115;
+  }
+  8% {
+    transform: scale(0.79724005285975);
+    opacity: 0.324133509532502;
+  }
+  9% {
+    transform: scale(0.816492113674594);
+    opacity: 0.388307045581978;
+  }
+  10% {
+    transform: scale(0.835975253358264);
+    opacity: 0.453250844527546;
+  }
+  11% {
+    transform: scale(0.855387595648175);
+    opacity: 0.517958652160582;
+  }
+  12% {
+    transform: scale(0.874465058629793);
+    opacity: 0.581550195432643;
+  }
+  13% {
+    transform: scale(0.892980457959643);
+    opacity: 0.643268193198809;
+  }
+  14% {
+    transform: scale(0.910742199975647);
+    opacity: 0.702473999918822;
+  }
+  15% {
+    transform: scale(0.92759263483841);
+    opacity: 0.758642116128034;
+  }
+  16% {
+    transform: scale(0.943406133389821);
+    opacity: 0.811353777966072;
+  }
+  17% {
+    transform: scale(0.958086948578905);
+    opacity: 0.860289828596351;
+  }
+  18% {
+    transform: scale(0.971566917632666);
+    opacity: 0.905223058775552;
+  }
+  19% {
+    transform: scale(0.983803057166454);
+    opacity: 0.946010190554845;
+  }
+  20% {
+    transform: scale(0.994775097397187);
+    opacity: 0.982583657990624;
+  }
+  21% {
+    transform: scale(1.004482998098605);
+    opacity: 1.014943326995351;
+  }
+  22% {
+    transform: scale(1.012944483204912);
+    opacity: 1.043148277349706;
+  }
+  23% {
+    transform: scale(1.020192626031937);
+    opacity: 1.06730875343979;
+  }
+  24% {
+    transform: scale(1.026273513562046);
+    opacity: 1.087578378540155;
+  }
+  25% {
+    transform: scale(1.031244012919887);
+    opacity: 1.104146709732958;
+  }
+  26% {
+    transform: scale(1.035169657773162);
+    opacity: 1.117232192577207;
+  }
+  27% {
+    transform: scale(1.038122671563014);
+    opacity: 1.127075571876713;
+  }
+  28% {
+    transform: scale(1.040180137221766);
+    opacity: 1.133933790739219;
+  }
+  29% {
+    transform: scale(1.041422322075019);
+    opacity: 1.138074406916731;
+  }
+  30% {
+    transform: scale(1.041931161788793);
+    opacity: 1.139770539295975;
+  }
+  31% {
+    transform: scale(1.041788906009367);
+    opacity: 1.139296353364557;
+  }
+  32% {
+    transform: scale(1.041076924729573);
+    opacity: 1.136923082431911;
+  }
+  33% {
+    transform: scale(1.039874672242926);
+    opacity: 1.132915574143086;
+  }
+  34% {
+    transform: scale(1.038258804460205);
+    opacity: 1.127529348200684;
+  }
+  35% {
+    transform: scale(1.03630244331152);
+    opacity: 1.121008144371735;
+  }
+  36% {
+    transform: scale(1.034074580270928);
+    opacity: 1.113581934236427;
+  }
+  37% {
+    transform: scale(1.031639610512562);
+    opacity: 1.105465368375206;
+  }
+  38% {
+    transform: scale(1.029056988684762);
+    opacity: 1.096856628949207;
+  }
+  39% {
+    transform: scale(1.026380995920906);
+    opacity: 1.087936653069686;
+  }
+  40% {
+    transform: scale(1.023660608009766);
+    opacity: 1.078868693365887;
+  }
+  41% {
+    transform: scale(1.020939453962221);
+    opacity: 1.069798179874072;
+  }
+  42% {
+    transform: scale(1.018255855071635);
+    opacity: 1.060852850238783;
+  }
+  43% {
+    transform: scale(1.015642933430945);
+    opacity: 1.052143111436484;
+  }
+  44% {
+    transform: scale(1.013128780532194);
+    opacity: 1.043762601773981;
+  }
+  45% {
+    transform: scale(1.010736675844825);
+    opacity: 1.035788919482748;
+  }
+  46% {
+    transform: scale(1.008485346373276);
+    opacity: 1.028284487910921;
+  }
+  47% {
+    transform: scale(1.006389258570188);
+    opacity: 1.021297528567294;
+  }
+  48% {
+    transform: scale(1.004458934435399);
+    opacity: 1.014863114784664;
+  }
+  49% {
+    transform: scale(1.002701284602498);
+    opacity: 1.009004282008326;
+  }
+  50% {
+    transform: scale(1.001119951464728);
+    opacity: 1.003733171549091;
+  }
+  51% {
+    transform: scale(0.999715656423423);
+    opacity: 0.999052188078077;
+  }
+  52% {
+    transform: scale(0.99848654582412);
+    opacity: 0.994955152747066;
+  }
+  53% {
+    transform: scale(0.997428530927641);
+    opacity: 0.99142843642547;
+  }
+  54% {
+    transform: scale(0.996535617825094);
+    opacity: 0.98845205941698;
+  }
+  55% {
+    transform: scale(0.995800223851891);
+    opacity: 0.98600074617297;
+  }
+  56% {
+    transform: scale(0.995213477836387);
+    opacity: 0.984044926121292;
+  }
+  57% {
+    transform: scale(0.994765501761521);
+    opacity: 0.982551672538403;
+  }
+  58% {
+    transform: scale(0.99444567228937);
+    opacity: 0.981485574297902;
+  }
+  59% {
+    transform: scale(0.994242860867272);
+    opacity: 0.980809536224239;
+  }
+  60% {
+    transform: scale(0.994145651652399);
+    opacity: 0.980485505507996;
+  }
+  61% {
+    transform: scale(0.994142536880647);
+    opacity: 0.980475122935489;
+  }
+  62% {
+    transform: scale(0.994222089786421);
+    opacity: 0.980740299288071;
+  }
+  63% {
+    transform: scale(0.994373115213994);
+    opacity: 0.981243717379981;
+  }
+  64% {
+    transform: scale(0.994584778673676);
+    opacity: 0.981949262245587;
+  }
+  65% {
+    transform: scale(0.994846714584779);
+    opacity: 0.982822381949263;
+  }
+  66% {
+    transform: scale(0.995149114738939);
+    opacity: 0.983830382463131;
+  }
+  67% {
+    transform: scale(0.995482798111454);
+    opacity: 0.984942660371514;
+  }
+  68% {
+    transform: scale(0.995839263433699);
+    opacity: 0.98613087811233;
+  }
+  69% {
+    transform: scale(0.996210725707948);
+    opacity: 0.98736908569316;
+  }
+  70% {
+    transform: scale(0.996590138294791);
+    opacity: 0.988633794315972;
+  }
+  71% {
+    transform: scale(0.996971201873175);
+    opacity: 0.989904006243916;
+  }
+  72% {
+    transform: scale(0.997348361848237);
+    opacity: 0.991161206160792;
+  }
+  73% {
+    transform: scale(0.997716795595384);
+    opacity: 0.992389318651281;
+  }
+  74% {
+    transform: scale(0.998072390976562);
+    opacity: 0.99357463658854;
+  }
+  75% {
+    transform: scale(0.998411717497548);
+    opacity: 0.994705724991826;
+  }
+  76% {
+    transform: scale(0.998731991417444);
+    opacity: 0.995773304724812;
+  }
+  77% {
+    transform: scale(0.999031035994521);
+    opacity: 0.996770119981737;
+  }
+  78% {
+    transform: scale(0.999307238086241);
+    opacity: 0.997690793620803;
+  }
+  79% {
+    transform: scale(0.999559502097784);
+    opacity: 0.998531673659281;
+  }
+  80% {
+    transform: scale(0.999787202281717);
+    opacity: 0.999290674272391;
+  }
+  81% {
+    transform: scale(0.999990134256271);
+    opacity: 0.999967114187569;
+  }
+  82% {
+    transform: scale(1.000168466510328);
+    opacity: 1.000561555034426;
+  }
+  83% {
+    transform: scale(1.000322692577001);
+    opacity: 1.001075641923335;
+  }
+  84% {
+    transform: scale(1.000453584479047);
+    opacity: 1.001511948263492;
+  }
+  85% {
+    transform: scale(1.000562147935928);
+    opacity: 1.001873826453093;
+  }
+  86% {
+    transform: scale(1.000649579741725);
+    opacity: 1.00216526580575;
+  }
+  87% {
+    transform: scale(1.000717227663527);
+    opacity: 1.002390758878423;
+  }
+  88% {
+    transform: scale(1.000766553101634);
+    opacity: 1.002555177005447;
+  }
+  89% {
+    transform: scale(1.000799096703443);
+    opacity: 1.002663655678145;
+  }
+  90% {
+    transform: scale(1.000816447067089);
+    opacity: 1.002721490223632;
+  }
+  91% {
+    transform: scale(1.000820212570343);
+    opacity: 1.002734041901144;
+  }
+  92% {
+    transform: scale(1.000811996369638);
+    opacity: 1.002706654565462;
+  }
+  93% {
+    transform: scale(1.000793374513611);
+    opacity: 1.002644581712036;
+  }
+  94% {
+    transform: scale(1.000765877105246);
+    opacity: 1.002552923684153;
+  }
+  95% {
+    transform: scale(1.000730972408719);
+    opacity: 1.002436574695729;
+  }
+  96% {
+    transform: scale(1.000690053760438);
+    opacity: 1.002300179201458;
+  }
+  97% {
+    transform: scale(1.000644429130043);
+    opacity: 1.002148097100144;
+  }
+  98% {
+    transform: scale(1.000595313150376);
+    opacity: 1.001984377167918;
+  }
+  99% {
+    transform: scale(1.000543821434112);
+    opacity: 1.001812738113706;
+  }
+  100% {
+    transform: scale(1.000490966969708);
+    opacity: 1.001636556565692;
+  }
+}

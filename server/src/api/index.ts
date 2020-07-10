@@ -1,4 +1,4 @@
-import { currentUserRouter } from './current-user'
+import { welcomeRouter } from './welcome'
 import express from 'express'
 import { isUniqueUserIdRouter } from './validate-user-id'
 import { signInRouter } from './sign-in'
@@ -9,7 +9,7 @@ const router = express.Router()
 
 router.use(signUpRouter)
 router.use(signInRouter)
-router.use(currentUserRouter)
+router.use(welcomeRouter)
 router.use(signOutRouter)
 router.use(isUniqueUserIdRouter)
 

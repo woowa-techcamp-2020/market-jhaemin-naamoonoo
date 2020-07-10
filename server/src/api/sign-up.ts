@@ -33,7 +33,7 @@ router.post(
       return
     }
 
-    await createUser({
+    const [, newUser] = await createUser({
       userId,
       password: await encryptPassword(password),
       email,
@@ -41,6 +41,8 @@ router.post(
       phone,
       address,
     })
+
+    req.session.user = newUser
 
     res.json(signUpResponse)
   }

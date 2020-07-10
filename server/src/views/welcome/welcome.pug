@@ -1,0 +1,39 @@
+
+
+doctype html
+html(lang='en')
+  head
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title 환영합니다 | 배민상회
+    link(rel="icon" href="/favicon.ico" type="image/x-icon")
+    link(rel="stylesheet" href="/styles/common/globalstyle.css")
+    style
+      include ./welcome.css
+  body
+    main.welcome-main
+      div.welcome-container
+        img.main-logo(
+          src="/assets/images/logo-ceo.svg"
+          alt="main-logo"
+        )
+        h1.title-text #{currentUser.name}님, 반갑습니다.
+        div.user-info-container
+          div.user-info-wrapper
+            label.user-info-label 이름
+            p.user-info-content #{currentUser.name}
+          div.user-info-wrapper
+            label.user-info-label 아이디
+            p.user-info-content #{currentUser.userId}
+          div.user-info-wrapper
+            label.user-info-label 이메일
+            p.user-info-content #{currentUser.email}
+          div.user-info-wrapper
+            label.user-info-label 휴대폰
+            p.user-info-content #{currentUser.phone}
+        p.description 위 내용은 내 정보 관리에서 수정하실 수 있습니다.
+        a.link(
+          class="sign-out"
+          href="/sign-out"
+        ) 로그아웃
+          
+    script(type="module")

@@ -6,222 +6,243 @@
     <title>회원가입 | 배민사장님광장</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="/styles/common/globalstyle.css" />
-    <link rel="stylesheet" href="/styles/common/input.css" />
     <link rel="stylesheet" href="/styles/sign-up.css" />
     <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
   </head>
   <body>
     <main class="sign-up-main">
-      <div class="input-container">
-        <img
-          src="/assets/images/logo-ceo.svg"
-          alt="CEO Logo"
-          class="ceo-logo"
-        />
+      <div class="left">
+        <div class="input-container">
+          <img
+            src="/assets/images/logo-ceo.svg"
+            alt="CEO Logo"
+            class="ceo-logo"
+          />
 
-        <div class="essential">
-          <p class="description">필수 정보를 입력해주세요</p>
+          <div class="essential">
+            <p class="description">필수 정보를 입력해주세요</p>
 
-          <div class="input-wrapper id">
-            <div class="input-icon id">
-              <i class="icon">tag</i>
+            <div class="input-wrapper id">
+              <div class="input-icon id">
+                <i class="icon">tag</i>
+              </div>
+              <input
+                class="input-text"
+                placeholder="아이디"
+                type="text"
+                name="userId"
+                spellcheck="false"
+                autocomplete="off"
+              />
+              <div class="check">
+                <i class="icon">checkmark_alt_circle_fill</i>
+              </div>
+              <div class="msg-field">
+                <span class="msg-text"></span>
+              </div>
             </div>
-            <input
-              class="input-text"
-              placeholder="아이디"
-              type="text"
-              name="userId"
-              spellcheck="false"
-            />
-            <div class="check">
-              <i class="icon">checkmark_alt_circle_fill</i>
+
+            <div class="input-wrapper pw">
+              <div class="input-icon pw">
+                <i class="icon">lock</i>
+              </div>
+              <input
+                class="input-text"
+                placeholder="비밀번호"
+                type="password"
+                name="password"
+              />
+              <div class="check">
+                <i class="icon">checkmark_alt_circle_fill</i>
+              </div>
+              <div class="msg-field">
+                <span class="msg-text"></span>
+              </div>
             </div>
-            <div class="msg-field">
-              <span class="msg-text"></span>
+
+            <div class="input-wrapper pw-confirm hidden">
+              <div class="input-icon pw">
+                <i class="icon">lock_fill</i>
+              </div>
+              <input
+                class="input-text"
+                placeholder="비밀번호 확인"
+                type="password"
+                tabindex="-1"
+                name="passwordConfirm"
+              />
+              <div class="check">
+                <i class="icon">checkmark_alt_circle_fill</i>
+              </div>
+              <div class="msg-field">
+                <span class="msg-text"></span>
+              </div>
+            </div>
+
+            <div class="input-wrapper email">
+              <div class="input-icon email">
+                <i class="icon">envelope</i>
+              </div>
+              <input
+                class="input-text"
+                placeholder="이메일"
+                type="email"
+                name="email"
+              />
+              <div class="check">
+                <i class="icon">checkmark_alt_circle_fill</i>
+              </div>
+              <div class="msg-field">
+                <span class="msg-text"></span>
+              </div>
+            </div>
+
+            <div class="input-wrapper name">
+              <div class="input-icon name">
+                <i class="icon">person</i>
+              </div>
+              <input
+                class="input-text"
+                placeholder="이름"
+                type="text"
+                name="name"
+                spellcheck="false"
+              />
+              <div class="check">
+                <i class="icon">checkmark_alt_circle_fill</i>
+              </div>
+              <div class="msg-field">
+                <span class="msg-text"></span>
+              </div>
+            </div>
+
+            <div class="input-wrapper phone">
+              <div class="input-icon phone">
+                <i class="icon">phone</i>
+              </div>
+              <input
+                class="input-text"
+                placeholder="휴대폰"
+                type="tel"
+                name="phone"
+              />
+              <button class="action">인증받기</button>
+              <div class="msg-field">
+                <span class="msg-text"></span>
+              </div>
+            </div>
+
+            <div class="input-wrapper code hidden">
+              <div class="input-icon code">
+                <i class="icon">pencil_ellipsis_rectangle</i>
+              </div>
+              <input
+                class="input-text"
+                placeholder="인증번호 6자리 입력"
+                type="text"
+                tabindex="-1"
+              />
+              <div class="timer" hidden></div>
+              <div class="check">
+                <i class="icon">checkmark_alt_circle_fill</i>
+              </div>
+              <div class="msg-field">
+                <span class="msg-text"></span>
+              </div>
             </div>
           </div>
 
-          <div class="input-wrapper pw">
-            <div class="input-icon pw">
-              <i class="icon">lock</i>
+          <div class="optional">
+            <label class="description" for="optional-information-checkbox">
+              <span class="input-checkbox-wrapper">
+                <input type="checkbox" id="optional-information-checkbox" />
+              </span>
+              <span class="text">선택 정보를 입력하시겠어요?</span>
+            </label>
+
+            <div class="input-wrapper address disabled">
+              <div class="input-icon address">
+                <i class="icon">house_alt</i>
+              </div>
+              <input
+                class="input-text address-postal"
+                placeholder="우편번호"
+                type="text"
+                name="postalCode"
+                disabled
+              />
+              <!-- <button class="action" disabled>주소찾기</button> -->
+              <button class="action activated">주소찾기</button>
+              <div class="msg-field">
+                <span class="msg-text"></span>
+              </div>
             </div>
-            <input
-              class="input-text"
-              placeholder="비밀번호"
-              type="password"
-              name="password"
-            />
-            <div class="check">
-              <i class="icon">checkmark_alt_circle_fill</i>
+
+            <div class="input-wrapper address disabled">
+              <input
+                class="input-text address-default"
+                type="text"
+                placeholder="주소"
+                name="essentialAddress"
+                disabled
+              />
             </div>
-            <div class="msg-field">
-              <span class="msg-text"></span>
+
+            <div class="input-wrapper address disabled">
+              <input
+                class="input-text address-detail"
+                type="text"
+                placeholder="상세 주소"
+                name="additionalAddress"
+                disabled
+              />
             </div>
           </div>
 
-          <div class="input-wrapper pw-confirm hidden">
-            <div class="input-icon pw">
-              <i class="icon">lock_fill</i>
+          <div class="policy">
+            <div class="aa-checkbox-wrapper">
+              <input type="checkbox" id="agree-all-checkbox" />
+              <label for="agree-all-checkbox">전체 약관에 동의합니다.</label>
             </div>
-            <input
-              class="input-text"
-              placeholder="비밀번호 확인"
-              type="password"
-              tabindex="-1"
-              name="passwordConfirm"
-            />
-            <div class="check">
-              <i class="icon">checkmark_alt_circle_fill</i>
+
+            <div class="terms">
+              <button class="baemin-term-btn">배민사장님광장 이용약관</button>
+              <button class="privacy-policy-btn">개인정보 수집이용 동의</button>
             </div>
-            <div class="msg-field">
-              <span class="msg-text"></span>
+
+            <div class="aa-checkbox-wrapper">
+              <input type="checkbox" id="agree-essential-checkbox" />
+              <label for="agree-essential-checkbox" class="small"
+                >필수 항목에 동의합니다.</label
+              >
+            </div>
+
+            <div class="aa-checkbox-wrapper">
+              <input type="checkbox" id="agree-ad-checkbox" />
+              <label for="agree-ad-checkbox" class="small"
+                >광고성 정보 수신 동의 (선택)</label
+              >
             </div>
           </div>
 
-          <div class="input-wrapper email">
-            <div class="input-icon email">
-              <i class="icon">envelope</i>
-            </div>
-            <input
-              class="input-text"
-              placeholder="이메일"
-              type="email"
-              name="email"
-            />
-            <div class="check">
-              <i class="icon">checkmark_alt_circle_fill</i>
-            </div>
-            <div class="msg-field">
-              <span class="msg-text"></span>
-            </div>
-          </div>
-
-          <div class="input-wrapper name">
-            <div class="input-icon name">
-              <i class="icon">person</i>
-            </div>
-            <input
-              class="input-text"
-              placeholder="이름"
-              type="text"
-              name="name"
-              spellcheck="false"
-            />
-            <div class="check">
-              <i class="icon">checkmark_alt_circle_fill</i>
-            </div>
-            <div class="msg-field">
-              <span class="msg-text"></span>
-            </div>
-          </div>
-
-          <div class="input-wrapper phone">
-            <div class="input-icon phone">
-              <i class="icon">phone</i>
-            </div>
-            <input
-              class="input-text"
-              placeholder="휴대폰"
-              type="tel"
-              name="phone"
-            />
-            <button class="action">인증받기</button>
-            <div class="msg-field">
-              <span class="msg-text"></span>
-            </div>
-          </div>
-
-          <div class="input-wrapper code hidden">
-            <div class="input-icon code">
-              <i class="icon">pencil_ellipsis_rectangle</i>
-            </div>
-            <input
-              class="input-text"
-              placeholder="인증번호 6자리 입력"
-              type="text"
-              tabindex="-1"
-            />
-            <div class="timer" hidden></div>
-            <div class="check">
-              <i class="icon">checkmark_alt_circle_fill</i>
-            </div>
-            <div class="msg-field">
-              <span class="msg-text"></span>
-            </div>
-          </div>
+          <button class="register-btn btn">가입 완료</button>
         </div>
-
-        <div class="optional">
-          <label class="description" for="optional-information-checkbox">
-            <span class="input-checkbox-wrapper">
-              <input type="checkbox" id="optional-information-checkbox" />
-            </span>
-            <span class="text">선택 정보를 입력하시겠어요?</span>
-          </label>
-
-          <div class="input-wrapper address disabled">
-            <div class="input-icon address">
-              <i class="icon">house_alt</i>
-            </div>
-            <input
-              class="input-text address-postal"
-              placeholder="우편번호"
-              type="text"
-              name="postalCode"
-              disabled
-            />
-            <!-- <button class="action" disabled>주소찾기</button> -->
-            <button class="action activated">주소찾기</button>
-            <div class="msg-field">
-              <span class="msg-text"></span>
-            </div>
-          </div>
-
-          <div class="input-wrapper address disabled">
-            <input
-              class="input-text address-default"
-              type="text"
-              placeholder="주소"
-              name="essentialAddress"
-              disabled
-            />
-          </div>
-
-          <div class="input-wrapper address disabled">
-            <input
-              class="input-text address-detail"
-              type="text"
-              placeholder="상세 주소"
-              name="additionalAddress"
-              disabled
-            />
-          </div>
-        </div>
-
-        <div class="policy">
-          <div class="aa-checkbox-wrapper">
-            <input type="checkbox" id="agree-all-checkbox" />
-            <label for="agree-all-checkbox">전체 약관에 동의합니다.</label>
-          </div>
-
-          <div class="aa-checkbox-wrapper">
-            <input type="checkbox" id="agree-essential-checkbox" />
-            <label for="agree-essential-checkbox" class="small"
-              >필수 항목에 동의합니다.</label
-            >
-          </div>
-
-          <div class="aa-checkbox-wrapper">
-            <input type="checkbox" id="agree-ad-checkbox" />
-            <label for="agree-ad-checkbox" class="small"
-              >광고성 정보 수신 동의 (선택)</label
-            >
-          </div>
-        </div>
-
-        <button class="register-btn">가입 완료</button>
       </div>
+
+      <aside class="aside">
+        <img src="/assets/images/rider.png" alt="rider" />
+      </aside>
     </main>
+
+    <aside class="modal">
+      <div class="bg"></div>
+      <div class="content">
+        <button class="close">
+          <i class="icon">xmark</i>
+        </button>
+        <article></article>
+      </div>
+    </aside>
 
     <script src="/dist/sign-up.built.js"></script>
   </body>

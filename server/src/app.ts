@@ -1,26 +1,27 @@
 import { api } from './api'
 import appRoot from 'app-root-path'
 import bodyParser from 'body-parser'
-import cookieSession from 'cookie-session'
 import express from 'express'
 import { routers } from './routers'
+import session from 'express-session'
 
 const app = express()
-const PORT = 3000
+const PORT = 10100
 
 app.set('view engine', 'pug')
 app.set('views', __dirname + '/views')
 
-app.use(bodyParser.json()) // why?
-app.use(bodyParser.urlencoded({ extended: true })) // why?
-
+app.set('trust proxy', 1) // trust first proxy
 app.use(
-  cookieSession({
-    name: 'session',
-    signed: false,
-    secure: process.env.NODE_ENV !== 'test',
+  session({
+    secret: 'hamingod',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { maxAge: 24000 * 60 * 60 },
   })
 )
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(api)
 
@@ -35,5 +36,9 @@ app.set('view engine', 'pug')
 
 // Serve
 app.use(routers)
+
+app.use(function (req, res, next) {
+  res.status(404).sendFile(appRoot.resolve('/src/views-html/404.html'))
+})
 
 export { app, PORT }
