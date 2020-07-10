@@ -192,15 +192,13 @@ All the pages we've created always fit best to every screen size. It's called [r
 
 **Sign Up Page**
 
-<figure>
-  <img src="https://user-images.githubusercontent.com/19797697/87106796-2f71e680-c299-11ea-95d4-746ce09effaa.png" alt="">
-  <figcaption align="center">Desktop</figcaption>
-</figure>
+<img src="https://user-images.githubusercontent.com/19797697/87106796-2f71e680-c299-11ea-95d4-746ce09effaa.png" alt="Sign Up Preview Desktop">
+<p align="center"><b>Desktop</b></p>
 
-<figure align="center">
-  <img src="https://user-images.githubusercontent.com/19797697/87106913-7233be80-c299-11ea-9cb8-849254c3fc96.png" alt="" width="300">
-  <figcaption align="center">Mobile</figcaption>
-</figure>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/19797697/87106913-7233be80-c299-11ea-9cb8-849254c3fc96.png" alt="Sign Up Preview Mobile" width="350">
+</p>
+<p align="center"><b>Mobile</b></p>
 
 ### Flex
 
