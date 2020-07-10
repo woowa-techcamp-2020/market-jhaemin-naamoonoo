@@ -112,10 +112,11 @@ Markup language alone looks horrible and literally ugly. CSS gracefully resolves
 
 **var()**
 
-Until this feature came out, we couldn't assign any reusable variables like global colors or sizes. The preprocessors were the king to mitigate this problem. They enable us to define variables, reuse them, and manipulate them with a lot of utility functions. They were good enough to enhance the styling workflow.
+Until this feature came out, we couldn't assign any reusable variables like global colors or sizes. The preprocessors were the king to mitigate this problem. They enable us to define variables, reuse them, and manipulate them with a lot of utility functions. They were good enough to enhance the styling workflow. However, the preprocessed styles are still static assets and cannot act dynamically. The only way to change the property was to explicitly set the values with `@media`.
+
+`var()` makes it possible to create global or scoped variables that work like [Pub-Sub pattern](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern). All the properties listening to a specific value dynamically change.
 
 ```css
-
 /* declare */
 :root {
   /* Colors */
@@ -136,6 +137,12 @@ Until this feature came out, we couldn't assign any reusable variables like glob
   transition: opacity var(--transition-time) ease,
 }
 
+/* You can change the value responsively */
+@media only screen and (max-width: 700px) {
+  :root {
+    --input-msg-height: 20px;
+  }
+}
 ```
 
 ### Animation(Dynamic UI)
@@ -148,14 +155,9 @@ Dynamic UI is a great way to dynamically interact with the end users. Mostly use
 
 To implement dynamic ui, the [transform](https://developer.mozilla.org/en/docs/Web/CSS/transform), [transition](https://developer.mozilla.org/en/docs/Web/CSS/transition), and [animation](https://developer.mozilla.org/en/docs/Web/CSS/animation) are the related css property.
 
-**Transition**
-Transition is used for enabling you to define the transition between two states of an element.
-
-**Transform**
-Transform property lets you rotate, scale, skew, or translate an element which means actullay changing the element.
-
-**Animation**
-Compared to transform or transition, Animation can specify change by using @keyframes. keyframes detailize the transition and depend on each status using `from` and `to` statement or specifying the each `%`'s status.
+- **Transition** is used for enabling you to define the transition between two states of an element.
+- **Transform** property lets you rotate, scale, skew, or translate an element which means actullay changing the element.
+- **Animation:** Compared to transform or transition, Animation can specify change by using @keyframes. keyframes detailize the transition and depend on each status using `from` and `to` statement or specifying the each `%`'s status.
 
 ```css
 @keyframes springZoomOut {
@@ -183,3 +185,112 @@ Compared to transform or transition, Animation can specify change by using @keyf
   ...;
 }
 ```
+
+### Responsive Design
+
+All the pages we've created always fit best to every screen size. It's called [responsive design](https://en.wikipedia.org/wiki/Responsive_web_design) and you can achieve this with many technologies like CSS and JavaScipt as all you know well.
+
+**Sign Up Page**
+
+<figure>
+  <img src="https://user-images.githubusercontent.com/19797697/87106796-2f71e680-c299-11ea-95d4-746ce09effaa.png" alt="">
+  <figcaption align="center">Desktop</figcaption>
+</figure>
+
+<figure align="center">
+  <img src="https://user-images.githubusercontent.com/19797697/87106913-7233be80-c299-11ea-9cb8-849254c3fc96.png" alt="" width="300">
+  <figcaption align="center">Mobile</figcaption>
+</figure>
+
+### Flex
+
+`flex` layout is perfect for faster responsive design and development. Flex elements are so **flex**ible that they are automatically divided into suitable portions using percentage.
+
+For example, given the HTML and CSS
+
+```html
+<div class="parent">
+  <div class="child-1"></div>
+  <div class="child-2"></div>
+</div>
+```
+
+```css
+.parent {
+  display: flex;
+  flex-direction: row;
+}
+
+.child-1 {
+  flex: 1;
+}
+
+.child-2 {
+  flex: 2;
+}
+```
+
+Totally the sum of the flex parent's child elements' flex value is **3**. Then `.child-1` occupies **1/3** and `.child-2` occupies **2/3** of the parent's space.
+
+### @media
+
+This CSS feature constraints styles at specific situations.
+
+```css
+.content {
+  width: 500px;
+  height: 500px;
+}
+
+@media only screen and (min-width: 1400px) {
+  .content {
+    width: 800px;
+    height: 800px;
+  }
+}
+```
+
+The `.content`'s size changes when the screen width exceeds **1400px**. You can simplify it by refactoring the codes using `var()` we've just mentioned above.
+
+```css
+:root {
+  --content-size: 500px;
+}
+
+.content {
+  width: var(--content-size);
+  height: var(--content-size);
+}
+
+@media only screen and (min-width: 1400px) {
+  :root {
+    --content-size: 800px;
+  }
+}
+```
+
+Then we can reduce the duplicate code and unexpected side effects.
+
+## License
+
+MIT License
+
+Copyright (c) 2020 [jhaemin](https://github.com/jhaemin) & [naamoonoo](https://github.com/jhaemin)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
