@@ -8,9 +8,29 @@
   width: calc(100% - 30px);
   max-width: 336px;
   padding: 100px 0;
+  padding-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.go-back {
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 50px;
+}
+
+.go-back .icon {
+  font-size: 1em;
+  margin-right: 5px;
+  font-weight: 700;
+  display: inline-block;
+  transition: transform 200ms ease;
+}
+
+.go-back:hover .icon {
+  transform: translateX(-30%);
 }
 
 .description {
