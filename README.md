@@ -329,7 +329,7 @@ Then we can reduce the duplicate code and unexpected side effects.
 
 MIT License
 
-Copyright (c) 2020 [jhaemin](https://github.com/jhaemin) & [naamoonoo](https://github.com/jhaemin)
+Copyright (c) 2020 [jhaemin](https://github.com/jhaemin) & [naamoonoo](https://github.com/naamoonoo)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
