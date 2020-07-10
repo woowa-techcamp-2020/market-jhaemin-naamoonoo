@@ -22,7 +22,10 @@ router.post('/api/sign-in', async (req: Request, res: Response) => {
     return
   }
 
-  const isCorrectPassword = await comparePassword(password, foundUser.password)
+  const isCorrectPassword = await comparePassword(
+    password ?? '',
+    foundUser.password
+  )
 
   if (!isCorrectPassword) {
     signInResult.err = {}

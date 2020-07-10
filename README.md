@@ -36,7 +36,7 @@ You have to manually install modules and build for each of server side and clien
 # Inside `/server` and `/client`
 % npm install # or just npm i
 % npm run dev # will open the port to host the apps, automatically rebuild on change
-% npm run build # will produce production ready codes
+% npm run build # will produce artifacts
 
 # only for server
 % npm start # run the app after build
@@ -47,6 +47,33 @@ You have to manually install modules and build for each of server side and clien
 We chose to start with [TDD](https://en.wikipedia.org/wiki/Test-driven_development), stands for Test-driven development, where firstly write the test cases for every function and API request then implement them passing all those pre-ready tests. In this way, we can build more robust and neat source code. However, sometimes TDD feels cumbersome and we refused to write tests unconsciously, which means at some point we were doing in exactly the reversed way. We didn't expect ourselves to do the perfect job, it's okay.
 
 To checenut more about our tests, take a look at **`__TEST__`** directories that reside somewhere.
+
+Test code is written by [given-when-then](https://martinfowler.com/bliki/GivenWhenThen.html) pattern. Specify the testing situtation by the how human thinks. If this test is well written, it can be used for document as well.
+
+### unit
+
+It's just testing the single unit functions. For example, It test the validation functions which is validating the user input.
+
+<p align="center">
+  <img src="./server/src/public/assets/images/unit-test.png" width="450" />
+</p>
+
+### api
+
+Using supertest, we can test the api request. When we send a `POST` request to sign in, by the each situdation's body, we receive the different response.
+
+<p align="center">
+  <img src="./server/src/public/assets/images/sign-in-api-test.png" width="450" />
+</p>
+
+### client
+
+Insetead of testing by hand, we can easily check that It's been rendered well, and even check event handler is working properly.
+
+<p align="center">
+  <img src="./server/src/public/assets/images/address-check-box-by-hand.gif" width="250" />
+  <img src="./server/src/public/assets/images/address-checkbox-test.gif" width="300" />
+</p>
 
 ## Server Side
 
@@ -60,6 +87,8 @@ Currently we're using the following features of Express.
 
 It is all about server side application. The Express router handles all the requests from the outside world. `get` is used for visiting pages, `post` is usually used for manipulating the data. In this project, we didn't consider much about RESTful things.
 
+> 404 error reuqest could be handled by injecting the handler at the end of an entry script after all the required middlewares and routers are completely registered.
+
 **Middlewares**
 
 Similar yet the same thing as router. Middlewares could intervene between the middlewares at any point, at any router. Middlewares intercept the request and can early respond without going next to the next middlewares.
@@ -70,7 +99,21 @@ Of course Express can serve the static files as usual like compiled CSS, JavaSci
 
 **Veiw Engine**
 
-By default, browser understands and parses HTML. There are a lot of markup languages that compiles to HTML. Express can be mixed with those view engines and does server side rendering when a user requests a page which is not written in plain HTML. We are using both HTML and [**Pug**](https://pugjs.org/api/getting-started.html).
+By default, browser understands and parses HTML. There are a lot of markup languages that compiles to HTML. Express can be mixed with those view engines and does server side rendering when a user requests a page which is not written in plain HTML.
+
+Basically a static HTML file can be served in a naive way.
+
+```ts
+res.sendFile(appRoot.resolve('sign-in.html'))
+```
+
+Also the Express render function accepts a template file(`.pug`) and its corresponding placeholder values.
+
+```ts
+res.render('welcome.pug', { userInfo })
+```
+
+> We are using both HTML and [Pug](https://pugjs.org/api/getting-started.html)
 
 **Session**
 
@@ -82,13 +125,26 @@ We use [nedb](https://github.com/louischatriot/nedb), one of the most popular em
 
 ### Security
 
-We use [bcrypt](https://en.wikipedia.org/wiki/Bcrypt) to hash user passwords.
+We use [bcrypt](https://en.wikipedia.org/wiki/Bcrypt) to hash user passwords. The hashed passwords are irreversible and only can be compared with the original password whether its correct or not.
 
 ## Client Side
 
 ### webpack
 
-To build and bundle TypeScript sources, we integrate with the [**webpack**](https://webpack.js.org/) build system.
+To build and bundle TypeScript sources, we integrate with the [**webpack**](https://webpack.js.org/) build system. `ts-loader` helps the webpack resolve TypeScript files and transpile with **tsc**.
+
+```js
+{
+  test: /\.tsx?$/, // .ts or .tsx(React)
+  use: 'ts-loader',
+}
+```
+
+We separate configuration files for each development and production mode.
+
+- [`webpack.common.js`](https://github.com/woowa-techcamp-2020/market-6/blob/master/client/webpack.common.js) contains shared webpack configuration like `ts-loader`
+- [`webpack.dev.js`](https://github.com/woowa-techcamp-2020/market-6/blob/master/client/webpack.dev.js) runs webpack with development mode. It produces rawly bundled JavaScipt.
+- [`webpack.prod.js`](https://github.com/woowa-techcamp-2020/market-6/blob/master/client/webpack.prod.js) runs webpack with production mode. It produces artifacts which are compressed for the performance.
 
 ### Semantic HTML
 
@@ -112,10 +168,11 @@ Markup language alone looks horrible and literally ugly. CSS gracefully resolves
 
 **var()**
 
-Until this feature came out, we couldn't assign any reusable variables like global colors or sizes. The preprocessors were the king to mitigate this problem. They enable us to define variables, reuse them, and manipulate them with a lot of utility functions. They were good enough to enhance the styling workflow.
+Until this feature came out, we couldn't assign any reusable variables like global colors or sizes. The preprocessors were the king to mitigate this problem. They enable us to define variables, reuse them, and manipulate them with a lot of utility functions. They were good enough to enhance the styling workflow. However, the preprocessed styles are still static assets and cannot act dynamically. The only way to change the property was to explicitly set the values with `@media`.
+
+`var()` makes it possible to create global or scoped variables that work like [Pub-Sub pattern](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern). All the properties listening to a specific value dynamically change.
 
 ```css
-
 /* declare */
 :root {
   /* Colors */
@@ -136,9 +193,15 @@ Until this feature came out, we couldn't assign any reusable variables like glob
   transition: opacity var(--transition-time) ease,
 }
 
+/* You can change the value responsively */
+@media only screen and (max-width: 700px) {
+  :root {
+    --input-msg-height: 20px;
+  }
+}
 ```
 
-### Animation(Dynamic UI)
+### Animation (Dynamic UI)
 
 Dynamic UI is a great way to dynamically interact with the end users. Mostly used for pretty look, but It also could upgrade the UX(user experience). In our project, one of the example is giving a positive feedback by showing green check icon when the user's input is valid and vice verse.
 
@@ -148,14 +211,9 @@ Dynamic UI is a great way to dynamically interact with the end users. Mostly use
 
 To implement dynamic ui, the [transform](https://developer.mozilla.org/en/docs/Web/CSS/transform), [transition](https://developer.mozilla.org/en/docs/Web/CSS/transition), and [animation](https://developer.mozilla.org/en/docs/Web/CSS/animation) are the related css property.
 
-**Transition**
-Transition is used for enabling you to define the transition between two states of an element.
-
-**Transform**
-Transform property lets you rotate, scale, skew, or translate an element which means actullay changing the element.
-
-**Animation**
-Compared to transform or transition, Animation can specify change by using @keyframes. keyframes detailize the transition and depend on each status using `from` and `to` statement or specifying the each `%`'s status.
+- **Transition** is used for enabling you to define the transition between two states of an element.
+- **Transform** property lets you rotate, scale, skew, or translate an element which means actullay changing the element.
+- **Animation:** Compared to transform or transition, Animation can specify change by using @keyframes. keyframes detailize the transition and depend on each status using `from` and `to` statement or specifying the each `%`'s status.
 
 ```css
 @keyframes springZoomOut {
@@ -183,3 +241,110 @@ Compared to transform or transition, Animation can specify change by using @keyf
   ...;
 }
 ```
+
+### Responsive Design
+
+All the pages we've created always fit best to every screen size. It's called [responsive design](https://en.wikipedia.org/wiki/Responsive_web_design) and you can achieve this with many technologies like CSS and JavaScipt as all you know well.
+
+**Sign Up Page**
+
+<img src="https://user-images.githubusercontent.com/19797697/87106796-2f71e680-c299-11ea-95d4-746ce09effaa.png" alt="Sign Up Preview Desktop">
+<p align="center"><b>Desktop</b></p>
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/19797697/87106913-7233be80-c299-11ea-9cb8-849254c3fc96.png" alt="Sign Up Preview Mobile" width="350">
+</p>
+<p align="center"><b>Mobile</b></p>
+
+### Flexbox
+
+Flex layout is perfect for faster responsive design and development. Flex elements are so **flex**ible that they are automatically divided into suitable portions using percentage.
+
+For example, given the HTML and CSS
+
+```html
+<div class="parent">
+  <div class="child-1"></div>
+  <div class="child-2"></div>
+</div>
+```
+
+```css
+.parent {
+  display: flex;
+  flex-direction: row;
+}
+
+.child-1 {
+  flex: 1;
+}
+
+.child-2 {
+  flex: 2;
+}
+```
+
+Totally the sum of the flex parent's child elements' flex value is **3**. Then `.child-1` occupies **1/3** and `.child-2` occupies **2/3** of the parent's space.
+
+### @media
+
+This CSS feature constraints styles at specific situations.
+
+```css
+.content {
+  width: 500px;
+  height: 500px;
+}
+
+@media only screen and (min-width: 1400px) {
+  .content {
+    width: 800px;
+    height: 800px;
+  }
+}
+```
+
+The `.content`'s size changes when the screen width exceeds **1400px**. You can simplify it by refactoring the codes using `var()` we've just mentioned above.
+
+```css
+:root {
+  --content-size: 500px;
+}
+
+.content {
+  width: var(--content-size);
+  height: var(--content-size);
+}
+
+@media only screen and (min-width: 1400px) {
+  :root {
+    --content-size: 800px;
+  }
+}
+```
+
+Then we can reduce the duplicate code and unexpected side effects.
+
+## License
+
+MIT License
+
+Copyright (c) 2020 [jhaemin](https://github.com/jhaemin) & [naamoonoo](https://github.com/jhaemin)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

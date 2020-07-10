@@ -30,7 +30,9 @@ export const fetchWrapper = async (
 }
 
 export const onSubmitHandler = async (e: Event, url: string) => {
-  e.preventDefault()
+  if (e) {
+    e.preventDefault()
+  }
 
   const inputs = Array.from(document.querySelectorAll('.input-text'))
   const body = inputs.reduce((acc, input: HTMLInputElement) => {
@@ -64,4 +66,6 @@ export const onSubmitHandler = async (e: Event, url: string) => {
     wrapper.classList.add('invalid-input')
     wrapper.querySelector('.msg-text').innerHTML = errors[key]
   }
+
+  return errors
 }

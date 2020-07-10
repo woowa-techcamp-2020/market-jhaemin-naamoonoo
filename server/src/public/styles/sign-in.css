@@ -75,3 +75,15 @@
 .join:hover .icon {
   transform: translateX(30%);
 }
+
+.github {
+  display: inline-block;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 30px;
+  opacity: 0;
+
+  opacity: 0;
+  animation: var(--animation);
+  animation-delay: 0.85s;
+}

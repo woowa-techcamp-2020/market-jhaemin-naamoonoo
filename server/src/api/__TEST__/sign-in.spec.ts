@@ -53,7 +53,7 @@ it('sign in with none existed userId should be fail', async (done) => {
   const expectedResponse = await request(app)
     .post('/api/sign-in')
     .send({ ...invalidInput, userId: 'w4wws4' })
-    .expect(400)
+    .expect(200)
 
   await deleteUser({ userId: createdUser.userId })
   //then
@@ -80,7 +80,7 @@ it('sign in with wrong password should be fail', async (done) => {
   const expectedResponse = await request(app)
     .post('/api/sign-in')
     .send({ ...invalidInput, password: 'wnskdws' })
-    .expect(400)
+    .expect(200)
 
   await deleteUser({ userId: createdUser.userId })
   //then
@@ -107,7 +107,7 @@ it('sign in with invalidInput should be fail', async (done) => {
   const expectedResponse = await request(app)
     .post('/api/sign-in')
     .send({ ...invalidInput, password: 'wnskdws' })
-    .expect(400)
+    .expect(200)
 
   await deleteUser({ userId: createdUser.userId })
   //then
