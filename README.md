@@ -36,7 +36,7 @@ You have to manually install modules and build for each of server side and clien
 # Inside `/server` and `/client`
 % npm install # or just npm i
 % npm run dev # will open the port to host the apps, automatically rebuild on change
-% npm run build # will produce production ready codes
+% npm run build # will produce artifacts
 
 # only for server
 % npm start # run the app after build
@@ -59,6 +59,8 @@ Currently we're using the following features of Express.
 **Routing**
 
 It is all about server side application. The Express router handles all the requests from the outside world. `get` is used for visiting pages, `post` is usually used for manipulating the data. In this project, we didn't consider much about RESTful things.
+
+> 404 error reuqest could be handled by injecting the handler at the end of an entry script after all the required middlewares and routers are completely registered.
 
 **Middlewares**
 
@@ -110,6 +112,12 @@ To build and bundle TypeScript sources, we integrate with the [**webpack**](http
   use: 'ts-loader',
 }
 ```
+
+We separate configuration files for each development and production mode.
+
+- [`webpack.common.js`](https://github.com/woowa-techcamp-2020/market-6/blob/master/client/webpack.common.js) contains shared webpack configuration like `ts-loader`
+- [`webpack.dev.js`](https://github.com/woowa-techcamp-2020/market-6/blob/master/client/webpack.dev.js) runs webpack with development mode. It produces rawly bundled JavaScipt.
+- [`webpack.prod.js`](https://github.com/woowa-techcamp-2020/market-6/blob/master/client/webpack.prod.js) runs webpack with production mode. It produces artifacts which are compressed for the performance.
 
 ### Semantic HTML
 
