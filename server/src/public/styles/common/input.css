@@ -100,8 +100,7 @@
 .input-wrapper .input-icon {
   min-width: 51px;
   height: var(--input-inner-height);
-  background-repeat: no-repeat;
-  background-position: center;
+  background-color: #fafbfc;
   border-right: 1px solid var(--border-gray);
   display: flex;
   align-items: center;

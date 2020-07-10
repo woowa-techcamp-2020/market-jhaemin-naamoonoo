@@ -151,6 +151,12 @@
   }
 }
 
+@media only screen and (max-width: 600px) {
+  .left {
+    min-width: 0px;
+  }
+}
+
 .aside {
   min-height: 100vh;
   flex: 1;

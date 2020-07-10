@@ -4,6 +4,8 @@
   --input-large-height: 79px;
   --input-msg-height: 29px;
   --transition-time: 300ms;
+
+  --animation: 1s linear springSlideUp forwards;
 }
 
 .sign-in-main {
@@ -12,6 +14,8 @@
   align-items: center;
   padding: 100px 0;
   height: 100vh;
+  width: calc(100% - 30px);
+  margin: auto;
 }
 
 .sign-in-container {
@@ -25,16 +29,40 @@
   max-width: 258px;
   margin: auto;
   margin-bottom: 45px;
+
+  opacity: 0;
+  animation: var(--animation);
+  animation-delay: 0.2s;
+}
+
+.input-wrapper.id {
+  opacity: 0;
+  animation: var(--animation);
+  animation-delay: 0.33s;
+}
+
+.input-wrapper.pw {
+  opacity: 0;
+  animation: var(--animation);
+  animation-delay: 0.46s;
 }
 
 .sign-in-btn {
   margin-top: 20px;
+
+  opacity: 0;
+  animation: var(--animation);
+  animation-delay: 0.59s;
 }
 
 .join {
   font-size: 15px;
   margin-top: 30px;
   display: inline-block;
+
+  opacity: 0;
+  animation: var(--animation);
+  animation-delay: 0.72s;
 }
 
 .join .icon {
