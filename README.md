@@ -70,7 +70,21 @@ Of course Express can serve the static files as usual like compiled CSS, JavaSci
 
 **Veiw Engine**
 
-By default, browser understands and parses HTML. There are a lot of markup languages that compiles to HTML. Express can be mixed with those view engines and does server side rendering when a user requests a page which is not written in plain HTML. We are using both HTML and [**Pug**](https://pugjs.org/api/getting-started.html).
+By default, browser understands and parses HTML. There are a lot of markup languages that compiles to HTML. Express can be mixed with those view engines and does server side rendering when a user requests a page which is not written in plain HTML.
+
+Basically a static HTML file can be served in a naive way.
+
+```ts
+res.sendFile(appRoot.resolve('sign-in.html'))
+```
+
+Also the Express render function accepts a template file(`.pug`) and its corresponding placeholder values.
+
+```ts
+res.render('welcome.pug', { userInfo })
+```
+
+> We are using both HTML and [Pug](https://pugjs.org/api/getting-started.html)
 
 **Session**
 
@@ -82,13 +96,20 @@ We use [nedb](https://github.com/louischatriot/nedb), one of the most popular em
 
 ### Security
 
-We use [bcrypt](https://en.wikipedia.org/wiki/Bcrypt) to hash user passwords.
+We use [bcrypt](https://en.wikipedia.org/wiki/Bcrypt) to hash user passwords. The hashed passwords are irreversible and only can be compared with the original password whether its correct or not.
 
 ## Client Side
 
 ### webpack
 
-To build and bundle TypeScript sources, we integrate with the [**webpack**](https://webpack.js.org/) build system.
+To build and bundle TypeScript sources, we integrate with the [**webpack**](https://webpack.js.org/) build system. `ts-loader` helps the webpack resolve TypeScript files and transpile with **tsc**.
+
+```js
+{
+  test: /\.tsx?$/, // .ts or .tsx(React)
+  use: 'ts-loader',
+}
+```
 
 ### Semantic HTML
 
@@ -145,7 +166,7 @@ Until this feature came out, we couldn't assign any reusable variables like glob
 }
 ```
 
-### Animation(Dynamic UI)
+### Animation (Dynamic UI)
 
 Dynamic UI is a great way to dynamically interact with the end users. Mostly used for pretty look, but It also could upgrade the UX(user experience). In our project, one of the example is giving a positive feedback by showing green check icon when the user's input is valid and vice verse.
 
@@ -200,9 +221,9 @@ All the pages we've created always fit best to every screen size. It's called [r
 </p>
 <p align="center"><b>Mobile</b></p>
 
-### Flex
+### Flexbox
 
-`flex` layout is perfect for faster responsive design and development. Flex elements are so **flex**ible that they are automatically divided into suitable portions using percentage.
+Flex layout is perfect for faster responsive design and development. Flex elements are so **flex**ible that they are automatically divided into suitable portions using percentage.
 
 For example, given the HTML and CSS
 
