@@ -15,7 +15,7 @@
 
 ---
 
-## Before getting started
+### July 6th, 2020 - July 10th, 2020 (5 days challenge)
 
 This project implements the **sign up** and **sign in** of [배민상회](https://mart.baemin.com/?gclid=EAIaIQobChMI8ciAjr-86gIVGa6WCh2KbwTwEAAYASAAEgIIY_D_BwE). At first, a registration process seems very easy and simple, but it requires tons of considerations and design. Especially for our frontend developers, understanding the mechanisms behind the jungle makes us being closer to a full-stack developer.
 
