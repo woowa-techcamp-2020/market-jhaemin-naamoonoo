@@ -28,6 +28,10 @@ In short, the server side and the client side are separated into each applicatio
 - [namoonoo](https://github.com/naamoonoo)
 - [jhaemin](https://github.com/jhaemin)
 
+## Design resource
+
+[🎨 Figma](https://www.figma.com/file/MXVVUZmgoY4NPO2BO0nfLq/%EB%B0%B0%EB%AF%BC-%EC%83%81%ED%9A%8C-%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85%2F%EB%A1%9C%EA%B7%B8%EC%9D%B8?node-id=0%3A1)
+
 ## Development
 
 You have to manually install modules and build for each of server side and client side. Fortunately, we use the same script names not to confuse ourselves.
