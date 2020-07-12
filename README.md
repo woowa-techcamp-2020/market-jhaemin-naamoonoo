@@ -50,29 +50,29 @@ You have to manually install modules and build for each of server side and clien
 
 We chose to start with [TDD](https://en.wikipedia.org/wiki/Test-driven_development), stands for Test-driven development, where firstly write the test cases for every function and API request then implement them passing all those pre-ready tests. In this way, we can build more robust and neat source code. However, sometimes TDD feels cumbersome and we refused to write tests unconsciously, which means at some point we were doing in exactly the reversed way. We didn't expect ourselves to do the perfect job, it's okay.
 
-To checenut more about our tests, take a look at **`__TEST__`** directories that reside somewhere.
+To check out more about our tests, take a look at **`__TEST__`** directories that reside somewhere.
 
 Test code is written by [given-when-then](https://martinfowler.com/bliki/GivenWhenThen.html) pattern. Specify the testing situtation by the how human thinks. If this test is well written, it can be used for document as well.
 
-### unit
+### Unit
 
-It's just testing the single unit functions. For example, It test the validation functions which is validating the user input.
+It is just about testing the single unit functions. For example, this tests the validation functions which is validating the user inputs.
 
 <p align="center">
   <img src="./server/src/public/assets/images/unit-test.png" width="450" />
 </p>
 
-### api
+### API
 
-Using supertest, we can test the api request. When we send a `POST` request to sign in, by the each situdation's body, we receive the different response.
+Using supertest, we can test the API requests. When we send a `POST` request to sign in, by the each situdation's body, we receive different responses.
 
 <p align="center">
   <img src="./server/src/public/assets/images/sign-in-api-test.png" width="450" />
 </p>
 
-### client
+### Client
 
-Insetead of testing by hand, we can easily check that It's been rendered well, and even check event handler is working properly.
+Insetead of testing by hand, we can easily check that it's been rendered well, and even event handler check is working properly.
 
 <p align="center">
   <img src="./server/src/public/assets/images/address-check-box-by-hand.gif" width="250" />
