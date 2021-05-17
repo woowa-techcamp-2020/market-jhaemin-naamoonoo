@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "dev": "ts-node-dev --respawn --transpileOnly -r tsconfig-paths/register src/main.ts",
+    "dev": "ts-node-dev --respawn -r tsconfig-paths/register src/main.ts",
     "build": "ttsc",
     "start": "node dist/main"
   },
